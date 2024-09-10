@@ -1,5 +1,5 @@
 # Scheduling Overview
-The BIH HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system for resource allocation.
+The NYUSh HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system for resource allocation.
 This section of the manual attempts to give an overview of what scheduling is and how to use the Slurm scheduler.
 For more detailed information, you will have to refer to the [Slurm website](https://slurm.schedmd.com/overview.html) and the Slurm man pages (e.g., by entering `man sbatch` or `man srun` on the HPC terminal's command line).
 
@@ -33,8 +33,7 @@ Also, make sure that you are aware of our [How-To: Debug Software](../how-to/mis
 ## A Word on "Elsewhere"
 Many other facilities run Slurm clusters and make their documentation available on the internet. We list some that we found useful below.
 However, be aware that Slurm is a highly configurable and extensible system.
-Other sites may have different configurations and plugins enabled than we have (or might even have written custom plugins that are not available at BIH).
-In any case, it's always useful to look "über den Tellerrand".
+Other sites may have different configurations and plugins enabled than we have (or might even have written custom plugins that are not available at NYUSH).
 
 - [Quick Start User Guide](https://slurm.schedmd.com/quickstart.html) - the official guide from the Slurm creators.
 - [Slurm `man` Pages](https://slurm.schedmd.com/man_index.html) - web versions of Unix manual (`man`) pages.

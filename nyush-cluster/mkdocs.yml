@@ -1,16 +1,16 @@
 # Project information
-site_name: BIH HPC Docs
-site_description: Public documentation of the BIH HPC infrastructure.
-site_author: BIH HPC IT
-site_url: https://bihealth.github.io/bih-cluster
+site_name: NYUSH HPC Docs
+site_description: Public documentation of the NYUSH HPC infrastructure.
+site_author: NYUSH HPC IT
+site_url: https://github.com/hgc123123/nyush-cluster.git
 
 # Repository
-repo_name: BIH HPC Docs
-repo_url: https://github.com/bihealth/bih-cluster/
-edit_uri: 'edit/main/bih-cluster/docs/'
+repo_name: NYUSH HPC Docs
+repo_url: https://github.com/hgc123123/nyush-cluster.git
+edit_uri: 'edit/main/nyush-cluster/docs/'
 
 # Copyright
-copyright: 2016-2024, BIH HPC IT
+copyright: 2016-2024, NYUSH HPC IT
 
 # Theming, Configuration
 theme:

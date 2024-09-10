@@ -1,8 +1,8 @@
-# Connecting to HPC 4 Research
-HPC 4 Research is only available via the Charité, MDC, and BIH internal networks.
+# Connecting to the HPC cluster
+The HPC cluster is only available via the campus networks.
 VPN access requires additional measures which are described in [Connecting from External Networks](./from-external.md).
 
-There are two primary methods for interacting with BIH HPC:
+There are two primary methods for interacting with NYU Shanghai HPC:
 
 1. Through the “Ondemand” web portal.
 2. Via SSH and Slurm.
@@ -12,67 +12,52 @@ For information regarding the web portal, please read [OnDemand Portal](../ondem
 In case you're not familiar with SSH, you should probably start via the web portal or (if you are determined to learn) read through our [SSH basics](ssh-basics.md) page.
 
 ## In brief
-Follow these steps to connect to BIH HPC via the command line:
+Follow these steps to connect to NYU Shanghai HPC via the command line:
 
 1. [Register an account](../admin/getting-access.md) via your PI. :memo: 
 2. [Generate a SSH key pair :key: in Linux](generate-key/linux.md) or [Windows](generate-key/windows.md)
-3. [Submit your public key :arrow_up: to Charite](submit-key/charite.md) or [to MDC](submit-key/mdc.md).
-4. Connect to one of the two login nodes.
+3. Connect to one of the two login nodes.
     
     ```bash
-    # Charite Users
-    $ ssh user_c@hpc-login-1.cubi.bihealth.org
-    $ ssh user_c@hpc-login-2.cubi.bihealth.org
+    # Pudong Cluster
+    $ ssh NetID@hpc.shanghai.nyu.edu
 
-    # MDC Users
-    $ ssh user_m@hpc-login-1.cubi.bihealth.org
-    $ ssh user_m@hpc-login-2.cubi.bihealth.org
+    # NYUSHC Cluster
+    $ ssh NetID@hpclogin.shanghai.nyu.edu
     ```
 
     !!! hint
-        There are two login nodes, `hpc-login-1` and `hpc-login-2`. There are two for
+        There are two login nodes, `hpc.shanghai.nyu.edu` and `hpclogin.shanghai.nyu.edu`. There are two for
         redundancy reasons. Please do not perform big file transfers or an `sshfs`
-        mount via the login nodes. For this purpose, we have `hpc-transfer-1` and
-        `hpc-transfer-2`.
+        mount via the login nodes. 
 
-    Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to BIH HPC.
-    If you are using a Windows PC to access BIH HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
+    Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to NYU Shanghai HPC.
+    If you are using a Windows PC to access NYU Shanghai HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
 
-5. Allocate resources on a computation node using [Slurm](../slurm/overview.md). Do not compute on the login node!
+4. Allocate resources on a computation node using [Slurm](../slurm/overview.md). Do not compute on the login node!
 
     ```bash
     # Start interactive shell on computation node
     $ srun --pty bash -i
     ```
 
-6. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
-7. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
+5. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
+6. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
 
 !!! tip "tl;dr"
 
-    - Web Access: https://hpc-portal.cubi.bihealth.org
+    - Web Access: https://ood.shanghai.nyu.edu
     - SSH-Based Access:
 
         ```bash
         # Interactive login (choose one)
-        ssh username@hpc-login-1.cubi.bihealth.org
-        ssh username@hpc-login-2.cubi.bihealth.org
+        ssh NetID@hpc.shanghai.nyu.edu
+        ssh NetID@hpclogin.shanghai.nyu.edu
         srun --pty bash -i
-
-        # File Transfer (choose one)
-        sftp local/file username@hpc-transfer-1.cubi.bihealth.org:remote/file
-        sftp username@hpc-transfer-2.cubi.bihealth.org:remote/file local/file
-
-        # Interactive login into the transfer nodes (choose one)
-        ssh username@hpc-transfer-1.cubi.bihealth.org
-        ssh username@hpc-transfer-2.cubi.bihealth.org
         ```
 
 ## What is my username?
-Your username for accessing the cluster are composed of your username at your primary organization (Charité/MDC) and a suffix:
-
-- Charite user: `<Charite username>_c -> doej_c`
-- MDC user: `<MDC username>_m -> jdoe_m`
+Your username for accessing the cluster are your NetID:
 
 ## How can I connect from the outside?
 Please read [Connecting from External Networks](./from-external.md)

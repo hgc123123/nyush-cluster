@@ -1,11 +1,10 @@
 # Getting Access
-Access to the BIH HPC cluster is conceptually based on **user groups** (also known as labs or units) and **projects**.
-Users have a relatively limited storage quota within their private home folder and store big data primarily within their group's work space or in project folders.
-**Projects** are collaborative efforts involving multiple PIs/groups and are allocated separate storage space on the cluster.
+Access to the NYU Shanghai HPC cluster is conceptually based on **user groups** (also known as labs or units) and **projects**.
+Users have a relatively limited storage quota within their private home folder and scratch folder.
 
-Independent group leaders at BIH/Charité/MDC can request a **group** on the cluster and name group **members**. 
+Independent group leaders at NYU Shanghai can request a **group** on the cluster and name group **members**. 
 The work group **leader** (the group PI) bears the responsibility for the group's **members** and ensures that [cluster policies and etiquette](./policies.md) are followed.
-In brief: Fair usage rules apply and the cluster ist not to be abused for unethical or illegal purposes.
+In brief: Fair usage rules apply and the cluster is not to be abused for unethical or illegal purposes.
 Major and/or continued violations may lead to exclusion of the entire group.  
 
 The group leader may also name one **delegate** (typically an IT-savvy Post-Doc) who is thereby allowed to take decision about cluster usage and work group management on behalf of the group leader. 
@@ -13,17 +12,16 @@ The above mentioned responsibilities stay with the group leader.
 
 !!! note
 
-    - A Charité or MDC user account is required for accessing HPC 4 Research.
     - Please only use email addresses from the institutions Charite, BIH, or MDC in the forms below.
 
 ## Work Groups and Users
 All cluster users are member of exactly one primary work group.
-This affiliation is usually defined by real life organisational structures within Charité/BIH/MDC.
+This affiliation is usually defined by real life organisational structures within NYU Shanghai.
 Leaders of independent research groups (PIs) can apply for a new cluster work group as follows:
 
 1. The group leader sends an email to hpc-helpdesk@bih-charite.de and includes the filled-out form below.
    Please read the notes box before sending.
-2. The HPC helpdesk decides on the request and creates corresponding objects on the cluster (users, groups, directories).
+2. The HPC helpdesk decides on the request and creates corresponding objects on the cluster (users, groups).
 3. New users are notified and sent further instructions via email.
 
 !!! warning "Important"

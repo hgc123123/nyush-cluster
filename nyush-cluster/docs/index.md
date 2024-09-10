@@ -1,7 +1,6 @@
 # Home
-Hu Welcome to the user documentation of the BIH high-performance computing (HPC) cluster, also called HPC 4 Research.
-The BIH HPC cluster is managed by [CUBI](https://cubi.bihealth.org) (Core Unit Bioinformatics).
-This documentation is maintained by BIH CUBI and the user community.
+Welcome to the user documentation of the NYU Shanghai high-performance computing (HPC) cluster, also called HPC 4 Research.
+This documentation is maintained by NYUSH IT and the user community.
 It is a living document that you can update and add to.
 See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details.
 
@@ -9,8 +8,8 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 
 !!! tip "Additional resources"
 
-    - [User discussion forum](https://hpc-talk.cubi.bihealth.org/)
-    - [Performance and workload monitoring](https://metrics.cubi.bihealth.org/public-dashboards/dc3e4d5b1ea049429abf39e412c47302)
+    - [How to create HPC account](https://nyu.service-now.com/servicelink/catalog.do?sysparm_document_key=sc_cat_item,b0fc230be498d6408b4d97a033492665/)
+    - [Performance and workload monitoring](https://ood.shanghai.nyu.edu/grafana/d/4247817/jobinfo?orgId=1)
 
 
 ## Getting Started
@@ -23,8 +22,8 @@ Read the following set of pages (in order) to learn how to get access and connec
 6. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).
 7. [HPC Tutorial](hpc-tutorial/episode-0.md)
 
-!!! note "Acknowledging BIH HPC Usage"
-    Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Research/Clinic cluster of the Berlin Institute of Health"*.
+!!! note "Acknowledging NYUSH HPC Usage"
+    Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Pudong/NYUSHC cluster of the NYU Shanghai"*.
     Please add your publications using the cluster to [this list](misc/publication-list.md).
 
 ## News & Maintenance Announcements
