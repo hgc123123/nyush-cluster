@@ -22,3 +22,16 @@ host:bih-cluster$ pipenv shell
 (bih-cluster) host:bih-cluster$ cd bih-cluster
 (bih-cluster) host:bih-cluster$ mkdocs serve
 ```
+
+
+## Building the Document Locally
+```bash
+module load miniconda3
+conda env list
+source  activate hpc
+pipenv install
+pipenv shell
+cd nyush-cluster/
+pipenv run mkdocs build
+
+```
