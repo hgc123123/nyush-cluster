@@ -1,0 +1,4120 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Public documentation of the BIH HPC infrastructure.">
+      
+      
+        <meta name="author" content="BIH HPC IT">
+      
+      
+        <link rel="canonical" href="https://bihealth.github.io/bih-cluster/admin/maintenance/">
+      
+      
+        <link rel="prev" href="../getting-access/">
+      
+      
+        <link rel="next" href="../policies/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.13">
+    
+    
+      
+        <title>Maintenance etc. - BIH HPC Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e359304.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../css/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+<!-- Matomo -->
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https://matomo.charite.de/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '40']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#next-maintenance-window" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="BIH HPC Docs" class="md-header__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            BIH HPC Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Maintenance etc.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BIH HPC Docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="BIH HPC Docs" class="md-nav__button md-logo" aria-label="BIH HPC Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    BIH HPC Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/bihealth/bih-cluster/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    BIH HPC Docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Administrative
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Administrative
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting Access
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Maintenance etc.
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Maintenance etc.
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-compute-and-storage-maintenance-december-13-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login, Compute and Storage Maintenance, December 13-14, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-compute-and-storage-maintenance-march-22-23-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login, Compute and Storage Maintenance, March 22-23, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drmaa-deprecation-march-2-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRMAA Deprecation, March 2, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-setting-tuning-march-1-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Setting Tuning, March 1, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiting-global-memory-usage-february-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limiting Global Memory Usage, February 14, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ganglia-fixes-docs-february-3-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ganglia Fixes &amp; Docs, February 3, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-changes-january-29-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc Changes, January 29, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-oversubscription-january-6-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Oversubscription, January 6, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-usage-of-localtmp-resource-january-31-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcing Usage of localtmp Resource, January 31, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-file-handling-changes-december-27-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporary File Handling Changes, December 27, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-node-upgrades-december-22-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Node Upgrades, December 22-23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpfs-upgrade-december-20-21-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPFS Upgrade, December 20-21, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-upgrade-to-21080-september-8-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm upgrade to 21.08.0, September 8, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-re-cabling-september-7-8-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network re-cabling, September 7-8, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renaming-of-gpu-high-memory-machines-scheduler-changes-september-7-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming of GPU &amp; High Memory Machines &amp; Scheduler Changes, September 7, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-nodes-in-the-staging-partition-august-31-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Nodes in the staging partition, August 31, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reservation-maintenance-display-on-login-august-30-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reservation / Maintenance Display on Login, August 30, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-to-job-sumission-script-august-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update to Job Sumission Script, August 23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-upgrade-august-6-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm upgrade, August 6, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-hardware-exchange-august-3-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking hardware exchange, August 3, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-reorganization-july-13-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server reorganization, July 13, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-reorganization-june-22-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server reorganization, June 22 + 23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-and-psu-exchange-may-31-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory and PSU exchange, May 31, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-servers-may-20-may-25-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving servers, May 20 + May 25, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-maintenances-december-23-25-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous Maintenances, December 23-25, 2020
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centos-8-migration-in-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      CentOS 8 Migration (in planning)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finalize-unification-of-mass-data-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalize unification of Mass Data Mounts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../policies/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Policies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connecting
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Connecting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/connecting/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/ssh-basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Basics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/connecting-windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Generate Keys
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Generate Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/generate-key/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/generate-key/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Submit Keys
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Submit Keys
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/submit-key/charite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Charite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/submit-key/mdc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MDC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Advanced SSH
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Advanced SSH
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/advanced-ssh/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/advanced-ssh/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/advanced-ssh/windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/from-external/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From External
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../connecting/connection-problems/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connection Problems
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Storage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Storage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage-locations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Locations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/home-quota/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home Folder Quota
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/scratch-cleanup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scratch Cleanup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/querying-storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Querying Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/storage-migration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Storage Migration
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../storage/migration-faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Migration FAQ
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    HPC tutorial
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            HPC tutorial
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hpc-tutorial/episode-0/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 0
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hpc-tutorial/episode-1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hpc-tutorial/episode-2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hpc-tutorial/episode-3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 3
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../hpc-tutorial/episode-4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Episode 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cluster Scheduler (Slurm)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster Scheduler (Slurm)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scheduling Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction to Scheduling
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/quickstart/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Quickstart
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/temporary-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm and Temporary Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/job-scripts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Job Scripts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/memory-allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Allocation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/reservations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reservations / Maintenances
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_9" id="__nav_6_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Slurm Commands
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_9">
+            <span class="md-nav__icon md-icon"></span>
+            Slurm Commands
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-srun/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    srun
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sbatch
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sattach/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sattach
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scancel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scancel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sinfo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-squeue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    squeue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    scontrol
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sacct/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    sacct
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/format-strings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Format Strings
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/snakemake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snakemake with Slurm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/x11/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    X11 Forwarding
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../slurm/rosetta-stone/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm Rosetta Stone
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OnDemand Portal
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            OnDemand Portal
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/overview/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/interactive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Interactive Sessions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ondemand/quotas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quotas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Best Practice
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Best Practice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/project-structure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Project Structure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/software-craftmanship/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Craftmanship
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/screen-tmux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Screen/Tmux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/bashrc-guide/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ~/.bashrc Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/temp-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Temporary Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/env-modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Custom Environment Modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../best-practice/software-installation-with-conda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install Software with Conda
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Static Data (Cubit)
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Static Data (Cubit)
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/annotations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Annotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/app-support/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Application Support
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/databases/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Databases
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/exomes-panels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exomes and Panels
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/exon-lists/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exon Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/index-files/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Precomputed Indexes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cubit/references/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Sequences
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    How-To
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            How-To
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_1" id="__nav_10_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Connect
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_1">
+            <span class="md-nav__icon md-icon"></span>
+            Connect
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/connect/high-memory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    High-Memory Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/connect/gpu-nodes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GPU Nodes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Software
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
+            <span class="md-nav__icon md-icon"></span>
+            Software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/openmpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OpenMPI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/scientific-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Scientific Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/cell-ranger/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cell Ranger
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/jupyter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jupyter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/keras/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Keras
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/matlab/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Matlab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/tensorflow/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tensorflow
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/software/apptainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apptainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Service
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
+            <span class="md-nav__icon md-icon"></span>
+            Service
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/service/file-exchange/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File Exchange
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/hpc-talk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Access HPC Talk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/debug-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/debug-at-hpc/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Debug @HPC
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../how-to/misc/contribute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Contribute to Docs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Getting Help
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Getting Help
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/hpc-talk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Talk Forum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/helpdesk/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HPC Helpdesk
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/good-tickets/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Tickets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../help/faq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Frequently Asked Questions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Miscellaneous
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Miscellaneous
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/publication-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publication List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/external-resources/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    External Guides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../misc/provided-software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Provided Software
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_4" id="__nav_12_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Technical details
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_4">
+            <span class="md-nav__icon md-icon"></span>
+            Technical details
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/for-the-impatient/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/architecture/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/job-scheduler/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Job Scheduler
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Nodes and Volumes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../overview/monitoring/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitoring
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#login-compute-and-storage-maintenance-december-13-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login, Compute and Storage Maintenance, December 13-14, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#login-compute-and-storage-maintenance-march-22-23-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Login, Compute and Storage Maintenance, March 22-23, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drmaa-deprecation-march-2-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      DRMAA Deprecation, March 2, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-setting-tuning-march-1-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Setting Tuning, March 1, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limiting-global-memory-usage-february-14-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Limiting Global Memory Usage, February 14, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ganglia-fixes-docs-february-3-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ganglia Fixes &amp; Docs, February 3, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#misc-changes-january-29-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Misc Changes, January 29, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enabling-oversubscription-january-6-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enabling Oversubscription, January 6, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enforcing-usage-of-localtmp-resource-january-31-2022" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enforcing Usage of localtmp Resource, January 31, 2022
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temporary-file-handling-changes-december-27-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Temporary File Handling Changes, December 27, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cluster-node-upgrades-december-22-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cluster Node Upgrades, December 22-23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gpfs-upgrade-december-20-21-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      GPFS Upgrade, December 20-21, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-upgrade-to-21080-september-8-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm upgrade to 21.08.0, September 8, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-re-cabling-september-7-8-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Network re-cabling, September 7-8, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renaming-of-gpu-high-memory-machines-scheduler-changes-september-7-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Renaming of GPU &amp; High Memory Machines &amp; Scheduler Changes, September 7, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#new-nodes-in-the-staging-partition-august-31-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Nodes in the staging partition, August 31, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reservation-maintenance-display-on-login-august-30-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reservation / Maintenance Display on Login, August 30, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#update-to-job-sumission-script-august-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Update to Job Sumission Script, August 23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-upgrade-august-6-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm upgrade, August 6, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networking-hardware-exchange-august-3-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Networking hardware exchange, August 3, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-reorganization-july-13-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server reorganization, July 13, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#server-reorganization-june-22-23-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Server reorganization, June 22 + 23, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-and-psu-exchange-may-31-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Memory and PSU exchange, May 31, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-servers-may-20-may-25-2021" class="md-nav__link">
+    <span class="md-ellipsis">
+      Moving servers, May 20 + May 25, 2021
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous-maintenances-december-23-25-2020" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous Maintenances, December 23-25, 2020
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#centos-8-migration-in-planning" class="md-nav__link">
+    <span class="md-ellipsis">
+      CentOS 8 Migration (in planning)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#finalize-unification-of-mass-data-mounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Finalize unification of Mass Data Mounts
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/bihealth/bih-cluster/edit/main/bih-cluster/docs/admin/maintenance.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="next-maintenance-window">Next Maintenance Window<a class="headerlink" href="#next-maintenance-window" title="Permanent link">&para;</a></h1>
+<p>This page documents the current and known upcoming maintenance windows.</p>
+<h2 id="login-compute-and-storage-maintenance-december-13-14-2022">Login, Compute and Storage Maintenance, December 13-14, 2022<a class="headerlink" href="#login-compute-and-storage-maintenance-december-13-14-2022" title="Permanent link">&para;</a></h2>
+<p>All informationand updates regarding maintenance will be circulated on our forum <a href="https://hpc-talk.cubi.bihealth.org/c/announcements/5">https://hpc-talk.cubi.bihealth.org/c/announcements/5</a>.</p>
+<h2 id="login-compute-and-storage-maintenance-march-22-23-2022">Login, Compute and Storage Maintenance, March 22-23, 2022<a class="headerlink" href="#login-compute-and-storage-maintenance-march-22-23-2022" title="Permanent link">&para;</a></h2>
+<p>All COMPUTE nodes and STORAGE resources won't be reachable!</p>
+<blockquote>
+<p>All nodes will be running in RESERVATION mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, March 22 and 23, all-day). For example, if you submit a job that can run up to 7 days after March 15 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".</p>
+</blockquote>
+<p>Issues of today's maintenance:</p>
+<ul>
+<li>Mounting of storage to <code>/tmp</code> on login nodes</li>
+<li>Changing mount options of the root partition on the compute nodes</li>
+<li>Upgrading all nodes kernels and further packages<ul>
+<li>This implies an upgrade of CUDA, Singularity, and further packages</li>
+</ul>
+</li>
+<li>Cold reboot ("power off, power on") of storage system</li>
+<li>Exchanging <code>cephfs-2</code> switches (Tier 2 storage, not relevant for most users)</li>
+</ul>
+<p><strong>IMPORTANT</strong></p>
+<ul>
+<li><strong>All nodes will reboot</strong></li>
+<li><strong>All running jobs will die</strong></li>
+<li><strong>All sessions on login nodes will die</strong></li>
+</ul>
+<p><a href="https://hpc-talk.cubi.bihealth.org/t/maintenance-2022-03-22-progress-thread/90">Progress Thread on hpc-talk</a></p>
+<h2 id="drmaa-deprecation-march-2-2022">DRMAA Deprecation, March 2, 2022<a class="headerlink" href="#drmaa-deprecation-march-2-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The usage of DRMAA on the HPC is deprecated.</li>
+<li>In Snakemake, it has been deprecated in favor of using Snakemake Profiles <a href="../../slurm/snakemake/#snakemake-and-slurm">as documented</a>.</li>
+<li>We will support DRMAA at least until June 30, 2022 but ask all users to migrate away from it as soon as possible.</li>
+<li>Background:<ul>
+<li>With DRMAA, the status of each job is queried for using <code>scontrol show job JOBID</code> and <code>sacct -j JOBID</code>.</li>
+<li>This leads to regular remote procedure calls (RPC) to the slurm control daemon.</li>
+<li>It leads to <strong>a lot of such calls</strong>.</li>
+<li>It leads to so many calls that it prevents the scheduler from working correctly and leads to service degradation for all users.</li>
+</ul>
+</li>
+<li>Using Snakemake profiles is easy.<ul>
+<li>Call Snakemake with <code>snakemake --profile=cubi-v1</code> instead of <code>snakemake --drmaa "..."</code>.</li>
+<li>In your rules, specify threads, running time and memory as:
+  <div class="highlight"><pre><span></span><code>rule myrule:
+  # ...
+  threads: 8
+  resources:
+    time=&quot;12:00:00&quot;,
+    memory=&quot;8G&quot;,
+  # ...
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h2 id="cluster-setting-tuning-march-1-2022">Cluster Setting Tuning, March 1, 2022<a class="headerlink" href="#cluster-setting-tuning-march-1-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>We have adjusted the scheduler settings to address high number of jobs by users:</li>
+<li><code>SchedulerParameters+=bf_max_job_user=50</code>: backfill scheduler only considers 50 jobs of each user. This mitigates an issue with some users having too many jobs and thus other users' jobs don't get ahead in the queue</li>
+<li><code>EnforcePartLimits=ALL</code>: jobs that don't fit into their partition are rejected</li>
+<li><code>DependencyParameters=kill_invalid_depend</code>: jobs that have dependencies set that cannot be fulfilled will be killed</li>
+</ul>
+<h2 id="limiting-global-memory-usage-february-14-2022">Limiting Global Memory Usage, February 14, 2022<a class="headerlink" href="#limiting-global-memory-usage-february-14-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A global memory allocation limit per user is set per partition.</li>
+<li>The value is set to "max CPU count per user * 7GB".</li>
+<li>Users can allocate up to "max cpu count" CPUs or "max cpu count * 7GB" RAM.</li>
+<li>This is enforced globally (users could allocate &#8532; of their global CPU limit with 3.5 GB RAM and &#8531; with 7GB of RAM, for example).</li>
+</ul>
+<h2 id="ganglia-fixes-docs-february-3-2022">Ganglia Fixes &amp; Docs, February 3, 2022<a class="headerlink" href="#ganglia-fixes-docs-february-3-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reparing GPFS and NVIDIA GPU monitoring in <a href="https://hpc-ganglia.cubi.bihealth.org">Ganglia</a></li>
+<li>Root cause was that the Python modules in Ganglia were removed from EPEL.
+  We now have a local package build of Ganglia, if you are interested, here is the <a href="https://github.com/bihealth/rpms-ganglia">patch</a> and <a href="https://github.com/bihealth/rpms-ganglia/issues/1">Docker based build instructions</a>.</li>
+<li>You can find some <a href="../../overview/monitoring/">documentation about our Ganglia here</a>.</li>
+</ul>
+<h2 id="misc-changes-january-29-2022">Misc Changes, January 29, 2022<a class="headerlink" href="#misc-changes-january-29-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>We have reduced oversubscription to 2x from 4x.</li>
+<li>We have setup the user quota on /tmp on the login nodes to 20MB to improve stability of the nodes.</li>
+</ul>
+<h2 id="enabling-oversubscription-january-6-2022">Enabling Oversubscription, January 6, 2022<a class="headerlink" href="#enabling-oversubscription-january-6-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Many resources remain unused as users allocate too many cores to their jobs.
+  Slurm will now oversubscribe jobs in terms of CPUs, i.e., schedule more than one allocated core per physical core/thread.</li>
+</ul>
+<h2 id="enforcing-usage-of-localtmp-resource-january-31-2022">Enforcing Usage of <code>localtmp</code> Resource, January 31, 2022<a class="headerlink" href="#enforcing-usage-of-localtmp-resource-january-31-2022" title="Permanent link">&para;</a></h2>
+<ul>
+<li>We will enforce using <code>localtmp</code> resource for local storage above 100MB.</li>
+<li>See <a href="../../slurm/temporary-files/">Slurm: Temporary Files</a> for details.</li>
+</ul>
+<h2 id="temporary-file-handling-changes-december-27-2021">Temporary File Handling Changes, December 27, 2021<a class="headerlink" href="#temporary-file-handling-changes-december-27-2021" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Each job gets its private <code>/tmp</code> using Linux namespaces/cgroups.
+  This greatly improves the reliability of cleaning up after jobs.
+  (Technically, this is implemented using the Slurm <a href="https://slurm.schedmd.com/job_container.conf.html">job_container/tmpfs</a>) plugin.</li>
+<li>We are starting to track available local temporary space with Slurm in the general resource (<code>Gres</code>) "localtmp".
+  In the future this will become a requirement.
+  Also see <a href="../../slurm/temporary-files/">Slurm: Temporary Files</a>.</li>
+</ul>
+<h2 id="cluster-node-upgrades-december-22-23-2021">Cluster Node Upgrades, December 22-23, 2021<a class="headerlink" href="#cluster-node-upgrades-december-22-23-2021" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Renaming of cluster head nodes to:</li>
+<li><code>hpc-login-1.cubi.bihealth.org</code></li>
+<li><code>hpc-login-2.cubi.bihealth.org</code></li>
+<li><code>hpc-portal.cubi.bihealth.org</code></li>
+<li><code>hpc-transfer-1.cubi.bihealth.org</code></li>
+<li><code>hpc-transfer-2.cubi.bihealth.org</code></li>
+<li>Upgraded cluster operating system from CentOS 7.9 to Rocky Linux 8.5.</li>
+<li>Added three more GPU nodes with Tesla V100 GPUS: <code>hpc-gpu-{5..7}</code>.  </li>
+<li>Slurm has been upgraded to <code>28.08.5</code>.</li>
+<li>Ganglia monitoring generally available at <a href="https://hpc-ganglia.cubi.bihealth.org">https://hpc-ganglia.cubi.bihealth.org</a>, from internal networks.</li>
+<li>We have applied a number of changes to maximal running times in Slurm configuration.</li>
+</ul>
+<h2 id="gpfs-upgrade-december-20-21-2021">GPFS Upgrade, December 20-21, 2021<a class="headerlink" href="#gpfs-upgrade-december-20-21-2021" title="Permanent link">&para;</a></h2>
+<p>The GPFS storage system has been upgraded to the latest version to make compatible with Enterprise Linux version 8.</p>
+<h2 id="slurm-upgrade-to-21080-september-8-2021">Slurm upgrade to <code>21.08.0</code>, September 8, 2021<a class="headerlink" href="#slurm-upgrade-to-21080-september-8-2021" title="Permanent link">&para;</a></h2>
+<p>Slurm has been upgraded to version <code>21.08.0</code>.</p>
+<h2 id="network-re-cabling-september-7-8-2021">Network re-cabling, September 7-8, 2021<a class="headerlink" href="#network-re-cabling-september-7-8-2021" title="Permanent link">&para;</a></h2>
+<p>All servers/nodes won't be reachable!</p>
+<blockquote>
+<p>All nodes will be running in reservation mode. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday and Wednesday, September 7 and 8, all-day). For example, if you submit a job that can run up to 7 days after August 30 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable".</p>
+<p>If you already have a job running on any nodes that goes beyond September 7, 12:00 am (00:00 Uhr), this job will die.</p>
+</blockquote>
+<h2 id="renaming-of-gpu-high-memory-machines-scheduler-changes-september-7-2021">Renaming of GPU &amp; High Memory Machines &amp; Scheduler Changes, September 7, 2021<a class="headerlink" href="#renaming-of-gpu-high-memory-machines-scheduler-changes-september-7-2021" title="Permanent link">&para;</a></h2>
+<p>The GPU machines <code>med030[1-4]</code> have been renamed to <code>hpc-gpu-[1-4]</code>.
+The high memory machines <code>med040[1-4]</code> have been renamed to <code>hpc-mem-[1-4]</code>.
+It will probably take us some time to update all places in the documentation.</p>
+<p>Further, the <code>long</code> partition has been changed to allow jobs with a maximum running time of 14 days.</p>
+<h2 id="new-nodes-in-the-staging-partition-august-31-2021">New Nodes in the <code>staging</code> partition, August 31, 2021<a class="headerlink" href="#new-nodes-in-the-staging-partition-august-31-2021" title="Permanent link">&para;</a></h2>
+<p>We have installed 36 new nodes (in BETA mode) in the cluster called <code>hpc-node-[1-36]</code>.
+They have 48 cores (thus 96 hardware threads) each and have 360GiB of main memory available (for the hardware nerds, it's Intel(R) Xeon(R) Gold 6240R CPUs at 2.40GHz, featuring the <code>cascadelake</code> architecture).</p>
+<p>Right now, they are only available in the <code>staging</code> partition.
+After some testing we will move them to the other partitions.
+We'd like to ask you to test them as well and report any issues to <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>.
+The nodes have been setup identically to the existing <code>med0xxx</code> nodes.
+We do not expect big changes but the nodes might not be as stable as other oness.</p>
+<p>Here is how you can reach them.</p>
+<div class="highlight"><pre><span></span><code>hpc-login-1 # srun --immediate=5 --pty --time=24:00:00 --partition=staging bash -i
+[...]
+hpc-cpu-1 #
+</code></pre></div>
+<p>Note that I'm specifying a maximal running time of 24h so the scheduler will end the job after 24 hours which is before the upcoming maintenance reservation begins.
+By default, the scheduler allocates 28 days to the job which means that the job cannot end before the reservation and will be scheduled to start <strong>after</strong> it.
+See <a href="../../slurm/reservations/">Reservations / Maintenances</a> for more information about maintenance reservations.</p>
+<h2 id="reservation-maintenance-display-on-login-august-30-2021">Reservation / Maintenance Display on Login, August 30, 2021<a class="headerlink" href="#reservation-maintenance-display-on-login-august-30-2021" title="Permanent link">&para;</a></h2>
+<p>User will now be notified on login about maintenance, for example:</p>
+<div class="highlight"><pre><span></span><code>NOTE: scheduled maintenance(s)
+
+ 1: 2021-09-07 00:00:00 to 2021-09-09 00:00:00 ALL nodes
+
+Slurm jobs will only start if they do not overlap with scheduled reservations.
+More information:
+
+  - https://bihealth.github.io/bih-cluster/slurm/reservations/
+  - https://bihealth.github.io/bih-cluster/admin/maintenance/
+</code></pre></div>
+<h2 id="update-to-job-sumission-script-august-23-2021">Update to Job Sumission Script, August 23, 2021<a class="headerlink" href="#update-to-job-sumission-script-august-23-2021" title="Permanent link">&para;</a></h2>
+<p>The <code>srun</code> command will now behave as if <code>--immediate=60</code> has been specified by default.
+It explains how to override this behaviour and possible reasons for job scheduling to fail within 60 seconds (reservations and full cluster).</p>
+<h2 id="slurm-upgrade-august-6-2021">Slurm upgrade, August 6, 2021<a class="headerlink" href="#slurm-upgrade-august-6-2021" title="Permanent link">&para;</a></h2>
+<p>We upgrade from <code>20.11.2</code> to <code>20.11.8</code> which contains some fixes for bugs that our users actually stumbled over. The change should be non-intrusive as it's only a patch-level update.</p>
+<h2 id="networking-hardware-exchange-august-3-2021">Networking hardware exchange, August 3, 2021<a class="headerlink" href="#networking-hardware-exchange-august-3-2021" title="Permanent link">&para;</a></h2>
+<p>Following servers won't be reachable:</p>
+<ul>
+<li>GPU nodes (med03xx)</li>
+<li>computing nodes (med0233-0248)</li>
+</ul>
+<blockquote>
+<p>These nodes are running in reservation mode now. This means you are still able to schedule new jobs on these nodes if their potential/allowed runtime does not extend into the maintenance window (Tuesday, August 3, all-day). For example, if you submit a job that can run up to 7 days after July 26 then the job will remain in "pending/PD" state giving the explanation of "all nodes being reserved or unavailable". If you have a job running on any of the before mentioned nodes that goes beyond August 3, 12:00 am (00:00 Uhr), this job will die. We do not expect the remaining nodes to be affected. However, there remains a minor risk of unexpected downtime of other nodes.</p>
+</blockquote>
+<h2 id="server-reorganization-july-13-2021">Server reorganization, July 13, 2021<a class="headerlink" href="#server-reorganization-july-13-2021" title="Permanent link">&para;</a></h2>
+<p>Affected servers are:</p>
+<ul>
+<li>med02xx</li>
+<li>med07xx</li>
+</ul>
+<h2 id="server-reorganization-june-22-23-2021">Server reorganization, June 22 + 23, 2021<a class="headerlink" href="#server-reorganization-june-22-23-2021" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>If you have a job running on any of the before mentioned nodes that goes beyond June 22, 6am, this job will die.
+We put a so-called Slurm reservation for the maintenance period.
+Any job that is scheduled before the maintenance and whose end time (start time + max running time) is not before the start of the maintenance will not be scheduled with the message ReqNodeNotAvail, Reserved for maintenance.</p>
+</blockquote>
+<p>Affected servers are:</p>
+<ul>
+<li>med01xx</li>
+<li>med05xx</li>
+<li>med06xx</li>
+<li>med03xx</li>
+<li>med0405</li>
+</ul>
+<h2 id="memory-and-psu-exchange-may-31-2021">Memory and PSU exchange, May 31, 2021<a class="headerlink" href="#memory-and-psu-exchange-may-31-2021" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Memory exchange</li>
+<li>transfer-1.research (OK)</li>
+<li>med0143 (OK)</li>
+<li>med0147 (OK)</li>
+<li>med0206 (FAIL - exchange part broken)</li>
+<li>med0233 (FAIL - exchange part broken)</li>
+<li>med0254 (FAIL - exchange part broken)</li>
+<li>PSU exchange</li>
+<li>med-host024 (OK)</li>
+</ul>
+<h2 id="moving-servers-may-20-may-25-2021">Moving servers, May 20 + May 25, 2021<a class="headerlink" href="#moving-servers-may-20-may-25-2021" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Physically moving proxmox-{2,4} and transfer-2.research (May 20)</li>
+<li>Physically moving proxmox-{1,3} and transfer-1.research (May 25)</li>
+</ul>
+<h2 id="miscellaneous-maintenances-december-23-25-2020">Miscellaneous Maintenances, December 23-25, 2020<a class="headerlink" href="#miscellaneous-maintenances-december-23-25-2020" title="Permanent link">&para;</a></h2>
+<p><strong>HPC 4 Research</strong></p>
+<ul>
+<li>Separate HPC 4 Research group GID space from other organization's.<ul>
+<li><strong>Fully Unavailable</strong></li>
+</ul>
+</li>
+<li>Reboot login nodes to increase RAM on hpc-login-2.research</li>
+<li>Update firmwares of transfer-{1,2}.research</li>
+</ul>
+<h2 id="centos-8-migration-in-planning">CentOS 8 Migration (in planning)<a class="headerlink" href="#centos-8-migration-in-planning" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>All nodes will be upgraded to CentOS 8.</li>
+<li>This will be done in a rolling fashion over the course of 1 month.</li>
+<li>The login nodes must be rebooted which we will do with a break of 2 days (one node will remain running).</li>
+</ul>
+<h2 id="finalize-unification-of-mass-data-mounts">Finalize unification of Mass Data Mounts<a class="headerlink" href="#finalize-unification-of-mass-data-mounts" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /> This task is currently being planned.
+No schedule has been fixed yet. <img alt="🚧" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f6a7.svg" title=":construction:" /></p>
+</div>
+<ul>
+<li>We will remove the bind mount <code>/fast</code> that currently points to <code>/data/gpfs-1</code> on HPC 4 Research.</li>
+<li>Users should use <code>/data</code> instead of <code>/fast</code> everywhere, e.g., <code>/data/users/$NAME</code> etc.</li>
+</ul>
+<h1 id="previous-maintenance-windows">Previous Maintenance Windows<a class="headerlink" href="#previous-maintenance-windows" title="Permanent link">&para;</a></h1>
+<h2 id="hpc-4-research-miscellaneous-maintenances-december-1-2020">HPC 4 Research: Miscellaneous Maintenances, December 1, 2020<a class="headerlink" href="#hpc-4-research-miscellaneous-maintenances-december-1-2020" title="Permanent link">&para;</a></h2>
+<p><strong>Time</strong>: 6am-12am</p>
+<ul>
+<li>Exchange GPFS Controller<ul>
+<li>We need to exchange a central piece of hardware in the storage system.</li>
+<li>We do not expect a downtime, only a degradation of service.</li>
+<li><strong>Access to the GPFS will be degraded</strong></li>
+</ul>
+</li>
+<li>Slurm Scheduler<ul>
+<li>Upgrade to the latest and greatest version.</li>
+<li>Restructure scheduler installation to ease rolling upgrades without future downtimes.</li>
+<li>Archival of old accounting information to improve schedule performance.</li>
+<li><strong>Slurm will be unavailable.</strong></li>
+</ul>
+</li>
+<li>Re-Mounting of GPFS<ul>
+<li>The <code>/fast</code> file system will be re-mounted to <code>/data/gpfs-1</code>.</li>
+<li><code>/fast</code> becomes a symbolic link to <code>/data</code> on all of the cluster.</li>
+<li><strong>GPFS access will disappear for some time.</strong></li>
+</ul>
+</li>
+<li>Login &amp; Transfer Node Migration<ul>
+<li>The login nodes will be moved from physical machines to virtual machines in high-availability mode.</li>
+<li>Further, they will be available as <code>hpc-login-1.cubi.bihealth.org</code> and <code>login-2...</code> instead of  <code>hpc-login-{1,2}</code>.</li>
+<li>The same is true for, <code>hpc-transfer-{1,2}</code> which will be replaced by <code>transfer-1.research.hpc.bihealth.org</code> and <code>transfer-2...</code>.</li>
+<li>The aim is to improve stability and make everything easier to manage by administration.</li>
+</ul>
+</li>
+</ul>
+<h3 id="current-status-result">Current Status / Result<a class="headerlink" href="#current-status-result" title="Permanent link">&para;</a></h3>
+<ul>
+<li>We had to clear the accounting information database to make the update work within an acceptable time (we have 4M+ jobs in there).
+  From now on we will only keep the last 31 days in the database (updated nightly).</li>
+<li>The old login and transfer nodes have been made available as nodes <code>med010[1-3]</code> and <code>med012[5-6]</code>.</li>
+<li>All nodes are available again.</li>
+<li>The maintenance is complete.</li>
+</ul>
+<h2 id="slurm-scheduler-updates-september-8-2020">Slurm Scheduler Updates: September 8, 2020<a class="headerlink" href="#slurm-scheduler-updates-september-8-2020" title="Permanent link">&para;</a></h2>
+<ul>
+<li>To improve the scheduling behaviour we will need to restart the Slurm scheduler at ~8am.</li>
+<li>If everything runs well, this will finish after 30minutes (8:30 am).</li>
+<li>Planned Scheduler Changes:<ul>
+<li>Introduce automatic routing of jobs to partitions.</li>
+<li>Make Slurm scheduler and accounting run more robustly.</li>
+</ul>
+</li>
+</ul>
+<h2 id="network-maintenance-june-3-2020">Network Maintenance: June 3, 2020<a class="headerlink" href="#network-maintenance-june-3-2020" title="Permanent link">&para;</a></h2>
+<p>On June 3, we need to perform a network maintenance at 8 am.</p>
+<p>If everything goes well, there might be a short delay in network packages and connections will survive.
+In this case, the maintenance will end 8:30 am.</p>
+<p>Otherwise, the maintenance will finish by noon.</p>
+<h2 id="cluster-maintenance-with-downtime-june-16">Cluster Maintenance with Downtime: June 16<a class="headerlink" href="#cluster-maintenance-with-downtime-june-16" title="Permanent link">&para;</a></h2>
+<p>We need to schedule a full cluster downtime on June 16.</p>
+<h2 id="slurm-migration">Slurm Migration<a class="headerlink" href="#slurm-migration" title="Permanent link">&para;</a></h2>
+<p>We will switch to the <a href="https://slurm.schedmd.com/">Slurm</a> workload scheduler (from the legacy SGE).
+The main reason is that Slurm allows for better scheduling of GPUs (and has loads of improvements over SGE), but the syntax is a bit different.
+Currently, our documentation is in an transient state.
+We are currently extending our <a href="../../slurm/quickstart/">Slurm-specific documentation</a>.</p>
+<ul>
+<li><strong>March 7, 2020 (test stage)</strong>:
+  Slurm will provide 16 CPU and 3 GPU nodes (with 4 Tesla V100 each), and two high memory nodes, the remaining nodes are available in SGE.
+  We ask users to look into scheduling with Slurm.</li>
+<li><strong>March 31, 2020 (intermediate stage)</strong>:
+  Half of the nodes will be migrated to the Slurm cluster (~100), all high memory and GPU nodes will be moved to Slurm.
+  New users are advised to use not learn SGE any more but directly use Slurm.
+  Support for SGE is limited to bug fixing only (documentation and tips are phased out).</li>
+<li><strong>May 31, 2020 (sunsetting SGE)</strong>:
+  All but 16 nodes will remain in the SGE cluster.</li>
+<li><strong>June 31, 2020 (the end)</strong>:
+  SGE has reached its end of life on hpc4research.</li>
+</ul>
+<h2 id="ssh-key-management">SSH Key Management<a class="headerlink" href="#ssh-key-management" title="Permanent link">&para;</a></h2>
+<p>SSH Key Management has switched to using Charite and MDC ActiveDirectory servers.
+<strong>You need to upload all keys by the end of April 2020.</strong></p>
+<ul>
+<li><a href="../../connecting/submit-key/mdc/">MDC Key Upload</a></li>
+<li><a href="../../connecting/submit-key/charite/">Charite Key Upload</a></li>
+</ul>
+<p><strong>Schedule</strong></p>
+<ul>
+<li><code>Feb 4, 2020:</code> Keys are now also taken from central MDC/Charite servers.
+  <em>You do not need to contact us any more to update your keys (we cannot accelerate the process at MDC).</em></li>
+<li><code>May 1, 2020:</code> Keys are now <strong>only</strong> taken from central MDC/Charite servers.
+  <strong>You must upload your keys to central servers by then.</strong></li>
+</ul>
+<h2 id="switch-update-location-flip-of-hpc-login-2-and-hpc-transfer-1">Switch update, Location Flip of hpc-login-2 and hpc-transfer-1<a class="headerlink" href="#switch-update-location-flip-of-hpc-login-2-and-hpc-transfer-1" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Monday, February 23, 9am-15am.</li>
+</ul>
+<p>Affected systems:</p>
+<ul>
+<li><code>hpc-transfer-1</code></li>
+<li><code>hpc-transfer-2</code></li>
+<li><code>hpc-login-2</code></li>
+<li>a few compute nodes</li>
+</ul>
+<p>The compute nodes are non-critical as we are taking them out of the queues now.</p>
+<h2 id="centos-76-upgrade-january-29-february-5">CentOS 7.6 Upgrade, January 29, February 5<a class="headerlink" href="#centos-76-upgrade-january-29-february-5" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Wednesday, January 29, 2018: <strong>Reboot hpc-login-1, hpc-transfer-1</strong></li>
+<li>Wednesday, February 5, 2018: <strong>Reboot hpc-login-2, hpc-transfer-2</strong></li>
+</ul>
+<h2 id="september-03-30-2018">September 03-30, 2018<a class="headerlink" href="#september-03-30-2018" title="Permanent link">&para;</a></h2>
+<p>Starting monday 03.09.2018 we will be performing rolling update of the cluster from CentOS 7.4 to CentOS 7.5.
+Since update will be performed in small bunches of nodes, the only impact you should notice is smaller number of nodes available for computation.</p>
+<p>Also, for around two weeks, you can expect that your jobs can hit both CentOS 7.4 &amp; CentOS 7.5 nodes. This should not impact you in any way, but if
+you encounter any unexpected behavior of the cluster during this time, please let us know.</p>
+<p>At some point we will have to update the transfer, and login nodes. We will do this also in parts, so the you can switch to the other machine.</p>
+<p>Key dates are:</p>
+<p><strong>18.09.2018</strong> - hpc-login-1 &amp; hpc-transfer-1 will not be available, and you should switch to hpc-login-2  &amp; hpc-transfer-2 respectively.</p>
+<p><strong>25.09.2018</strong> - hpc-login-2 &amp; hpc-transfer-2 will not be available, and you should switch to hpc-login-1  &amp; hpc-transfer-1 respectively.</p>
+<p>Please also be informed that non-invasive maintenance this weekend which we announced has been canceled, so cluster will operate normally.</p>
+<p>In case of any concerns, issues, do not hesitate to contact us via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#97;&#100;&#109;&#105;&#110;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>, or <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;">&#104;&#112;&#99;&#45;&#104;&#101;&#108;&#112;&#100;&#101;&#115;&#107;&#64;&#98;&#105;&#104;&#45;&#99;&#104;&#97;&#114;&#105;&#116;&#101;&#46;&#100;&#101;</a>.</p>
+<h2 id="june-18-2018-0600-1500">June 18, 2018, 0600-1500<a class="headerlink" href="#june-18-2018-0600-1500" title="Permanent link">&para;</a></h2>
+<p>Due to tasks we need to perform on BIH cluster, we have planned maintenance:</p>
+<ul>
+<li>Maintenance start: 18.06.2018 06:00 AM</li>
+<li>Maintenance end: 18.06.2018 3:00 PM</li>
+</ul>
+<p>During maintenance we will perform several actions:</p>
+<ul>
+<li>GPFS drives re-balancing to improve performance</li>
+<li><del>OS update on cluster, transfer, and login nodes</del></li>
+</ul>
+<p>During maintenance whole cluster will not be usable, this includes:</p>
+<ul>
+<li>you will not be able to run jobs on cluster (SGE queuing system will be shutdown)</li>
+<li>hpc-login-{1,2} nodes will not work reliably during this time</li>
+<li>hpc-transfer-{1-2} nodes, and resources shared by them will be not available</li>
+</ul>
+<p>Maintenance window is quite long, since we are dependent on external vendor. However, we will recover services as soon as possible.</p>
+<p>We will keep you posted during maintenance with services status.</p>
+<h2 id="march-16-18-2018-mdc-it">March 16-18, 2018 (MDC IT)<a class="headerlink" href="#march-16-18-2018-mdc-it" title="Permanent link">&para;</a></h2>
+<p><strong>MDC IT</strong> has a network maintenance from <strong>Friday, March 16 18:00 hours until Sunday March 18 18:00 hours.</strong></p>
+<p>This will affect connections to the cluster but no connections within the cluster.</p>
+<h2 id="january-17-2018-complete">January 17, 2018 (Complete)<a class="headerlink" href="#january-17-2018-complete" title="Permanent link">&para;</a></h2>
+<p><strong>STATUS:</strong> complete</p>
+<p>The first aim of this window is to upgrade the cluster to CentOS 7.4 to patch against the Meltdown/Spectre vulnerabilities. For this, the login and transfer nodes have to be rebooted.</p>
+<p>The second aim of this window is to reboot the file server to mitigate some NFS errors. For this, the SGE master has to be stopped for some time.</p>
+<h3 id="planprogress">Plan/Progress<a class="headerlink" href="#planprogress" title="Permanent link">&para;</a></h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> reboot med-file1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> update to CentOS 7.4<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> front nodes<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> hpc-login-1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> hpc-login-2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> hpc-login-3 (admin use only)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> hpc-transfer-1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> hpc-transfer-2</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> infrastructure nodes<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> qmaster*</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <del>install-srv</del></li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> compute nodes<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0100 to med0246</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> med0247 to med0764</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> special purpose compute nodes<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0401 (high-memory)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0402 (high-memory)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0403 (high-memory)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0404 (high-memory)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> med0405 (GPU)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="previous-maintenance">Previous Maintenance<a class="headerlink" href="#previous-maintenance" title="Permanent link">&para;</a></h2>
+<p>(since January 2010)</p>
+<ul>
+<li>none</li>
+</ul>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 10, 2024</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2016-2024, BIH HPC IT
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.action.edit"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8d2eff1.min.js"></script>
+      
+    
+  </body>
+</html>
