@@ -50,7 +50,7 @@ As another diversion, let us consider how Unix manages its resources.
 This is important to understand when requesting resources from the scheduler later on.
 
 First of all, a computer might offer a certain **feature** such as a specific hardware platform or special network connection.
-Examples for this on the BIH HPC are specific Intel processor generations such as `haswell` or the availability of Infiniband networking.
+Examples for this on the NYU Shanghai HPC are specific Intel processor generations such as `haswell` or the availability of RoCE networking.
 You can request these with so-called constraints; they are not allocated to specific jobs.
 
 Second, there are resources that are allocated to specific jobs.
@@ -65,18 +65,13 @@ Generally, once a resource has been allocated to one job, it is not available to
 This means if you allocating more resources to your job that you actually need (*overallocation*) then those resources are not available to other jobs (whether they are your jobs or those of other users).
 This will be explained further below.
 
-Another example of resource allocation are *licenses*.
-The BIH HPC has a few Matlab 2016b licenses that users can request.
-As long as a license is allocated to one job, it is unavailable to another.
-
-## Nodes, Sockets, Processors, Cores, Threads
+## Nodes, Sockets, Processors, Cores
 
 Regarding compute resources, Slurm differentiates between:
 
 - nodes: a compute server,
 - sockets: a socket in the compute server that hosts one physical processor,
-- processor: a CPU or a *CPU core* in a multi-core computer (all CPUs in the BIH HPC are multi-core), and
-- (hardware) threads: most Intel CPUs feature hardware threads (also known as "hyperthreading") where each core appears to be two cores.
+- processor: a CPU or a *CPU core* in a multi-core computer (all CPUs in the NYU Shanghai HPC are multi-core).
 
 In most cases, you will use one compute node only.
 When using more than one node, you will need to use some form of message passing, e.g., MPI, so processes on different nodes can communicate.
@@ -148,7 +143,7 @@ HPC administration is constantly working on optimizing the scheduler settings.
 Note that you can use the `--format` option to the `squeue` command to request that it shows you information
 about job scheduling (in particular, see the `%S` field, which will show you the expected start time for a job,
 assuming Slurm has calculated it). See `man squeue` for details.
-If you observe inexplicable behavior, please notify us at `hpc-helpdesk@bih-charite.de`.
+If you observe inexplicable behavior, please notify us at `shanghai.it.help@nyu.edu`.
 
 ## Slurm Partitions
 
@@ -156,6 +151,5 @@ In Slurm, the nodes of a cluster are split into **partitions**.
 Nodes are assigned to one or more partition (see the [Job Scheduler](../overview/job-scheduler.md) section for details).
 Jobs can also be assigned to one or more partitions and are executed on nodes of the given partition.
 
-In the BIH HPC, partitions are used to stratify jobs of certain running times and to provide different quality of service (e.g., maximal number of CPU cores available to a user for jobs of a certain running time and size).
-The partitions `gpu` and `highmem` provide special hardware (the nodes are not assigned to other partitions) and the `mpi` partition allows MPI-parallelism and the allocation of jobs to more than one node.
+In the NYUSH HPC, partitions are used to stratify jobs of certain running times and to provide different quality of service (e.g., maximal number of CPU cores available to a user for jobs of a certain running time and size).
 The [Job Scheduler](../overview/job-scheduler.md) provides further details.

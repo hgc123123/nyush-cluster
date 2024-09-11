@@ -14,50 +14,76 @@ $ man squeue
 **interactive sessions**
 
 ```bash
-hpc-login-1:~$ srun --pty bash
-med0740:~$ echo "Hello World"
-med0740:~$ exit
+[hpc@hpclogin ~]$ srun --pty bash
+[hpc@compute132 ~]$ echo "hello world"
+hello world
+[hpc@compute132 ~]$ exit
+exit
+[hpc@hpclogin ~]$ 
 ```
 
 **batch submission**
 
 ```bash
-hpc-login-1:~$ sbatch script.sh
-Submitted batch job 2
-hpc-login-1:~$ squeue
+[hpc@hpclogin ~]$ sbatch job_script.slurm 
+Submitted batch job 483131
+[hpc@hpclogin ~]$ squeue -u hpc
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-                27     debug script.s holtgrem  R       0:06      1 med0703
+            483131  parallel     test      hpc  R       0:06      1 compute141
 ```
 
 **listing nodes**
 
 ```bash
 $ sinfo -N
-NODELIST   NODES PARTITION STATE
-med0740        1    debug* idle
-med0741        1    debug* down*
-med0742        1    debug* down*
+[hpc@hpclogin ~]$ sinfo -N
+NODELIST    NODES PARTITION STATE 
+compute118      1    debug* mix   
+compute119      1    debug* alloc 
+compute120      1    debug* idle  
+compute121      1    debug* mix   
+compute122      1    debug* idle  
+compute134      1  parallel alloc 
+compute135      1  parallel alloc 
+compute136      1  parallel alloc 
+compute137      1  parallel alloc 
+compute138      1  parallel alloc 
+compute139      1  parallel alloc 
+gpu145          1   rooster idle  
+gpu146          1   rooster idle  
+gpu147          1   rooster idle  
+gpu180          1      hebb idle  
+gpu181          1      chem idle  
+gpu182          1        li idle  
+gpu185          1      chem idle  
+gpu186          1    netsys idle  
+gpu187          1    sfscai mix   
+gpu190          1    sfscai mix
+[....]
 
-$ scontrol show nodes
-NodeName=med0740 Arch=x86_64 CoresPerSocket=8
-   CPUAlloc=0 CPUTot=32 CPULoad=0.06
-   AvailableFeatures=(null)
+[hpc@hpclogin ~]$ scontrol show nodes
+[hpc@hpclogin ~]$ scontrol show node compute118
+NodeName=compute118 Arch=x86_64 CoresPerSocket=32 
+   CPUAlloc=32 CPUEfctv=64 CPUTot=64 CPULoad=33.19
+   AvailableFeatures=cpu,g6338
+   ActiveFeatures=cpu,g6338
 [...]
 
-$ scontrol show nodes med0740
-NodeName=med0740 Arch=x86_64 CoresPerSocket=8
-   CPUAlloc=0 CPUTot=32 CPULoad=0.06
-   AvailableFeatures=(null)
-   ActiveFeatures=(null)
-   Gres=(null)
-   NodeAddr=med0740 NodeHostName=med0740 Version=20.02.0
-   OS=Linux 3.10.0-1062.12.1.el7.x86_64 #1 SMP Tue Feb 4 23:02:59 UTC 2020
-   RealMemory=1 AllocMem=0 FreeMem=174388 Sockets=2 Boards=1
-   State=IDLE ThreadsPerCore=2 TmpDisk=0 Weight=1 Owner=N/A MCS_label=N/A
-   Partitions=debug
-   BootTime=2020-03-05T00:54:15 SlurmdStartTime=2020-03-05T16:23:25
-   CfgTRES=cpu=32,mem=1M,billing=32
-   AllocTRES=
+[hpc@hpclogin ~]$ scontrol show node gpu187
+NodeName=gpu187 Arch=x86_64 CoresPerSocket=32 
+   CPUAlloc=13 CPUEfctv=64 CPUTot=64 CPULoad=6.22
+   AvailableFeatures=cpu,g6338,a800
+   ActiveFeatures=cpu,g6338,a800
+   Gres=gpu:a800:8(S:0-1)
+   NodeAddr=10.214.97.187 NodeHostName=gpu187 Version=22.05.6
+   OS=Linux 4.18.0-372.9.1.el8.x86_64 #1 SMP Fri Apr 15 22:12:19 EDT 2022 
+   RealMemory=515372 AllocMem=299008 FreeMem=112490 Sockets=2 Boards=1
+   State=MIXED ThreadsPerCore=1 TmpDisk=0 Weight=400 Owner=N/A MCS_label=N/A
+   Partitions=sfscai 
+   BootTime=2023-11-01T11:38:40 SlurmdStartTime=2024-08-06T09:17:19
+   LastBusyTime=2024-09-10T06:36:37
+   CfgTRES=cpu=64,mem=515372M,billing=64,gres/gpu=8
+   AllocTRES=cpu=13,mem=292G,gres/gpu=5
    CapWatts=n/a
    CurrentWatts=0 AveWatts=0
    ExtSensorsJoules=n/s ExtSensorsWatts=0 ExtSensorsTemp=n/s
@@ -66,10 +92,13 @@ NodeName=med0740 Arch=x86_64 CoresPerSocket=8
 **queue states**
 
 ```bash
-$ squeue
+[hpc@hpclogin ~]$ squeue -u hpc
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-$ squeue -u holtgrem_c
+[....]
+
+[hpc@hpclogin ~]$ squeue -u hpc
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+            483131  parallel     test      hpc  R       4:10      1 compute141
 ```
 
 **node resources**
@@ -87,143 +116,127 @@ $ sinfo -o "%N %G"
 **listing job details**
 
 ```
-$ scontrol show job 225
-JobId=225 JobName=bash
-   UserId=XXX(135001) GroupId=XXX(30069) MCS_label=N/A
-   Priority=4294901580 Nice=0 Account=(null) QOS=normal
-   JobState=FAILED Reason=NonZeroExitCode Dependency=(null)
-   Requeue=1 Restarts=0 BatchFlag=0 Reboot=0 ExitCode=130:0
-   RunTime=00:16:27 TimeLimit=14-00:00:00 TimeMin=N/A
-   SubmitTime=2020-03-23T11:34:26 EligibleTime=2020-03-23T11:34:26
-   AccrueTime=Unknown
-   StartTime=2020-03-23T11:34:26 EndTime=2020-03-23T11:50:53 Deadline=N/A
-   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2020-03-23T11:34:26
-   Partition=gpu AllocNode:Sid=hpc-login-1:1918
+[hpc@hpclogin ~]$ scontrol show job 483133
+JobId=483133 JobName=test
+   UserId=hpc(111222117) GroupId=hpc(111222117) MCS_label=N/A
+   Priority=5248 Nice=0 Account=hpc QOS=normal
+   JobState=RUNNING Reason=None Dependency=(null)
+   Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0
+   RunTime=00:00:08 TimeLimit=00:30:00 TimeMin=N/A
+   SubmitTime=2024-09-11T10:15:15 EligibleTime=2024-09-11T10:15:15
+   AccrueTime=2024-09-11T10:15:15
+   StartTime=2024-09-11T10:15:15 EndTime=2024-09-11T10:45:15 Deadline=N/A
+   SuspendTime=None SecsPreSuspend=0 LastSchedEval=2024-09-11T10:15:15 Scheduler=Main
+   Partition=parallel AllocNode:Sid=hpclogin:2249687
    ReqNodeList=(null) ExcNodeList=(null)
-   NodeList=med0301
-   BatchHost=med0301
-   NumNodes=1 NumCPUs=2 NumTasks=0 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
-   TRES=cpu=2,node=1,billing=2
-   Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=*
-   MinCPUsNode=1 MinMemoryNode=0 MinTmpDiskNode=0
+   NodeList=compute141
+   BatchHost=compute141
+   NumNodes=1 NumCPUs=1 NumTasks=1 CPUs/Task=1 ReqB:S:C:T=0:0:*:*
+   TRES=cpu=1,mem=2G,node=1,billing=1
+   Socks/Node=* NtasksPerN:B:S:C=1:0:*:* CoreSpec=*
+   MinCPUsNode=1 MinMemoryCPU=2G MinTmpDiskNode=0
    Features=(null) DelayBoot=00:00:00
    OverSubscribe=OK Contiguous=0 Licenses=(null) Network=(null)
-   Command=bash
-   WorkDir=XXX
+   Command=/gpfsnyu/home/hpc/run.slurm
+   WorkDir=/gpfsnyu/home/hpc
+   StdErr=/gpfsnyu/home/hpc/483133.err
+   StdIn=/dev/null
+   StdOut=/gpfsnyu/home/hpc/483133.out
    Power=
-   TresPerNode=gpu:tesla:4
-   MailUser=(null) MailType=NONE
 ```
 
 
 ```bash
-host:~$ squeue
-             JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
-              1177    medium     bash jweiner_  R 4-21:52:24      1 med0127 
-              1192    medium     bash jweiner_  R 4-07:08:40      1 med0127 
-              1209   highmem     bash mkuhrin_  R 2-01:07:17      1 med0402 
-              1210       gpu     bash hilberta  R 1-10:30:34      1 med0304 
-              1213      long     bash schubacm  R 1-09:42:27      1 med0127 
-              2401       gpu     bash ramkem_c  R 1-05:14:53      1 med0303 
-              2431    medium ngs_mapp holtgrem  R 1-05:01:41      1 med0127 
-              2437  critical snakejob holtgrem  R 1-05:01:34      1 med0135 
-              2733     debug     bash schubacm  R    7:36:42      1 med0127 
-              3029  critical ngs_mapp holtgrem  R    5:59:07      1 med0127 
-              3030  critical snakejob holtgrem  R    5:56:23      1 med0134 
-              3031  critical snakejob holtgrem  R    5:56:23      1 med0137 
-              3032  critical snakejob holtgrem  R    5:56:23      1 med0137 
-              3033  critical snakejob holtgrem  R    5:56:23      1 med0138 
-              3034  critical snakejob holtgrem  R    5:56:23      1 med0138 
-              3035  critical snakejob holtgrem  R    5:56:20      1 med0139 
-              3036  critical snakejob holtgrem  R    5:56:20      1 med0139 
-              3037  critical snakejob holtgrem  R    5:56:20      1 med0140 
-              3038  critical snakejob holtgrem  R    5:56:20      1 med0140 
-              3039  critical snakejob holtgrem  R    5:56:20      1 med0141 
-              3040  critical snakejob holtgrem  R    5:56:20      1 med0141 
-              3041  critical snakejob holtgrem  R    5:56:20      1 med0142 
-              3042  critical snakejob holtgrem  R    5:56:20      1 med0142 
-              3043  critical snakejob holtgrem  R    5:56:20      1 med0143 
-              3044  critical snakejob holtgrem  R    5:56:20      1 med0143 
-              3063      long     bash schubacm  R    4:12:37      1 med0127 
-              3066      long     bash schubacm  R    4:11:47      1 med0127 
-              3113    medium ngs_mapp holtgrem  R    1:52:33      1 med0708 
-              3118    medium snakejob holtgrem  R    1:50:38      1 med0133 
-              3119    medium snakejob holtgrem  R    1:50:38      1 med0703 
-              3126    medium snakejob holtgrem  R    1:50:38      1 med0706 
-              3127    medium snakejob holtgrem  R    1:50:38      1 med0144 
-              3128    medium snakejob holtgrem  R    1:50:38      1 med0144 
-              3133    medium snakejob holtgrem  R    1:50:35      1 med0147 
-              3134    medium snakejob holtgrem  R    1:50:35      1 med0147 
-              3135    medium snakejob holtgrem  R    1:50:35      1 med0148 
-              3136    medium snakejob holtgrem  R    1:50:35      1 med0148 
-              3138    medium snakejob holtgrem  R    1:50:35      1 med0104 
+[hpc@hpclogin ~]$ squeue 
+             JOBID PARTITION     NAME   USER ST       TIME  NODES NODELIST(REASON)
+            482984       aml       PT   jh99  R   17:30:02      1 compute183
+            483130     debug session_   dw90  R       8:35      1 compute131
+            483024     debug     bbaa   zg70  R   13:39:44      1 compute130
+            483021     debug     baab   zg70  R   13:52:27      1 compute118
+            482998     debug     abba   zg70  R   16:42:43      1 compute121
+            482997     debug     aabb   zg70  R   16:45:55      1 compute119
+            482996     debug   f2baba   zg70  R   16:51:22      1 compute119
+            482955     debug   n2bbaa   zg70  R   18:29:09      1 compute132
+            482954     debug   n2abba   zg70  R   18:32:13      1 compute130
+            483133  parallel     test   gh40  R       1:27      1 compute141
+            483135  parallel NdU6b100   jm05  R       0:13      1 compute141
+            480230  parallel Moababsc   wr72  R 12-18:36:08      1 compute140
+            480229  parallel Moaabbsc   wr72  R 12-18:38:11      1 compute139
+            480228  parallel Wbbaasca   wr72  R 12-18:41:24      1 compute138
+            480227  parallel Wbabasca   wr72  R 12-18:42:47      1 compute137
+            480226  parallel Wbaabsca   wr72  R 12-18:44:45      1 compute136
+            480225  parallel Wababsca   wr72  R 12-18:46:28      1 compute135
+            480224  parallel Waabbsca   wr72  R 12-18:48:31      1 compute134
+            480231  parallel Moababsc   wr72  R 12-18:30:26      1 compute141
+            483027    sfscai prodigy-  js156  R   13:23:38      1 gpu190
+            483124    sfscai      rec  yl179  R      25:46      1 gpu187
+            483123    sfscai       rd  yl179  R      26:52      1 gpu190
+            483119    sfscai     cold  yl179  R      46:58      1 gpu190
+            483117    sfscai     cold  yl179  R    1:18:48      1 gpu187
+            482628    sfscai  GT-S.sh   ys10  R 1-22:50:19      1 gpu188
+            482907    sfscai      mag   qz86  R   23:21:23      1 gpu190
+            483111    sfscai   POP909  jl187  R    2:05:18      1 gpu190
+            482894    sfscai     bash   bc88  R 1-02:21:24      2 gpu[187-188]
+            483134    sfscai     bash   yg09  R       0:48      1 gpu187
+            483049    sfscai     bash   zz17  R   11:34:46      1 gpu190
+            483057    sfscai ctpph_ad   zz17  R   10:32:32      1 gpu187
+            482970    sfscai ctp_ph_a   zz17  R   17:45:53      1 gpu188
 ```
 
 ```bash
-host:~$ squeue -o "%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b"
-     JOBID PARTITION NAME                 USER       ST       TIME  NODES NODELIST(R TRES_PER_NODE
-      1177 medium    bash                 jweiner_m   R 4-21:52:22      1 med0127    N/A
-      1192 medium    bash                 jweiner_m   R 4-07:08:38      1 med0127    N/A
-      1209 highmem   bash                 mkuhrin_m   R 2-01:07:15      1 med0402    N/A
-      1210 gpu       bash                 hilberta_c  R 1-10:30:32      1 med0304    gpu:tesla:4
-      1213 long      bash                 schubacm_c  R 1-09:42:25      1 med0127    N/A
-      2401 gpu       bash                 ramkem_c    R 1-05:14:51      1 med0303    gpu:tesla:1
-      2431 medium    ngs_mapping          holtgrem_c  R 1-05:01:39      1 med0127    N/A
-      2437 critical  snakejob.ngs_mapping holtgrem_c  R 1-05:01:32      1 med0135    N/A
-      2733 debug     bash                 schubacm_c  R    7:36:40      1 med0127    N/A
-      3029 critical  ngs_mapping          holtgrem_c  R    5:59:05      1 med0127    N/A
-      3030 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:21      1 med0134    N/A
-      3031 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:21      1 med0137    N/A
-      3032 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:21      1 med0137    N/A
-      3033 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:21      1 med0138    N/A
-      3034 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:21      1 med0138    N/A
-      3035 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0139    N/A
-      3036 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0139    N/A
-      3037 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0140    N/A
-      3038 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0140    N/A
-      3039 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0141    N/A
-      3040 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0141    N/A
-      3041 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0142    N/A
-      3042 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0142    N/A
-      3043 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0143    N/A
-      3044 critical  snakejob.ngs_mapping holtgrem_c  R    5:56:18      1 med0143    N/A
-      3063 long      bash                 schubacm_c  R    4:12:35      1 med0127    N/A
-      3066 long      bash                 schubacm_c  R    4:11:45      1 med0127    N/A
-      3113 medium    ngs_mapping          holtgrem_c  R    1:52:31      1 med0708    N/A
-      3118 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:36      1 med0133    N/A
-      3119 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:36      1 med0703    N/A
-      3126 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:36      1 med0706    N/A
-      3127 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:36      1 med0144    N/A
-      3128 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:36      1 med0144    N/A
-      3133 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:33      1 med0147    N/A
-      3134 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:33      1 med0147    N/A
-      3135 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:33      1 med0148    N/A
-      3136 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:33      1 med0148    N/A
-      3138 medium    snakejob.ngs_mapping holtgrem_c  R    1:50:33      1 med0104    N/A
+[hpc@hpclogin ~]$ squeue -o "%.10i %9P %20j %10u %.2t %.10M %.6D %10R %b"
+     JOBID PARTITION NAME               USER       ST       TIME  NODES NODELIST(R TRES_PER_NODE
+    482984 aml       PT                   jh99      R   17:31:36      1 compute183 N/A
+    483130 debug     session_desktop_6o   dw90      R      10:09      1 compute131 N/A
+    483024 debug     bbaa                 zg70      R   13:41:18      1 compute130 N/A
+    483021 debug     baab                 zg70      R   13:54:01      1 compute118 N/A
+    482998 debug     abba                 zg70      R   16:44:17      1 compute121 N/A
+    482997 debug     aabb                 zg70      R   16:47:29      1 compute119 N/A
+    482996 debug     f2baba               zg70      R   16:52:56      1 compute119 N/A
+    482955 debug     n2bbaa               zg70      R   18:30:43      1 compute132 N/A
+    482954 debug     n2abba               zg70      R   18:33:47      1 compute130 N/A
+    483133 parallel  test                 gh40      R       3:01      1 compute141 N/A
+    483135 parallel  NdU6b100             jm05      R       1:47      1 compute141 N/A
+    480230 parallel  Moababscan           wr72      R 12-18:37:42      1 compute140 N/A
+    480229 parallel  Moaabbscan           wr72      R 12-18:39:45      1 compute139 N/A
+    480228 parallel  Wbbaascan            wr72      R 12-18:42:58      1 compute138 N/A
+    480227 parallel  Wbabascan            wr72      R 12-18:44:21      1 compute137 N/A
+    480226 parallel  Wbaabscan            wr72      R 12-18:46:19      1 compute136 N/A
+    480225 parallel  Wababscan            wr72      R 12-18:48:02      1 compute135 N/A
+    480224 parallel  Waabbscan            wr72      R 12-18:50:05      1 compute134 N/A
+    480231 parallel  Moababscan           wr72      R 12-18:32:00      1 compute141 N/A
+    483027 sfscai    prodigy-evaluation-1 js556     R   13:25:12      1 gpu190     gres:gpu:1
+    483124 sfscai    rec                  yl379     R      27:20      1 gpu187     gres:gpu:1
+    483123 sfscai    rd                   yl379     R      28:26      1 gpu190     gres:gpu:1
+    483119 sfscai    cold                 yl379     R      48:32      1 gpu190     gres:gpu:1
+    483117 sfscai    cold                 yl379     R    1:20:22      1 gpu187     gres:gpu:1
+    482628 sfscai    GT-S.sh              ys10      R 1-22:51:53      1 gpu188     gres:gpu:1
+    482907 sfscai    mag                  qz86      R   23:22:57      1 gpu190     gres:gpu:2
+    483111 sfscai    POP909               jl087     R    2:06:52      1 gpu190     gres:gpu:1
+    482894 sfscai    bash                 bc88      R 1-02:22:58      2 gpu[187-18 gres:gpu:2
+    483134 sfscai    bash                 yg09      R       2:22      1 gpu187     gres:gpu:1
+    483049 sfscai    bash                 zz17      R   11:36:20      1 gpu190     gres:gpu:1
+    483057 sfscai    ctpph_adp            zz17      R   10:34:06      1 gpu187     gres:gpu:1
+    482970 sfscai    ctp_ph_adp           zz17      R   17:47:27      1 gpu188     gres:gpu:1
 ```
 
 
 ```bash
-host:~$ sinfo
-PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST 
-debug*       up    8:00:00     11  drain med[0707,0709-0710,0740-0742,0744-0745,0749,0752,0755] 
-debug*       up    8:00:00      8    mix med[0104,0127,0133-0135,0703,0706,0708] 
-debug*       up    8:00:00     10  alloc med[0137-0144,0147-0148] 
-debug*       up    8:00:00    103   idle med[0105-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705] 
-medium       up 7-00:00:00     11  drain med[0707,0709-0710,0740-0742,0744-0745,0749,0752,0755] 
-medium       up 7-00:00:00      8    mix med[0104,0127,0133-0135,0703,0706,0708] 
-medium       up 7-00:00:00     10  alloc med[0137-0144,0147-0148] 
-medium       up 7-00:00:00    103   idle med[0105-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705] 
-long         up 28-00:00:0     11  drain med[0707,0709-0710,0740-0742,0744-0745,0749,0752,0755] 
-long         up 28-00:00:0      8    mix med[0104,0127,0133-0135,0703,0706,0708] 
-long         up 28-00:00:0     10  alloc med[0137-0144,0147-0148] 
-long         up 28-00:00:0    103   idle med[0105-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705] 
-critical     up 7-00:00:00     11  drain med[0707,0709-0710,0740-0742,0744-0745,0749,0752,0755] 
-critical     up 7-00:00:00      8    mix med[0104,0127,0133-0135,0703,0706,0708] 
-critical     up 7-00:00:00     10  alloc med[0137-0144,0147-0148] 
-critical     up 7-00:00:00    103   idle med[0105-0124,0136,0145-0146,0151-0164,0201-0264,0704-0705] 
-highmem      up 14-00:00:0      1    mix med0402 
-highmem      up 14-00:00:0      3   idle med[0401,0403-0404] 
-gpu          up 14-00:00:0      2    mix med[0303-0304] 
-gpu          up 14-00:00:0      2   idle med[0301-0302] 
+[hpc@hpclogin ~]$ sinfo 
+PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
+parallel     up 20-00:00:0      1    mix compute141
+parallel     up 20-00:00:0      7  alloc compute[134-140]
+parallel     up 20-00:00:0      3   idle compute[142-144]
+rooster      up   infinite      4   idle gpu[145-148]
+hebb         up   infinite      1   idle gpu180
+debug*       up 7-00:00:00      1   resv compute133
+debug*       up 7-00:00:00      3    mix compute[118,121,132]
+debug*       up 7-00:00:00      3  alloc compute[119,130-131]
+debug*       up 7-00:00:00      9   idle compute[120,122-129]
+chem         up   infinite      2   idle gpu[181,185]
+li           up   infinite      1   idle gpu182
+aml          up   infinite      1    mix compute183
+aml          up   infinite      2   idle compute[184,189]
+netsys       up   infinite      1   idle gpu186
+sfscai       up 2-00:00:00      3    mix gpu[187-188,190]
 ```

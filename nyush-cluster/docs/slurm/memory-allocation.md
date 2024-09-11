@@ -1,7 +1,7 @@
 # Memory Allocation
 
 Memory allocation is one of the topics that users find confusing most often.
-This section first gives some technical background and then explains how to implement this properly with Slurm on the BIH HPC.
+This section first gives some technical background and then explains how to implement this properly with Slurm on the NYUSH HPC.
 
 ## Technical Background
 
@@ -47,7 +47,7 @@ However, accessing it will take some time as it must be read back into main memo
 In this way, it was possible for a computer with 4MB of RAM and a disk of 100MB to run programs that used 8MB.
 Of course, this was only really useable for programs that ran in the background. One could really feel the latency if a graphical program was using swapped memory (you could actually hear the hard drive working).
 Today, swap storage is normally only relevant when put your computer into hibernation.
-Given the large main memory on the cluster nodes, their small local hard drives (just used for loading the operating system), and the extreme slowness involved in using swapped memory, the BIH HPC nodes have no swap memory allocated.
+Given the large main memory on the cluster nodes, their small local hard drives (just used for loading the operating system), and the extreme slowness involved in using swapped memory, the NYUSH HPC nodes have no swap memory allocated.
 
 Most HPC users will also use **shared memory**, at least implicitly.
 Whenever a program uses `fork` to create a subprocess (BTW, this is *not* a thread), the program can chose to "copy" its current address space.
@@ -70,49 +70,6 @@ If the memory is not freed then this constitutes a *memory leak*, but that is an
 
 Other relevant segments are **code**, where the compiled code lives, and **data**, where static data such as strings displayed to the user are stored.
 As a side node, in interpreted languages such as R or Python, the code and data segments will refer to the code and data of Python while the actual program text will be on the heap.
-
-## Interlude: Memory in Java
-
-!!! note "Memory in Java Summary"
-
-    - set `-XX:MaxHeapSize=<size>` (e.g., `<size>=2G`) for your program and only tune the other parameters if needed
-    - also consider the amount of memory that Java needs for heap management in your Slurm allocations
-
-Java's memory management provides for some interesting artifacts.
-When running simple Java programs, you will never run into this but if you need to use gigabytes of memory in Java then you will have to learn a bit about Java memory management.
-This is the case when running [GATK](https://gatk.broadinstitute.org/hc/en-us) programs, for example.
-
-As different operating systems handle memory management differently, the Java virtual machine does its own memory management to provide a consistent interface.
-The following three settings are important in governing memory usage of Java:
-
-- `-Xmx<size>`/`-XX:MaxHeapSize=<size>` -- the maximal *Java heap* size
-- `-Xms<size>`/`-XX:InitialHeapSize=<size>` -- the initial *Java heap* size
-- `-Xss<size>`/`-XX:ThreadStackSize=<size>` -- maximal stack size available to a Java thread (e.g., the main thread)
-
-Above, `<size>` is a memory specification, either in bytes or with a suffix, e.g., `80M`, or `1G`.
-
-On startup, Java does roughly the following:
-
-- Setup the core virtual machine, load libraries, etc. and allocate (vsize) consume (rss) memory on the *OS (operating system) heap*.
-- Setup the *Java heap* allocate (vsize) and consume (rss) memory on the *OS heap*.
-  In particular, Java will need to setup data structures for the memory management of each individual object.
-- Run the program where Java data and Java threads will lead to memory allocation (vsize) and consumption (rss) of memory.
-
-Memory freed by the Java garbage collector can be re-used by other Java objects (rss remains the same) or be freed in the operating system (rss decreases).
-The Java VM program itself will also consume memory on the *OS stack* but that is negligible.
-
-Overall, the Java VM needs to store in main memory:
-
-- The Java VM, program code, Java thread stacks etc. (very little memory).
-- The *Java heap* (potentially a lot of memory).
-- The *Java heap management* data structures (so-called "off-heap", but of course on the *OS heap*) (potentially also considerable memory).
-
-In the BIH HPC context, the following is recommended to:
-
-- Set the Java heap to an appropriate size (use trial-and-error to determine the correct size or look through internet forums).
-- Only tune initial heap size in the case of performance issues (unlikely in batch processing).
-- Only bump the stack size when problems occur.
-- Consider "off-heap" memory when performing Slurm allocations.
 
 ## Memory Allocation in Slurm
 
@@ -148,15 +105,17 @@ slurmstepd: error: Detected 1 oom-kill event(s) in step <JOB ID>.batch cgroup. S
 You can inspect the amount of memory available on each node in total with `sinfo --format "%.10P %.10l %.6D %.6m %N"`, as shown below.
 
 ```bash
-$ sinfo --format "%.10P %.10l %.6D %.6m %N"
+[hpc@hpclogin ~]$ sinfo --format "%.10P %.10l %.6D %.6m %N"
  PARTITION  TIMELIMIT  NODES MEMORY NODELIST
-    debug*    8:00:00    240 128722 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-    medium 7-00:00:00    240 128722 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-      long 28-00:00:0    240 128722 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-  critical 7-00:00:00    176 128722 med[0101-0164,0501-0516,0601-0632,0701-0764]
-   highmem 14-00:00:0      4 515762 med[0401-0404]
-       gpu 14-00:00:0      4 385215 med[0301-0304]
-       mpi 14-00:00:0    240 128722 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
+  parallel 20-00:00:0     11 515306 compute[134-144]
+   rooster   infinite      4 515370 gpu[145-148]
+      hebb   infinite      1 515628 gpu180
+    debug* 7-00:00:00     16 515175 compute[118-133]
+      chem   infinite      2 257289 gpu[181,185]
+        li   infinite      1 257328 gpu182
+       aml   infinite      3 515207 compute[183-184,189]
+    netsys   infinite      1 515347 gpu186
+    sfscai 2-00:00:00      3 515371 gpu[187-188,190]
 ```
 
 ## Memory/CPU Accounting in Slurm
@@ -178,12 +137,12 @@ You can query information about jobs, e.g., using `sacct`:
 $ sacct -j 1607166
        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
 ------------ ---------- ---------- ---------- ---------- ---------- --------
-1607166      snakejob.+   critical                    16  COMPLETED      0:0
+1607166      snakejob.+      debug                    16  COMPLETED      0:0
 1607166.bat+      batch                               16  COMPLETED      0:0
 1607166.ext+     extern                               16  COMPLETED      0:0
 ```
 
-This shows that the job with ID `1607166` with a job ID starting with `snakejob.` has been run in the `critical` partition, been allocated 16 cores and had an exit code of `0:0`.
+This shows that the job with ID `1607166` with a job ID starting with `snakejob.` has been run in the `debug` partition, been allocated 16 cores and had an exit code of `0:0`.
 For technical reasons, there is a `batch` and an `extern` sub step.
 Actually, Slurm makes it possible to run various steps in one batch [as documented in the Slurm documentation](https://slurm.schedmd.com/job_launch.html).
 

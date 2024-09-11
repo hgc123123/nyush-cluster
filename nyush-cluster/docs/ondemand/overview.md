@@ -2,14 +2,10 @@
 
 !!! important "Status / Stability"
 
-    OnDemand Support is currently in **beta** phase on the BIH HPC.
-    In case of any issues, please send an email to hpc-helpdesk@bih-charite.de.
+    OnDemand Support is currently in **beta** phase on the NYUSH HPC.
+    In case of any issues, please send an email to shanghai.it.help@nyu.edu.
 
-To allow for better interactive works, BIH HPC administration has setup an  [Open OnDemand (OOD)](https://openondemand.org/) portal web server.
-
-You can find the OnDemand Portal for HPC 4 Research at:
-
-- [:globe_with_meridians: https://hpc-portal.cubi.bihealth.org](https://hpc-portal.cubi.bihealth.org)
+To allow for better interactive works, NYUSH HPC administration has setup an  [Open OnDemand (OOD)](https://ood.shanghai.nyu.edu) portal web server.
 
 ## Background
 

@@ -7,7 +7,7 @@ The `sbatch` command allows you to put a job into the scheduler's queue to be ex
     ```bash
     # Execute job.sh in partition medium with 4 threads and 4GB of RAM total for a
     # running time of up to one day.
-    hpc-login-1:~$ sbatch --partition=medium --mem=4G --ntasks 4 --time=1-00 job.sh
+    [hpc@hpclogin ~]$ sbatch --partition=debug --mem=4G --ntasks 4 --time=1-00 job.sh 
     Submitted batch job JOB_ID
     ```
 
@@ -24,8 +24,8 @@ The command will create a batch job and add it to the queue to be executed at a 
     Also see the section [#array-jobs] below.
 - `--nodes`
     -- The number of nodes to allocate.
-    This is only given here as an important argument as the maximum number of nodes allocatable to any partition but `mpi` is set to one (1).
-    This is done as there are few users on the BIH HPC that actually use multi-node paralleilsm.
+    This is only given here as an important argument as the maximum number of nodes allocatable to any partition but `debug` is set to one (1).
+    This is done as there are few users on the NYUSH HPC that actually use multi-node paralleilsm.
     Rather, most users will use multi-core parallelism and might forget to limit the number of nodes which causes inefficient allocation of resources.
 - `--cpus-per-task`
     -- This corresponds to the number of CPU cores allocated to each task.
@@ -34,9 +34,7 @@ The command will create a batch job and add it to the queue to be executed at a 
     As you can define minimal and maximal number of tasks/CPUs/cores, you could also specify `--mem-per-cpu` and get more flexible scheduling of your job.
 - `--gres`
     -- Generic resource allocation.
-    On the BIH HPC, this is only used for allocating GPUS, e.g., with `--gres=gpu:tesla:2`, a user could allocate two NVIDIA Tesla GPUs on the same host (use `a40` instead of `tesla` for the A40 GPUs).
-- `--licenses`
-    -- On the BIH HPC, this is used for the allocation of MATLAB 2016b licenses only.
+    On the NYUSH HPC, this is only used for allocating GPUS, e.g., with `--gres=gpu:2`, a user could allocate two NVIDIA GPUs on the same host.
 - `--partition`
     -- The partition to run in.
     Also see the [Job Scheduler](../overview/job-scheduler.md) section.
@@ -47,7 +45,7 @@ The command will create a batch job and add it to the queue to be executed at a 
     -- Specify dependencies on other jobs, e.g., using `--dependency afterok:JOBID` to only execute if the job with ID `JOBID` finished successfully or `--dependency after:JOBID` to wait for a job to finish regardless of its termination status.
 - `--constraint`
     -- Require one or more features from your node.
-    On the BIH HPC, the processor generation is defined as a feature on the nodes, e.g., `haswell`, or special networking such as `infiniband`.
+    On the NYUSH HPC, the processor generation is defined as a feature on the nodes, e.g., `haswell`, or special networking such as `RoCe`.
     You can have a look at `/etc/slurm/slurm.conf` on all configured features.
 - `--output`
     -- The path to the output log file (by default joining stdout and stderr, see the man page on `--error` on how to redirect stderr separately).
@@ -58,7 +56,7 @@ The command will create a batch job and add it to the queue to be executed at a 
   Also see the documentation of [sbatch in the Slurm manual](https://slurm.schedmd.com/sbatch.html).
 - `--mail-user=<email>`
   -- The email address to send to.
-  Must end in `@charite.de`, `@mdc-berlin.de`, or `@bih-charite.de`.
+  Must end in `@nyu.edu`.
 
 !!! important "Ensure your `--output` directory exists!"
 
@@ -84,11 +82,11 @@ You can submit array jobs by specifying `-a EXPR` or `--array EXPR` where `EXPR`
 For example:
 
 ```bash
-hpc-login-1 ~# sbatch -a 1-3 grid_search.sh
-hpc-login-1 ~# sbatch -a 1,2,5-10 grid_search.sh
+[hpc@hpclogin ~]$ sbatch -a 1-3 job.sh 
+[hpc@hpclogin ~]$ sbatch -a 1,2,5-10 job.sh
 ```
 
-This will submit `grid_search.sh` with certain variables set:
+This will submit `job.sh` with certain variables set:
 
 - `SLURM_ARRAY_JOB_ID` -- the ID of the first job
 - `SLURM_ARRAY_TASK_ID` -- the index of the job in the array

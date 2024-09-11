@@ -5,8 +5,8 @@ The `srun` command allows you to run a command **now**.
 !!! info "Representative Example"
 
     ```bash
-    hpc-login-1:~$ srun --pty bash -i
-    med0201:~$
+    [hpc@hpclogin ~]$ srun --pty bash -i
+    [hpc@compute130 ~]$ 
     ```
 
 The command will perform a resource allocation with the scheduler (and wait until it has allocated the requested resources) first.

@@ -17,7 +17,7 @@ That is, when later submitting the script with `sbatch my-job.sh` you can either
 **Creating the Script**
 
 ```bash
-host:example$ cat >my-job.sh <<"EOF"
+[hpc@hpclogin ~]$ cat >script.sh <<"EOF"
 #!/bin/bash
 #
 #SBATCH --job-name=this-is-my-job
@@ -44,17 +44,16 @@ Also see the [SLURM Rosetta Stone](rosetta-stone.md) for more options.
 **Submit, Look at Queue & Result**
 
 ```
-host:example$ sbatch script.sh 
+[hpc@hpclogin ~]$ sbatch script.sh 
 Submitted batch job 315
-host:example$ squeue  -u holtgrem_c
+[hpc@hpclogin ~]$ squeue  -u holtgrem_c
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
-               315     debug this-is- holtgrem  R       0:40      1 med0127 
-host:example$ sleep 2m
-host:example$ squeue  -u holtgrem_c
+               315     debug this-is-      hpc  R       0:40      1 compute118 
+[hpc@hpclogin ~]$ sleep 2m
+[hpc@hpclogin ~]$ squeue  -u hpc
              JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON) 
-host:example$ cat output.txt 
-Wed Mar 25 13:30:56 CET 2020
-med0127
+[hpc@hpclogin ~]$ cat output.txt 
+Wed Sep 11 10:24:07 CST 2024
+compute132
 Hello World
-Wed Mar 25 13:31:56 CET 2020
 ```
