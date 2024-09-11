@@ -48,7 +48,7 @@ The documentation is structured as follows:
 - **Cluster Scheduler** technical help for using the Slurm scheduler.
 - **OnDemand Portal** introduces web HPC access.
 - **Best Practice** guidelines on recommended usage of certain aspects of the system.
-- **Static Data (Cubit)** documentation about the static data (files) collection on the cluster.
+<!-- - **Static Data (Cubit)** documentation about the static data (files) collection on the cluster. -->
 - **How-To** short(ish) solutions for specific technical problems.
 - **Getting Help** explains how you can obtain help in using the BIH HPC.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.
