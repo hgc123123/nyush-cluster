@@ -13,7 +13,6 @@ This page describes how to connect to the NYUSH HPC from external networks (e.g.
 !!! tip "SSH Key Gotchas"
 
     You should use separate SSH key pairs for your workstation, laptop, home computer etc.
-    As a reminder, you will have to register the SSH keys with your home IT organization ([MDC](submit-key/mdc.md) or [Charite](submit-key/charite.md)).
     When using gateway nodes, please make sure to use SSH key agents and agent forwarding (`ssh` flag "`-A`").
 
 
