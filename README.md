@@ -6,7 +6,7 @@ You can find the built documentation here:
 
 
 
-## Building the Document Locally
+## Contributor to the docs
 ```bash
 
 ```
