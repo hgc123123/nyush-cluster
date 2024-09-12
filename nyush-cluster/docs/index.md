@@ -8,7 +8,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 
 !!! tip "Additional resources"
 
-    - [How to create HPC account](https://nyu.service-now.com/servicelink/catalog.do?sysparm_document_key=sc_cat_item,b0fc230be498d6408b4d97a033492665/)
+    - [How to create HPC account](https://nyu.service-now.com/servicelink/catalog.do?sysparm_document_key=sc_cat_item,b0fc230be498d6408b4d97a033492665)
     - [Performance and workload monitoring](https://ood.shanghai.nyu.edu/grafana/d/4247817/jobinfo?orgId=1)
 
 

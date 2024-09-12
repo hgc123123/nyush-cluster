@@ -18,12 +18,12 @@ When you logged into the cluster, please make sure that you also executed `srun`
 ## Installing conda
 
 ```bash
-hpc-login-1:~$ srun --mem=5G --pty bash -i
-hpc-cpu-123:~$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
-hpc-cpu-123:~$ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
-hpc-cpu-123:~$ eval "$(/$HOME/work/miniconda/bin/conda shell.bash hook)"
-hpc-cpu-123:~$ conda init
-hpc-cpu-123:~$ conda config --set auto_activate_base false
+$ srun --mem=5G --pty bash -i
+ $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+ $ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
+ $ eval "$(/$HOME/work/miniconda/bin/conda shell.bash hook)"
+ $ conda init
+ $ conda config --set auto_activate_base false
 ```
 
 This will install conda to `$HOME/work/miniconda`.
@@ -34,16 +34,16 @@ To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
 
 ```bash
-hpc-cpu-123:~$ conda config --add channels bioconda
-hpc-cpu-123:~$ conda config --add channels default
-hpc-cpu-123:~$ conda config --add channels conda-forge
+ $ conda config --add channels bioconda
+ $ conda config --add channels default
+ $ conda config --add channels conda-forge
 ```
 
 ## Installing software with conda
 Installing packages with conda is straight forward:
 
 ```bash
-hpc-cpu-123:~$ conda install <package>
+ $ conda install <package>
 ```
 
 This will install a package into the conda base environment. 
@@ -52,7 +52,7 @@ To search for a package, e.g. to find the correct name in conda or if it exists
 at all, issue the command:
 
 ```bash
-hpc-cpu-123:~$ conda search <string>
+ $ conda search <string>
 ```
 
 To choose a specific version (conda will install the latest version that is
@@ -60,7 +60,7 @@ compatible with the current installed Python version), you can provide the
 version as follows:
 
 ```bash
-hpc-cpu-123:~$ conda install <package>=<version>
+ $ conda install <package>=<version>
 ```
 
 Please note that new conda installs may ship with a recently update Python version and not all packages might have been adapted.
@@ -76,13 +76,13 @@ E.g., if you find out that some packages don't work after starting out/upgrading
     Simply run
 
     ```bash
-    hpc-cpu-123:~$ conda install mamba
+     $ conda install mamba
     ```
 
     With that, you can install software into your environment using the same syntax as for Conda:
 
     ```bash
-    hpc-cpu-123:~$ mamba install <package>
+     $ mamba install <package>
     ```
 
 ## Creating an environment
@@ -99,9 +99,9 @@ environment, is is available in all other environments.
 To create a Python 2.7 environment and activate it, issue the following commands:
 
 ```bash
-hpc-cpu-123:~$ conda create -n py27 python=2.7
-hpc-cpu-123:~$ source activate py27
-(py27) hpc-cpu-123:~$
+ $ conda create -n py27 python=2.7
+ $ source activate py27
+(py27)  $
 ```
 
 From now on, conda will install packages into the `py27` environment when you issue
@@ -109,8 +109,8 @@ the `install` command. To switch back to the root environment, simply deactivate
 `py27` environment:
 
 ```bash
-(py27) hpc-cpu-123:~$ source deactivate py27
-hpc-cpu-123:~$
+(py27)  $ source deactivate py27
+ $
 ```
 
 But of course, as Python 2.7 is not supported any more by the Python Software Foundation, you should switch over to Python 3 already!

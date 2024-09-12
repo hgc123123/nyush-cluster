@@ -5,10 +5,13 @@ Perform queries to the Slurm accounting information.
 !!! info "Representative Example"
 
     ```bash
-    hpc-login-1:~$ sacct -j  1607103
-        JobID    JobName  Partition    Account  AllocCPUS      State ExitCode
-    ------------ ---------- ---------- ---------- ---------- ---------- --------
-    1607103      wgs_sv_an+     medium                     1    PENDING      0:0
+    [gh2440@hpclogin ~]$ sacct -j 483188
+    JobID           JobName  Partition    Account  AllocCPUS      State ExitCode 
+    ------------ ---------- ---------- ---------- ---------- ---------- -------- 
+    483188               PT        aml     jh3899          9    RUNNING      0:0 
+    483188.batch      batch                jh3899          9    RUNNING      0:0 
+    483188.exte+     extern                jh3899          9    RUNNING      0:0 
+    483188.0         matlab                jh3899          9    RUNNING      0:0
     ```
 
 The `sacct` command displays information from the Slurm accounting service.

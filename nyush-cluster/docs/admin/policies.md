@@ -10,20 +10,13 @@ Larger changes will be announced through the mailing list.
 ## Cluster Etiquette
 
 1. The clusters are soft-partitioned shared resources that are made available under a "fair use" policy as far as possible.
-2. The general assumption that if a user interferes with the work of others (e.g., by blocking compute slots) then this happens accidentally.
-    - Please do not do this.
-    - If you see this happening try to contact the user yourself (use `getent passswd $USER` to find out the user's office contact details).
-    - Send an email to hpc-helpdesk@bih-charite.de if you need administrative intervention.
-3. All users must be subscribed to the cluster mailing list (they are subscribed automatically when the account is created).
-4. When leaving please send an email to hpc-helpdesk@bih-charite.de such that we can shutdown your account in an organized fashion.
-   We also need to arrange for cleaning up your data.
-5. The cluster mailing list shanghai.it.help@nyu.edu is the primary contact channel for announcements by administration to users.
+2. The cluster mailing list shanghai.it.help@nyu.edu is the primary contact channel for announcements by administration to users.
    Users must be subscribed to the mailing list.
    Users must follow the announcements, failure to do so can lead to missing important policy changes and thus losing access to the cluster or data.
-6. **Do not perform any computation on the login nodes.**
+3. **Do not perform any computation on the login nodes.**
    This includes: archive management tools such as `tar`, `(un)zip`, or `gzip`.
    You should probably only run `screen`/`tmux` and maybe a text editor there.
-7. **Do not perform heavy I/O operations on `/gpfsnyu/home/user` or `/gpfsnyu/scratch/user`.**
+4. **Do not perform heavy I/O operations on `/gpfsnyu/home/user` or `/gpfsnyu/scratch/user`.**
    Rather write data to the `/tmp`, and then transfer them to `/gpfsnyu`.
 
 ## Cluster Policies
@@ -39,7 +32,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
     - `home` 50GB space
     - `scratch` 10TB space
 3. The overall throughput limit is 10GB/sec.
-   Try not to overload the cluster I/O wise.
+   **Try not to overload the cluster I/O wise.**
 4. :shield: :robot: User home/scratch file sets have to be owned by the user, group is `hpc-users` and mode is `u=rwx,go=`; POSIX ACLs are prohibited.
     This policy is automatically enforced every 5 minutes.
 5. :robot: All files in scratch will be moved into a read-only "trash can" inside `/scratch/NYUSH_TRASH` after 14 days (by `mtime`) over night.

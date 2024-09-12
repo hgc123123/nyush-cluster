@@ -32,46 +32,22 @@ Replace `USER_NAME` with your cluster user name.
 You can also adapt the Host naming as you like.
 
 ```
-Host bihcluster
-    HostName hpc-login-1.cubi.bihealth.org
+Host login2
+    HostName hpc.shanghai.nyu.edu
     User USER_NAME
 
-Host bihcluster2
-    HostName hpc-login-1.cubi.bihealth.org
+Host hpclogin
+    HostName hpclogin.shanghai.nyu.edu
     User USER_NAME
 ```
 
 Now, you can do type the following (and you don't have to remember the host name of the login node any more).
 
 ```bash
-$ ssh bihcluster
+$ ssh hpclogin
 ```
 
-This configuration works if you are inside Charité, the Charité VPN, or MDC.
-
-### MDC users: Jail node
-If you have an MDC user account and want to connect from the outside, you can use the following `~/.ssh/config` lines to set up a ProxyJump via the MDC SSH jail.
-
-```
-Host mdcjail
-    HostName ssh1.mdc-berlin.de
-    User MDC_USER_NAME
-```
-
-Now you can run
-
-```bash
-$ ssh -J mdcjail bihcluster1
-```
-
-If you are always connecting from outside the internal network, you can also add a permanent ProxyJump to the SSH configuration like so:
-
-```
-Host bihcluster
-    HostName hpc-login-1.cubi.bihealth.org
-    User USER_NAME
-    ProxyJump mdcjail
-```
+This configuration works if you are inside NYUSH VPN.
 
 ## Connecting with another computer/laptop
 If you need to connect to the cluster from another computer than the one
@@ -96,10 +72,10 @@ $ ssh-add  id_rsa
 
 ## File System mount via sshfs
 ```
-$ sshfs <USERNAME>@hpc-transfer-1.cubi.bihealth.org:/ <MOUNTPOINT>
+$ sshfs <USERNAME>@hpclogin.shanghai.nyu.edu:/ <MOUNTPOINT>
 ```
 
-* `hpc-transfer-1:` follows the structure `<host>:<directory>` starting in the user home.
+* `hpclogin.shanghai.nyu.edu:` follows the structure `<host>:<directory>` starting in the user home.
 * `<MOUNTPOINT>` must be an empty but existing and readable directory on your local computer
 
 ### MacOS
@@ -110,7 +86,7 @@ $ brew cask install osxfuse; brew install sshfs; brew link --overwrite sshfs
 The last command is optional and unlinks any pre-existing links to older versions of sshfs.
 Now you can run
 ```
-$ sshfs -o follow_symlinks <USERNAME>@hpc-transfer-1<X>.cubi.bihealth.org:<directory_relative_to_Cluster_root> <MOUNTPOINT> -o volname=<BIH-FOLDER> -o allow_other,noapplexattr,noappledouble
+$ sshfs -o follow_symlinks <USERNAME>@hpclogin.shanghai.nyu.edu:<directory_relative_to_Cluster_root> <MOUNTPOINT> -o volname=<FOLDER> -o allow_other,noapplexattr,noappledouble
 ```
 
 ## X11

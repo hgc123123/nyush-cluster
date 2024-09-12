@@ -5,8 +5,8 @@ Terminate a running Slurm job.
 !!! info "Representative Example"
 
     ```bash
-    hpc-login-1:~$ scancel 1703828
-    hpc-login-1:~$
+    [hpc@hpclogin ~]$ scancel 1703828
+    [hpc@hpclogin ~]$
     ```
 
 This command allows to terminate one or more running jobs (of course, non-superusers can only terminate their own jobs).

@@ -6,24 +6,26 @@ Object manipulation is less important for normal users.
 !!! info "Representative Example"
 
     ```bash
-    hpc-login-1:~$ scontrol show job 1607103
-    JobId=1607103 JobName=wgs_sv_annotation
-        UserId=holtgrem_c(100131) GroupId=hpc-ag-cubi(5272) MCS_label=N/A
-        Priority=748 Nice=0 Account=(null) QOS=normal
-        [...]
-    hpc-login-1:~$ scontrol show node med02[01-32]
-    NodeName=med0201 Arch=x86_64 CoresPerSocket=8
-        CPUAlloc=0 CPUTot=32 CPULoad=0.01
-        AvailableFeatures=ivybridge,infiniband
-        ActiveFeatures=ivybridge,infiniband
-        [...]
-    hpc-login-1:~$ scontrol show partition medium
-    PartitionName=medium
-        AllowGroups=ALL AllowAccounts=ALL AllowQos=ALL
-        AllocNodes=ALL Default=NO QoS=medium
-        DefaultTime=NONE DisableRootJobs=NO ExclusiveUser=NO GraceTime=0 Hidden=NO
-        [...]
-    ```
+   [hpc@hpclogin ~]$ scontrol show job 482955
+    JobId=482955 JobName=n2bbaa
+       UserId=userid(userid) GroupId=groupId(groupId) MCS_label=N/A
+       Priority=1052 Nice=0 Account=jz2 QOS=normal
+       [...] 
+
+    [hpc@hpclogin ~]$ scontrol show node compute[118-122]
+    NodeName=compute118 Arch=x86_64 CoresPerSocket=32 
+       CPUAlloc=0 CPUEfctv=64 CPUTot=64 CPULoad=0.00
+       AvailableFeatures=cpu,g6338
+       ActiveFeatures=cpu,g6338
+       [...]
+
+    [hpc@hpclogin ~]$ scontrol show partition debug
+    PartitionName=debug
+       AllowGroups=ALL AllowAccounts=ALL AllowQos=normal
+       AllocNodes=ALL Default=YES QoS=N/A
+       DefaultTime=00:30:00 DisableRootJobs=NO ExclusiveUser=NO GraceTime=0 Hidden=NO
+       [...]
+   ```
 
 This command allows to query all information for an object from Slurm, e.g., jobs, nodes, or partitions.
 The command also accepts ranges of jobs and hosts.

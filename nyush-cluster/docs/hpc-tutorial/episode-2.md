@@ -3,10 +3,7 @@
 |Episode|Topic|
 |---|---|
 | 0 | [How can I install the tools?](episode-0.md) |
-| 1 | [How can I use the static data?](episode-1.md) |
 | **2** | **How can I distribute my jobs on the cluster (Slurm)?** |
-| 3 | [How can I organize my jobs with Snakemake?](episode-3.md) |
-| 4 | [How can I combine Snakemake and Slurm?](episode-4.md) |
 
 Welcome to the second episode of our tutorial series!
 
@@ -33,9 +30,8 @@ You may have noticed that you run `sbatch` with a script, not with regular comma
 The reason is that `sbatch` only accepts bash scripts.
 If you give `sbatch` a normal shell command or binary, it won't work.
 This means that we have to put the command(s) we want to use in a bash script.
-A skeleton script can be found at `/data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh`
 
-The content of the file:
+The content of the example file:
 
 ```bash
 #!/bin/bash
@@ -72,14 +68,14 @@ Slurm will create a log file with a file name composed of the job name (`%x`) an
 To start now with our tutorial, create a new tutorial directory with a log directory, e.g.,
 
 ```terminal
-(first-steps) $ mkdir -p /data/cephfs-1/home/users/$USER/work/tutorial/episode2/logs
+(first-steps) $ mkdir -p /gpfsnyu/home/users/$USER/work/tutorial/episode2/logs
 ```
 
 and copy the wrapper script to this directory:
 
 ```terminal
-(first-steps) $ pushd /data/cephfs-1/home/users/$USER/work/tutorial/episode2
-(first-steps) $ cp /data/cephfs-1/work/projects/cubit/tutorial/skeletons/submit_job.sh .
+(first-steps) $ pushd /gpfsnyu/home/users/$USER/work/tutorial/episode2
+(first-steps) $ cp /gpfsnyu/spack/share/submit_job.sh .
 (first-steps) $ chmod u+w submit_job.sh
 ```
 
@@ -116,17 +112,17 @@ Your file should look something like this:
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
 #SBATCH --time=30:00
 
-export TMPDIR=/data/cephfs-1/home/users/${USER}/scratch/tmp
+export TMPDIR=/gpfsnyu/home/users/${USER}/scratch/tmp
 mkdir -p ${TMPDIR}
 
-BWAREF=/data/cephfs-1/work/projects/cubit/current/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
-REF=/data/cephfs-1/work/projects/cubit/current/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
+BWAREF=/gpfsnyu/scratch/user/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
+REF=/gpfsnyu/scratch/user/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
 
 bwa mem -t 8 \
     -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
     $BWAREF \
-    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R1.fq.gz \
-    /data/cephfs-1/work/projects/cubit/tutorial/input/test_R2.fq.gz \
+    /gpfsnyu/scratch/user/cubit/tutorial/input/test_R1.fq.gz \
+    /gpfsnyu/scratch/user/cubit/tutorial/input/test_R2.fq.gz \
 | samtools view -b \
 | samtools sort -O BAM -T $TMPDIR -o aln.bam
 

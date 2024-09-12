@@ -5,24 +5,35 @@ The `sinfo` command allows you to query the current cluster status.
 !!! info "Representative Example"
 
     ```bash
-    hpc-login-1:~$ sinfo
+    [gh2440@hpclogin ~]$ sinfo 
     PARTITION AVAIL  TIMELIMIT  NODES  STATE NODELIST
-    [...]
-    medium       up 7-00:00:00     10 drain* med[0101-0103,0125-0126,0128-0132]
-    medium       up 7-00:00:00      1  down* med0243
-    medium       up 7-00:00:00     31    mix med[0104,0106-0122,0124,0133,0232-0233,0237-0238,0241-0242,0244,0263-0264,0503,0506]
-    medium       up 7-00:00:00      5  alloc med[0105,0123,0127,0239-0240]
-    medium       up 7-00:00:00    193   idle med[0134-0164,0201-0231,0234-0236,0245-0262,0501-0502,0504-0505,0507-0516,0601-0632,0701-0764]
-    [...]
-    hpc-login-1:$  sinfo --summarize
+    parallel     up 20-00:00:0      1    mix compute141
+    parallel     up 20-00:00:0      7  alloc compute[134-140]
+    parallel     up 20-00:00:0      3   idle compute[142-144]
+    rooster      up   infinite      4   idle gpu[145-148]
+    hebb         up   infinite      1   idle gpu180
+    debug*       up 7-00:00:00      1   resv compute133
+    debug*       up 7-00:00:00      4    mix compute[119,121,130,132]
+    debug*       up 7-00:00:00      2  alloc compute[120,131]
+    debug*       up 7-00:00:00      9   idle compute[118,122-129]
+    chem         up   infinite      2   idle gpu[181,185]
+    li           up   infinite      1   idle gpu182
+    aml          up   infinite      1    mix compute183
+    aml          up   infinite      2   idle compute[184,189]
+    netsys       up   infinite      1   idle gpu186
+    sfscai       up 2-00:00:00      2    mix gpu[188,190]
+    sfscai       up 2-00:00:00      1   idle gpu187
+    [gh2440@hpclogin ~]$ sinfo --summarize
     PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
-    debug*       up    8:00:00    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-    medium       up 7-00:00:00    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-    long         up 28-00:00:0    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
-    critical     up 7-00:00:00    25/141/10/176 med[0101-0164,0501-0516,0601-0632,0701-0764]
-    highmem      up 14-00:00:0          1/2/1/4 med[0401-0404]
-    gpu          up 14-00:00:0          3/0/1/4 med[0301-0304]
-    mpi          up 14-00:00:0    38/191/11/240 med[0101-0164,0201-0264,0501-0516,0601-0632,0701-0764]
+    parallel     up 20-00:00:0         8/3/0/11 compute[134-144]
+    rooster      up   infinite          0/4/0/4 gpu[145-148]
+    hebb         up   infinite          0/1/0/1 gpu180
+    debug*       up 7-00:00:00        6/10/0/16 compute[118-133]
+    chem         up   infinite          0/2/0/2 gpu[181,185]
+    li           up   infinite          0/1/0/1 gpu182
+    aml          up   infinite          1/2/0/3 compute[183-184,189]
+    netsys       up   infinite          0/1/0/1 gpu186
+    sfscai       up 2-00:00:00          2/1/0/3 gpu[187-188,190]
     ```
 
 This command will summaries the state of nodes by different criteria (e.g., by partition or globally).

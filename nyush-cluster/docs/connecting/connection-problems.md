@@ -9,17 +9,14 @@ solve the problem:
 The full error message looks as follows:
 
 ```
-ssh: connect to host hpc-login-1.cubi.bihealth.org port 22: Connection refused
+ssh: connect to host hpclogin.shanghai.nyu.edu port 22: Connection refused
 ```
 
 This means that your computer could not open a network connection to the server.
 
-- HPC 4 Research can be connected to from:
-    - Charite (cabled) network
-    - Charite VPN :point_right: **but only with [Zusatzantrag B](./from-external.md#zusatzantrag-b-recommended)**. :point_left:
-    - MDC (cabled) network
-    - MDC VPN
-    - BIH (cabled) network
+- NYUSH Cluster can be connected to from:
+    - Campus network
+    - NYUSH VPN :point_right: **but only with [NYUSH VPN](./from-external.md#zusatzantrag-b-recommended)**. :point_left:
 - If you think that there is no problem with any of this then please include the output of the following command in your ticket (use the server that you want to read instead of `<DEST>`):
     - Linux/Mac
         ```
@@ -35,16 +32,16 @@ This means that your computer could not open a network connection to the server.
 ## I can connect, but it seems that my account has no access yet
 
 ```
-You're logging into BIH HPC cluster! (login-1)
+You're logging into NYUSH HPC cluster! (hpclogin.shanghai.nyu.edu)
 
  ***Your account has not been granted cluster access yet.***
 
  If you think that you should have access, please contact
- hpc-helpdesk@bih-charite.de for assistance.
+ shanghai.it.help@nyu.edu for assistance.
 
- For applying for cluster access, contact hpc-helpdesk@bih-charite.de.
+ For applying for cluster access, contact shanghai.it.help@nyu.edu.
 
-user@login-1's password:
+user@hpclogin.shanghai.nyu.edu's password:
 ```
 
 !!! hint
@@ -52,21 +49,21 @@ user@login-1's password:
     **This is the most common error**, and the main cause for this is a wrong username. Please take a couple of minutes to read the [What is my username?](connecting.md#what-is-my-username)!
 
 If you encounter this message **although we told you that you have access and you checked the username as mentioned above**,
-please write to [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de),
+please write to [shanghai.it.help@nyu.edu](mailto:shanghai.it.help@nyu.edu),
 always indicating the message you get and a detailed description of what you
 did.
 
 ## I'm getting a passPHRASE prompt
 
 ```
-You're logging into BIH HPC cluster! (login-1)
+You're logging into NYUSH HPC cluster! (hpclogin.shanghai.nyu.edu)
 
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
- then please contact hpc-helpdesk@bih-charite.de for assistance.
+ then please contact shanghai.it.help@nyu.edu for assistance.
 
-Enter passphrase for key '/home/USER/.ssh/id_rsa':
+Enter passphrase for key '/gpfsnyu/home/USER/.ssh/id_rsa':
 ```
 
 Here you have to enter the **passphrase that was used for encrypting your private key**.
@@ -75,14 +72,14 @@ Read [SSH Basics](./ssh-basics.md#ssh-keys) for further information of what is g
 ## I can connect, but I get a passWORD prompt
 
 ```
-You're logging into BIH HPC cluster! (login-1)
+You're logging into NYUSH HPC cluster! (hpclogin.shanghai.nyu.edu)
 
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
  then please contact hpc-helpdesk@bih-charite.de for assistance.
 
-user@login-1's password:
+user@hpclogin.shanghai.nyu.edu's password:
 ```
 
 !!! important "This is diffeerent from passPHRASE prompt"
@@ -92,5 +89,5 @@ user@login-1's password:
 When you encounter this message during a login attempt, there is an issue with
 your SSH key. In this case, please connect with increased verbosity to the
 cluster (`ssh -vvv ...`) and mail the output and a detailed description to
-[hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de).
+[shanghai.it.help@nyu.edu](mailto:shanghai.it.help@nyu.edu).
 
