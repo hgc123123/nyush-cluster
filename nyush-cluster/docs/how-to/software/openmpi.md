@@ -10,14 +10,14 @@ We will use a simple Makefile for building the software.
 First, load the OpenMPI package.
 
 ```bash
-hpc-login-1:~$ srun --pty bash -i
-med0127:~$ module load openmpi/4.3.0-0
+$ srun --pty bash -i
+sompute122:~$ module load openmpi/4.3.0-0
 ```
 
 Then, check that the installation works
 
 ```bash
-med0127:~$ ompi_info | head
+compute122:~$ ompi_info | head
                  Package: Open MPI root@med0127 Distribution
                 Open MPI: 4.0.3
   Open MPI repo revision: v4.0.3
@@ -35,8 +35,8 @@ med0127:~$ ompi_info | head
 Next, clone the OpenMPI example project from Gitlab.
 
 ```terminal
-med0127:~$ git clone git@github.com:bihealth/bih-cluster-openmpi-example.git
-med0127:~$ cd bih-cluster-openmpi-example/src
+compute122:~$ git clone git@github.com:bihealth/bih-cluster-openmpi-example.git
+compute122:~$ cd bih-cluster-openmpi-example/src
 ```
 
 `Makefile`
