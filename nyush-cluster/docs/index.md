@@ -1,5 +1,5 @@
 # Home
-Welcome to the user documentation of the NYU Shanghai high-performance computing (HPC) cluster, also called HPC 4 Research.
+Welcome to the user documentation of the NYU Shanghai high-performance computing (HPC) cluster, also called NYUSH HPC.
 This documentation is maintained by NYUSH IT and the user community.
 It is a living document that you can update and add to.
 See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details.
@@ -8,7 +8,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 
 !!! tip "Additional resources"
 
-    - [How to create HPC account](https://nyu.service-now.com/servicelink/catalog.do?sysparm_document_key=sc_cat_item,b0fc230be498d6408b4d97a033492665)
+    - [How to create HPC account](https://nyu.service-now.com/sp?id=sc_cat_item&sys_id=b0fc230be498d6408b4d97a033492665)
     - [Performance and workload monitoring](https://ood.shanghai.nyu.edu/grafana/d/4247817/jobinfo?orgId=1)
 
 
@@ -27,10 +27,7 @@ Read the following set of pages (in order) to learn how to get access and connec
     Please add your publications using the cluster to [this list](misc/publication-list.md).
 
 ## News & Maintenance Announcements
-- :ram: July 16th: New high-memory node `hpc-mem-5` with 4 TB of RAM.
-- :locomotive: Until autumn 2024: Operation Exodus – Migration of all data from GPFS to CephFS storage.
-- :maple_leaf: September 30th 2024: Unmounting of `/fast` on all non-transfer nodes.
-- :headstone: October 31st 2024: Retirement of GPFS/DDN storage.
+- :maple_leaf: September 30th 2024: Add new nodes purchased by AI center.
 
 See [Maintenance](admin/maintenance.md) for a detailed list of current, planned, and previous maintenance and update work.
 
@@ -49,5 +46,5 @@ The documentation is structured as follows:
 - **OnDemand Portal** introduces web HPC access.
 - **Best Practice** guidelines on recommended usage of certain aspects of the system.
 - **How-To** short(ish) solutions for specific technical problems.
-- **Getting Help** explains how you can obtain help in using the BIH HPC.
+- **Getting Help** explains how you can obtain help in using the NYUSH HPC.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.

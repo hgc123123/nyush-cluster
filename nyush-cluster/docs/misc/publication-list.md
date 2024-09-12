@@ -1,6 +1,6 @@
 # Publication List
 
-The BIH Cluster is a valuable resource.
+The NYUSH Cluster is a valuable resource.
 It has been used to support the publications listed below.
 
 - Please add your publications here.

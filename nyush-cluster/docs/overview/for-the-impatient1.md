@@ -1,15 +1,13 @@
 # Overview
-## BIH HPC 4 Research
-**BIH HPC 4 Research** is located in the BIH data center in Buch and connected via the BIH research network.
-Connections can be made from Charite, MDC, and BIH networks.
-The cluster is open for users with either Charite or MDC accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
-The system has been designed to be suitable for the processing of human genetics data from research contexts (and of course data without data privacy concerns such as public and mouse data).
+## NYUSH HPC
+**NYUSHC HPC** is located in the NYU Shanghai data center in Shanghai and connected via the MLPS network.
+The cluster is open for users with either NYU Shanghai or NYU accounts after [getting access through the gatekeeper proces](../admin/getting-access.md).
 
 ## Cluster Hardware and Scheduling
 
 The cluster consists of the following major components:
 
-- 2 login nodes for users `hpc-login-1` and `hpc-login-2` (for interactive sessions only),
+- 2 login nodes for users `hpc.shanghai.nyu.edu` and `hpclogin.shanghai.nyu.edu` (for interactive sessions only),
 - 2 nodes for file transfers `hpc-transfer-1` and `hpc-transfer-2`,
 - a scheduling system using Slurm,
 - 228 general purpose compute nodes `hpc-cpu-{1..228}`

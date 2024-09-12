@@ -31,11 +31,8 @@ The first prerequisite is to have a cluster account already (see [Getting Access
 Once you have done your first SSH connection to the cluster successfully you can start using the portal.
 For this you perform the following steps:
 
-1. Go to https://hpc-portal.cubi.bihealth.org - you will be redirected to the login page shown below.
-    If you have an account with Charite (ends in `_c`) then please use the "Charité - Universitätmedizin Berlin" button, for MDC Accounts please use the "Max Delbrück Center Berlin" button.
-    ![](figures/ondemand-hpc-sso.png){: style="width:30%;" .center}
-2. Login with your home organization's SSO system.
-    Please note that depending on whether you are accessing the system via the wired network in your home organization or via VPN the SSO might look differently.
+1. Go to https://ood.shanghai.nyu.edu - you will be redirected to the login page shown below.
+2. Login with your NetID.
 
 !!! help "Clicked the Wrong Login Button?"
 

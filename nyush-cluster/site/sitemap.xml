@@ -166,11 +166,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/jupyter/</loc>
-         <lastmod>2024-09-12</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/keras/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
@@ -241,7 +236,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/hgc123123/nyush-cluster.git/overview/for-the-impatient/</loc>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/overview/for-the-impatient1/</loc>
          <lastmod>2024-09-12</lastmod>
          <changefreq>daily</changefreq>
     </url>

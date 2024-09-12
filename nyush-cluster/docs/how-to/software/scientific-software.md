@@ -2,8 +2,7 @@
 
 This page gives an end-to-end example how to build and install [Gromacs](http://www.gromacs.org/) as an example for managing complex scientific software installs in user land.
 You don't have to learn or understand the specifics of Gromacs.
-We use it as an example as there are some actual users on the BIH cluster.
-However, installing it is out of scope of BIH HPC administration.
+We use it as an example as there are some actual users on the NYUSH cluster.
 
 Gromacs is a good example as it is a sufficiently complex piece of software.
 Quite some configuration is done on the command line and there is no current software package of it in the common RPM repositories.
@@ -233,7 +232,7 @@ EOF
 ```
 
 Note that the paths chosen above are sensible but arbitrary.
-You can install any software anywhere you have permission to -- somewhere in your user and group home, maybe a project home makes most sense on the BIH HPC, no root permissions required.
+You can install any software anywhere you have permission to -- somewhere in your user and group home, maybe a project home makes most sense on the NYUSH HPC, no root permissions required.
 You can also place the module files anywhere, as long as the `module use` line is appropriate.
 
 ### Going on with Gromacs
