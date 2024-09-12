@@ -20,14 +20,14 @@
 The whole session should look something like this:
 
 ```shell
-host:~$ ssh-keygen -t ed25519 -C "your_email@example.com"
+$ ssh-keygen -t ed25519 -C "your_email@example.com"
 Generating public/private ed25519 key pair.
-Enter file in which to save the key (/home/USER/.ssh/id_ed25519): 
-Created directory '/home/USER/.ssh'.
+Enter file in which to save the key (/gpfsnyu/home/USER/.ssh/id_ed25519): 
+Created directory '/gpfsnyu/home/USER/.ssh'.
 Enter passphrase (empty for no passphrase):
 Enter same passphrase again: 
-Your identification has been saved in /home/USER/.ssh/id_ed25519.
-Your public key has been saved in /home/USER/.ssh/id_ed25519.pub.
+Your identification has been saved in /gpfsnyu/home/USER/.ssh/id_ed25519.
+Your public key has been saved in /gpfsnyu/home/USER/.ssh/id_ed25519.pub.
 The key fingerprint is:
 SHA256:Z6InW1OYt3loU7z14Kmgy87iIuYNr1gJAN1tG71D7Jc your_email@example.com
 The key's randomart image is:

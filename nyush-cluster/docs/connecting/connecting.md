@@ -14,7 +14,7 @@ In case you're not familiar with SSH, you should probably start via the web port
 ## In brief
 Follow these steps to connect to NYU Shanghai HPC via the command line:
 
-1. [Register an account](../admin/getting-access.md) via your PI. :memo: 
+1. [Register an account](../admin/getting-access.md) via [submiting forum](https://nyu.service-now.com/servicelink/catalog.do?sysparm_document_key=sc_cat_item,b0fc230be498d6408b4d97a033492665). :memo: 
 2. [Generate a SSH key pair :key: in Linux](generate-key/linux.md) or [Windows](generate-key/windows.md)
 3. Connect to one of the two login nodes.
     
