@@ -38,12 +38,13 @@ Note that the files in your `scratch` directory will automatically be removed af
 You can also use your `work` directory here.
 
 ```bash
-hpc-login-1:~$ srun --pty bash -i
-$ mkdir $HOME/scratch/gromacs-install
-$ cd $HOME/scratch/gromacs-install
-$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
-$ tar xf gromacs-2018.3.tar.gz
-$ ls gromacs-2018.3
+[gh2440@hpclogin ~]$ mkdir $HOME/scratch/gromacs-install
+[gh2440@hpclogin ~]$ cd $HOME/scratch/gromacs-install
+[gh2440@hpclogin ~]$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
+[gh2440@compute132 ~]$ srun --pty bash -i
+[gh2440@compute132 ~]$ cd $HOME/scratch/gromacs-install
+[gh2440@compute132 ~]$ tar xf gromacs-2018.3.tar.gz
+[gh2440@compute132 ~]$ ls gromacs-2018.3
 admin    cmake           COPYING          CTestConfig.cmake  INSTALL  scripts  src
 AUTHORS  CMakeLists.txt  CPackInit.cmake  docs               README   share    tests
 ```
@@ -70,10 +71,10 @@ Also, software installations are usually not precious enough to waste resources 
 Also that we force Gromacs to use `AVX_256` for SIMD support (Intel *sandy bridge* architecture) to not get unsupported CPU instruction errors.
 
 ```bash
-$ module load gcc/7.2.0-0 cmake/3.11.0-0
+$ module load cmake/3.26.0-gcc-8.5.0
 $ module list
 Currently Loaded Modulefiles:
-  1) gcc/7.2.0-0      2) cmake/3.11.0-0
+  1) cmake/3.26.0-gcc-8.5.0
 $ mkdir gromacs-2018.3-build-nompi
 $ cd gromacs-2018.3-build-nompi
 $ cmake ../gromacs-2018.3 \
@@ -89,10 +90,10 @@ We will also need the precise version here so we can later load the correct libr
 Note that we install the software into the directory `gromacs-mpi` but switch off shared library building as recommended by the Gromacs documentation.
 
 ```bash
-$ module load openmpi/3.1.0-0
+$ module load openmpi/main-gcc-8.5.0
 $ module list
 Currently Loaded Modulefiles:
-  1) gcc/7.2.0-0       2) cmake/3.11.0-0    3) openmpi/4.0.3-0
+  1) openmpi/main-gcc-8.5.0       2) cmake/3.26.0-gcc-8.5.0
 $ mkdir gromacs-2018.3-build-mpi
 $ cd gromacs-2018.3-build-mpi
 $ cmake ../gromacs-2018.3 \
@@ -112,10 +113,7 @@ If something goes wrong: meh, the "joys" of compilling C software.
 
 !!! note "Getting Support for Building Software"
 
-    BIH HPC IT cannot provide support for compiling scientific software.
-    Please contact the appropriate mailing lists or forums for your scientific software.
-    You should only contact the BIH HPC IT helpdesk only if you are sure that the problem is with the BIH HPC cluster.
-    You should try to resolve the issue on your own and with the developers of the software that you are trying to build/use.
+    NYUSH HPC IT can provide support for compiling scientific software.
 
 For the no-MPI version:
 
@@ -154,9 +152,8 @@ proc ModulesHelp { } {
 
 module-whatis {Gromacs molecular simulation toolkit (non-MPI)}
 
-set root /data/cephfs-1/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
+set root /gpfsnyu/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
-prereq gcc/7.2.0-0
 
 conflict gromacs
 conflict gromacs-mpi
@@ -183,10 +180,9 @@ proc ModulesHelp { } {
 
 module-whatis {Gromacs molecular simulation toolkit (MPI)}
 
-set root /data/cephfs-1/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
+set root /gpfsnyu/home/users/YOURUSER/work/software/gromacs-mpi/2018.3
 
-prereq openmpi/4.0.3-0
-prereq gcc/7.2.0-0
+prereq openmpi/main-gcc-8.5.0
 
 conflict gromacs
 conflict gromacs-mpi
@@ -210,16 +206,13 @@ You can verify the result:
 ```bash
 $ module avail
 
------------------- /data/cephfs-1/home/users/YOURUSER/local/modules ------------------
+------------------ /gpfsnyu/home/users/YOURUSER/local/modules ------------------
 gromacs/2018.3     gromacs-mpi/2018.3
 
 -------------------- /usr/share/Modules/modulefiles --------------------
 dot         module-info null
 module-git  modules     use.own
 
--------------------------- /opt/local/modules --------------------------
-cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0
-gcc/7.2.0-0     matlab/r2016b-0 openmpi/4.0.3-0
 ```
 
 ### Interlude: Convenient `module use`
@@ -243,35 +236,18 @@ Note that the paths chosen above are sensible but arbitrary.
 You can install any software anywhere you have permission to -- somewhere in your user and group home, maybe a project home makes most sense on the BIH HPC, no root permissions required.
 You can also place the module files anywhere, as long as the `module use` line is appropriate.
 
-As a best practice, you could use the following location:
-
-- User-specific installation:
-    - `$HOME/work/software` as a root to install software to
-    - `$HOME/work/software/$PKG/$VERSION` for installing a given software package in a given version
-    - `$HOME/work/software/modules` as the root for modules to install
-    - `$HOME/work/software/$PKG/$VERSION` for the module file to load the software in a given version
-    - `$HOME/work/software/modules.sh` as a Bash script to contain the line `module use $HOME/work/software/modules`
-- Group/project specific installation for a shared setup.
-  Don't forget to give the group and yourself read permission only so you don't accidentally damage files after instalation (`chmod ug=rX,o= $GROUP/work/software`, the upper case `X` is essential to only set `+x` on directories and not files):
-    - `$GROUP/work/software` as a root to install software to
-    - `$GROUP/work/software/$PKG/$VERSION` for installing a given software package in a given version
-    - `$GROUP/work/software/modules` as the root for modules to install
-    - `$GROUP/work/software/$PKG/$VERSION` for the module file to load the software in a given version
-    - `$GROUP/work/software/modules.sh` as a Bash script to contain the `case` Bash snippet from above but with `module use $GROUP/work/software/modules`
-    - This setup allows multiple users to provide software installations and share it with others.
-
 ### Going on with Gromacs
 
 Every time you want to use Gromacs, you can now do
 
 ```bash
-$ module load gcc/7.2.0-0 gromacs/2018.3
+$ module load  gromacs/2018.3
 ```
 
 or, if you want to have the MPI version:
 
 ```bash
-$ module load gcc/7.2.0-0 openmpi/4.0.3-0 gromacs-mpi/2018.3
+$ module load  openmpi/main-gcc-8.5.0 gromacs-mpi/2018.3
 ```
 
 ## Launching Gromacs
@@ -297,14 +273,14 @@ See [How-To: Build Run OpenMPI Programs](openmpi.md) for more information.
 
 # MPI-specific parameters
 
-# Launch on 8 nodes (== 8 tasks)
+#SBATCH -N 1
+# Launch on 8 tasks
 #SBATCH --ntasks 8
 # Allocate 4 CPUs per task (== per node)
 #SBATCH --cpus-per-task 4
 
-# Load the OpenMPI and GCC environment module to get the runtime environment.
-module load gcc/4.7.0-0
-module load openmpi/4.0.3-0
+# Load the OpenMPI environment module to get the runtime environment.
+module load openmpi/main-gcc-8.5.0
 
 # Make custom environment modules known. Alternative, you can "module use"
 # them in the session you use for submitting the job.

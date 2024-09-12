@@ -3,7 +3,7 @@
 |Episode|Topic|
 |---|---|
 | 0 | [How can I install the tools?](episode-0.md) |
-| **2** | **How can I distribute my jobs on the cluster (Slurm)?** |
+| **1** | **How can I distribute my jobs on the cluster (Slurm)?** |
 
 Welcome to the second episode of our tutorial series!
 

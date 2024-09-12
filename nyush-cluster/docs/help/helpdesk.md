@@ -8,8 +8,6 @@ Please also use the handy figure below on general problem resolution.
 
 ![](figures/help-workflow.png){: .center}
 
-But before contacting the helpdesk, try to get help in the [HPC Talk](../how-to/misc/hpc-talk.md) BIH HPC user self-help forum!
-
 ## Helpdesk Scope
 
 Our helpdesk can support you in the following areas:
@@ -24,7 +22,7 @@ Please note that all other questions can only be answered in a "best effort way"
 
 ## Helpdesk Non-Scope
 
-The following topics are out of scope for the BIH HPC Helpdesk:
+The following topics are out of scope for the NYUSH HPC Helpdesk:
 
 - Generic Linux or programming questions (try [stackoverflow.com](http://stackoverflow.com)).
 - Managing users, groups, and projects on the clusters (use shanghai.it.help@nyu.edu).

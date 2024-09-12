@@ -1,8 +1,5 @@
 # Storage and Volumes: Locations
-This document describes the forth iteration of the file system structure on the NYUSH HPC cluster.
-
-!!! warning "Important"
-    For now, the old, third-generation file system is still mounted at `/gpfsnyu`. **It will be decommissioned soon, please consult [this document describing the migration process](storage-migration.md)!**
+This document describes the iteration of the file system structure on the NYUSH HPC cluster.
 
 ## Organizational Entities
 There are the following two entities on the cluster:
@@ -13,7 +10,7 @@ There are the following two entities on the cluster:
 Each user and group can have storage folders in different locations.
 
 ## Data Types and Storage Tiers
-Files stored on the HPC fall into one of three categories:
+Files stored on the HPC fall into one of two categories:
 
 1. **Home** folders store programs, scripts, and user config i.&nbsp;e. long-lived and very important files. 
 Loss of this data requires to redo manual work (like programming).
@@ -37,7 +34,7 @@ This is the starting point when starting a new shell or SSH session.
 Important config files are stored here as well as analysis scripts and small user files.
 Home folders have a [strict storage quota](./home-quota.md) of 50 GB.
 
-### Tier 2 Storage
+### Scratch Space
 Location: `/gpfsnyu/scratch`
 
 This is where big files go when they are not in active use.
@@ -50,7 +47,7 @@ File quotas here can be significantly larger as space is much cheaper and more a
 | Tier | Function        | Path                                           | Default Quota |
 |:-----|:----------------|:-----------------------------------------------|--------------:|
 |    1 | User home       | `/gpfsnyu/home/users/<user>`                   | 50 GB         |
-|    2 | Group           | `/gpfsnyu/scratch/users/<user>`                | 10 TB         |
+|    2 | scratch         | `/gpfsnyu/scratch/users/<user>`                | 10 TB         |
 
 ## Snapshots and Mirroring
 Snapshots are incremental copies of the state of the data at a particular point in time. 

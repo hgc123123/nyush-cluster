@@ -31,13 +31,13 @@ $ module avail
 Load one module, make sure to use a specific version to avoid ambiguities.
 
 ```terminal
-$ module load Jannovar/0.16-Java-1.7.0_80
+$ module load cuda/12.1.0-gcc-8.5.0
 ```
 
 Unload one module
 
 ```terminal
-$ module unload Jannovar
+$ module unload cuda
 ```
 
 Unload all modules
@@ -57,7 +57,7 @@ $ module help
 Get help for a particular environment module
 
 ```terminal
-$ module help Jannovar/0.16-Java-1.7.0_80
+$ module help cuda/12.1.0-gcc-8.5.0
 ```
 
 ### Using your own Module Files
@@ -75,7 +75,7 @@ On the login nodes, the `module` command is not installed.
 You should not run any computations there, so why would you need environment modules there? ;)
 
 ```terminal
-meg-login2$ module
+$ module
 -bash: module: command not found
 ```
 
@@ -93,11 +93,11 @@ case "${HOSTNAME}" in
         ;;
     *)
         # load Python3 environment module
-        module load Python/3.4.3-foss-2015a
+        module load python/3.10.10-gcc-8.5.0
 
         # Define path for temporary directories, don't forget to cleanup!
         # Also, this will only work after /fast is available.
-        export TMPDIR=/data/cephfs-1/home/users/$USER/scratch/tmp
+        export TMPDIR=/gpfsnyu/home/users/$USER/scratch/tmp
         ;;
 esac
 ```

@@ -77,7 +77,7 @@ You're logging into NYUSH HPC cluster! (hpclogin.shanghai.nyu.edu)
  *** It looks like your account has access. ***
 
  Login is based on **SSH keys only**, if you are getting a password prompt
- then please contact hpc-helpdesk@bih-charite.de for assistance.
+ then please contact shanghai.it.help@nyu.edu for assistance.
 
 user@hpclogin.shanghai.nyu.edu's password:
 ```

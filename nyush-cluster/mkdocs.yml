@@ -101,7 +101,7 @@ nav:
     - "Querying Quotas": storage/querying-storage.md
   - "HPC tutorial":
     - "Episode 0": hpc-tutorial/episode-0.md
-    - "Episode 2": hpc-tutorial/episode-2.md
+    - "Episode 1": hpc-tutorial/episode-1.md
   - "Cluster Scheduler (Slurm)":
     - slurm/overview.md
     - slurm/background.md
@@ -124,10 +124,7 @@ nav:
   - "OnDemand Portal":
     - "Overview": ondemand/overview.md
     - "Interactive Sessions": ondemand/interactive.md
-    - "Quotas": ondemand/quotas.md
   - "Best Practice":
-    - "Project Structure": best-practice/project-structure.md
-    - "Software Craftmanship": best-practice/software-craftmanship.md
     - "Using Screen/Tmux": best-practice/screen-tmux.md
     - "~/.bashrc Guide": best-practice/bashrc-guide.md
     - "Temporary Files": best-practice/temp-files.md
@@ -135,15 +132,11 @@ nav:
     - "Install Software with Conda": best-practice/software-installation-with-conda.md
   - "How-To":
     - "Connect":
-      - "High-Memory Nodes": how-to/connect/high-memory.md
       - "GPU Nodes": how-to/connect/gpu-nodes.md
     - "Software":
       - "OpenMPI": how-to/software/openmpi.md
       - "Scientific Software": how-to/software/scientific-software.md
-    - "Service":
-      - "File Exchange": how-to/service/file-exchange.md
     - "Miscellaneous":
-      - "Access HPC Talk": how-to/misc/hpc-talk.md
       - "Debug Software": how-to/misc/debug-software.md
       - "Debug @HPC": how-to/misc/debug-at-hpc.md
       - "Contribute to Docs": how-to/misc/contribute.md
@@ -155,10 +148,3 @@ nav:
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md
-    - "Provided Software": misc/provided-software.md
-    - "Technical details":
-      - "Overview": overview/for-the-impatient.md
-      - "Architecture": overview/architecture.md
-      - "Job Scheduler": overview/job-scheduler.md
-      - "Nodes and Volumes": overview/storage.md
-      - "Monitoring": overview/monitoring.md

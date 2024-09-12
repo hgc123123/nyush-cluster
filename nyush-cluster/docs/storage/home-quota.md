@@ -1,7 +1,7 @@
 # Keeping your home folder clean
 We set quite restrictive quotas for user homes, but in exchange you get file system [snapshots and mirroring](./storage-locations.md#snapshots-and-mirroring).
 Your home folder should therefore only be used for scripts, your user config, and other small files.
-Everything else should be stored in the `work` or `scratch` subdirectories, which effectively link to your group's shared storage space.
+Everything else should be stored in the `scratch` subdirectories, which effectively link to your group's shared storage space.
 This document describes some common pitfalls and how to circumvent them.
 
 !!! hint

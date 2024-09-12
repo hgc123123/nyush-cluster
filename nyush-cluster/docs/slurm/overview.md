@@ -1,5 +1,5 @@
 # Scheduling Overview
-The NYUSh HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system for resource allocation.
+The NYUSH HPC uses the [Slurm](https://slurm.schedmd.com/overview.html) scheduling system for resource allocation.
 This section of the manual attempts to give an overview of what scheduling is and how to use the Slurm scheduler.
 For more detailed information, you will have to refer to the [Slurm website](https://slurm.schedmd.com/overview.html) and the Slurm man pages (e.g., by entering `man sbatch` or `man srun` on the HPC terminal's command line).
 
@@ -22,13 +22,10 @@ Also, make sure that you are aware of our [How-To: Debug Software](../how-to/mis
     - [`sbatch`](commands-sbatch.md) -- submission of batch jobs
     - [`scancel`](commands-scancel.md) -- stop/kill jobs
     - [`sinfo`](commands-sinfo.md) -- display information about the Slurm cluster
-    - [`squeue`](commands-squeue.md) -- information about pending and running jbos
+    - [`squeue`](commands-squeue.md) -- information about pending and running jobs
     - [`scontrol`](commands-scontrol.md) -- detailed information (and control)
     - [`sacct`](commands-sacct.md) -- access Slurm accounting information (pending, running, and past jobs)
     - [Format Strings in Slurm](format-strings.md) -- format strings allow to display extended information about Slurm scheduler objects
-- [Slurm and Snakemake](snakemake.md) -- how to use Snakemake with Slurm
-- [X11 Forwarding](x11.md) -- X11 forwarding in Slurm (simple; short)
-- [Rosetta Stone](rosetta-stone.md) -- lookup table for SGE <-> Slurm
 
 ## A Word on "Elsewhere"
 Many other facilities run Slurm clusters and make their documentation available on the internet. We list some that we found useful below.

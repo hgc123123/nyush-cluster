@@ -11,7 +11,7 @@ First, load the OpenMPI package.
 
 ```bash
 $ srun --pty bash -i
-sompute122:~$ module load openmpi/4.3.0-0
+compute122:~$ module load openmpi/4.3.0-0
 ```
 
 Then, check that the installation works
@@ -130,10 +130,10 @@ mpirun -np 64 ./openmpi_example
 The next step is building the software
 
 ```bash
-med0127:~$ make
+compute122:~:~$ make
 mpicc    -c -o openmpi_example.o openmpi_example.c
 mpicc -pthread -Wl,-rpath -Wl,/opt/local/openmpi-4.0.3-0/lib -Wl,--enable-new-dtags -L/opt/local/openmpi-4.0.3-0/lib -lmpi  openmpi_example.o   -o openmpi_example
-med0127:~$ ls -lh
+compute122:~$ ls -lh
 total 259K
 -rw-rw---- 1 holtgrem_c hpc-ag-cubi  287 Apr  7 23:29 Makefile
 -rwxrwx--- 1 holtgrem_c hpc-ag-cubi 8.5K Apr  8 00:15 openmpi_example
@@ -147,7 +147,7 @@ drwxrwx--- 2 holtgrem_c hpc-ag-cubi 4.0K Apr  7 23:29 sge_log
 The software will run outside of the MPI environment -- but in a single process only, of course.
 
 ```bash
-med0127:~$ ./openmpi_example
+compute122:~$ ./openmpi_example
 Hello world from processor med0127, rank 0 out of 1 processors
 ```
 
@@ -156,7 +156,7 @@ Hello world from processor med0127, rank 0 out of 1 processors
 All of the arguments are already in the `run_mpi.sh` script.
 
 ```
-med01247:~# sbatch run_mpi.sh
+compute122:~# sbatch run_mpi.sh
 ```
 
 Explanation of the OpenMPI-specific arguments
@@ -166,39 +166,39 @@ Explanation of the OpenMPI-specific arguments
 Let's look at the slurm log file, e.g., in `slurm_log/slurm-openmpi_example-3181.log`.
 
 ```
-med0124:~$  cat slurm_log/slurm-openmpi_example-*.log
-Hello world from processor med0133, rank 6 out of 64 processors
-Hello world from processor med0133, rank 25 out of 64 processors
-Hello world from processor med0133, rank 1 out of 64 processors
-Hello world from processor med0133, rank 2 out of 64 processors
-Hello world from processor med0133, rank 3 out of 64 processors
-Hello world from processor med0133, rank 7 out of 64 processors
-Hello world from processor med0133, rank 9 out of 64 processors
-Hello world from processor med0133, rank 12 out of 64 processors
-Hello world from processor med0133, rank 13 out of 64 processors
-Hello world from processor med0133, rank 15 out of 64 processors
-Hello world from processor med0133, rank 16 out of 64 processors
-Hello world from processor med0133, rank 17 out of 64 processors
-Hello world from processor med0133, rank 18 out of 64 processors
-Hello world from processor med0133, rank 23 out of 64 processors
-Hello world from processor med0133, rank 24 out of 64 processors
-Hello world from processor med0133, rank 26 out of 64 processors
-Hello world from processor med0133, rank 27 out of 64 processors
-Hello world from processor med0133, rank 31 out of 64 processors
-Hello world from processor med0133, rank 0 out of 64 processors
-Hello world from processor med0133, rank 4 out of 64 processors
-Hello world from processor med0133, rank 5 out of 64 processors
-Hello world from processor med0133, rank 8 out of 64 processors
-Hello world from processor med0133, rank 10 out of 64 processors
-Hello world from processor med0133, rank 11 out of 64 processors
-Hello world from processor med0133, rank 14 out of 64 processors
-Hello world from processor med0133, rank 19 out of 64 processors
-Hello world from processor med0133, rank 20 out of 64 processors
-Hello world from processor med0133, rank 21 out of 64 processors
-Hello world from processor med0133, rank 22 out of 64 processors
-Hello world from processor med0133, rank 28 out of 64 processors
-Hello world from processor med0133, rank 29 out of 64 processors
-Hello world from processor med0133, rank 30 out of 64 processors
+compute122:~$  cat slurm_log/slurm-openmpi_example-*.log
+Hello world from processor compute123, rank 6 out of 64 processors
+Hello world from processor compute123, rank 25 out of 64 processors
+Hello world from processor compute123, rank 1 out of 64 processors
+Hello world from processor compute123, rank 2 out of 64 processors
+Hello world from processor compute123, rank 3 out of 64 processors
+Hello world from processor compute123, rank 7 out of 64 processors
+Hello world from processor compute123, rank 9 out of 64 processors
+Hello world from processor compute123, rank 12 out of 64 processors
+Hello world from processor compute123, rank 13 out of 64 processors
+Hello world from processor compute123, rank 15 out of 64 processors
+Hello world from processor compute123, rank 16 out of 64 processors
+Hello world from processor compute123, rank 17 out of 64 processors
+Hello world from processor compute123, rank 18 out of 64 processors
+Hello world from processor compute123, rank 23 out of 64 processors
+Hello world from processor compute123, rank 24 out of 64 processors
+Hello world from processor compute123, rank 26 out of 64 processors
+Hello world from processor compute123, rank 27 out of 64 processors
+Hello world from processor compute123, rank 31 out of 64 processors
+Hello world from processor compute123, rank 0 out of 64 processors
+Hello world from processor compute123, rank 4 out of 64 processors
+Hello world from processor compute123, rank 5 out of 64 processors
+Hello world from processor compute123, rank 8 out of 64 processors
+Hello world from processor compute123, rank 10 out of 64 processors
+Hello world from processor compute123, rank 11 out of 64 processors
+Hello world from processor compute123, rank 14 out of 64 processors
+Hello world from processor compute123, rank 19 out of 64 processors
+Hello world from processor compute123, rank 20 out of 64 processors
+Hello world from processor compute123, rank 21 out of 64 processors
+Hello world from processor compute123, rank 22 out of 64 processors
+Hello world from processor compute123, rank 28 out of 64 processors
+Hello world from processor compute123, rank 29 out of 64 processors
+Hello world from processor compute123, rank 30 out of 64 processors
 Hello world from processor med0134, rank 32 out of 64 processors
 Hello world from processor med0134, rank 33 out of 64 processors
 Hello world from processor med0134, rank 34 out of 64 processors
@@ -287,14 +287,14 @@ Let's look at the log output:
 
 ```terminal
 # cat slurm_log/slurm-openmpi_example-3193.log
-Hello world from processor med0133, rank 1 out of 8 processors
-Hello world from processor med0133, rank 3 out of 8 processors
-Hello world from processor med0133, rank 2 out of 8 processors
-Hello world from processor med0133, rank 6 out of 8 processors
-Hello world from processor med0133, rank 0 out of 8 processors
-Hello world from processor med0133, rank 4 out of 8 processors
-Hello world from processor med0133, rank 5 out of 8 processors
-Hello world from processor med0133, rank 7 out of 8 processors
+Hello world from processor compute123, rank 1 out of 8 processors
+Hello world from processor compute123, rank 3 out of 8 processors
+Hello world from processor compute123, rank 2 out of 8 processors
+Hello world from processor compute123, rank 6 out of 8 processors
+Hello world from processor compute123, rank 0 out of 8 processors
+Hello world from processor compute123, rank 4 out of 8 processors
+Hello world from processor compute123, rank 5 out of 8 processors
+Hello world from processor compute123, rank 7 out of 8 processors
 ```
 
 Each process can now launch 4 threads (e.g., by defining `export OMP_NUM_THREADS=4` before the program call).

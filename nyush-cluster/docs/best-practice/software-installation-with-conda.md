@@ -1,6 +1,6 @@
 # Software Installation with Conda
 ## Conda
-Users do not have the rights to install system packages on the BIH HPC cluster.
+Users do not have the rights to install system packages on the NYUSH HPC cluster.
 For the management of bioinformatics software we therefore recommend using the conda package manager.
 Conda provides software in different “channels” and one of those channels contains a huge selection of bioinformatics software (bioconda).
 Generally packages are pre-compiled and conda just downloads the binaries from the conda servers.
@@ -15,20 +15,11 @@ Also note that some system-level software is managed through environment modules
 ## Premise
 When you logged into the cluster, please make sure that you also executed `srun` to log into a computation node and perform the software installation there.
 
-## Installing conda
+## Loading conda modules
 
 ```bash
-$ srun --mem=5G --pty bash -i
- $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
- $ bash Miniconda3-latest-Linux-x86_64.sh -b -f -p $HOME/work/miniconda
- $ eval "$(/$HOME/work/miniconda/bin/conda shell.bash hook)"
- $ conda init
- $ conda config --set auto_activate_base false
+module load miniconda3
 ```
-
-This will install conda to `$HOME/work/miniconda`.
-You can change the path to your liking, but please note that your `$HOME` folder has limited space.
-The `work` subfolder however has a bigger quota. More about this [here](../storage/home-quota.md).
 
 To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
@@ -94,23 +85,21 @@ conflicting packages will mostly struggle with the Python version.
 
 By default, conda will install packages into its root environment. Please note
 that software that does not depend on Python and is installed in the root
-environment, is is available in all other environments.
+environment, it is available in all other environments.
 
-To create a Python 2.7 environment and activate it, issue the following commands:
+To create a Python 3.7 environment and activate it, issue the following commands:
 
 ```bash
- $ conda create -n py27 python=2.7
- $ source activate py27
-(py27)  $
+ $ conda create -n py37 python=3.7
+ $ source activate py37
+(py37)  $
 ```
 
-From now on, conda will install packages into the `py27` environment when you issue
+From now on, conda will install packages into the `py37` environment when you issue
 the `install` command. To switch back to the root environment, simply deactivate the
-`py27` environment:
+`py37` environment:
 
 ```bash
-(py27)  $ source deactivate py27
+(py37)  $ source deactivate py37
  $
 ```
-
-But of course, as Python 2.7 is not supported any more by the Python Software Foundation, you should switch over to Python 3 already!
