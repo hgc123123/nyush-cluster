@@ -11,23 +11,7 @@ First, load the OpenMPI package.
 
 ```bash
 $ srun --pty bash -i
-compute122:~$ module load openmpi/4.3.0-0
-```
-
-Then, check that the installation works
-
-```bash
-compute122:~$ ompi_info | head
-                 Package: Open MPI root@med0127 Distribution
-                Open MPI: 4.0.3
-  Open MPI repo revision: v4.0.3
-   Open MPI release date: Mar 03, 2020
-                Open RTE: 4.0.3
-  Open RTE repo revision: v4.0.3
-   Open RTE release date: Mar 03, 2020
-                    OPAL: 4.0.3
-      OPAL repo revision: v4.0.3
-       OPAL release date: Mar 03, 2020
+compute122:~$ module load openmpi/main-gcc-8.5.0
 ```
 
 ## Building the example

@@ -2249,20 +2249,7 @@ We will use a simple Makefile for building the software.</p>
 <h2 id="loading-openmpi-environment">Loading OpenMPI Environment<a class="headerlink" href="#loading-openmpi-environment" title="Permanent link">&para;</a></h2>
 <p>First, load the OpenMPI package.</p>
 <div class="highlight"><pre><span></span><code>$<span class="w"> </span>srun<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
-compute122:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openmpi/4.3.0-0
-</code></pre></div>
-<p>Then, check that the installation works</p>
-<div class="highlight"><pre><span></span><code>compute122:~$<span class="w"> </span>ompi_info<span class="w"> </span><span class="p">|</span><span class="w"> </span>head
-<span class="w">                 </span>Package:<span class="w"> </span>Open<span class="w"> </span>MPI<span class="w"> </span>root@med0127<span class="w"> </span>Distribution
-<span class="w">                </span>Open<span class="w"> </span>MPI:<span class="w"> </span><span class="m">4</span>.0.3
-<span class="w">  </span>Open<span class="w"> </span>MPI<span class="w"> </span>repo<span class="w"> </span>revision:<span class="w"> </span>v4.0.3
-<span class="w">   </span>Open<span class="w"> </span>MPI<span class="w"> </span>release<span class="w"> </span>date:<span class="w"> </span>Mar<span class="w"> </span><span class="m">03</span>,<span class="w"> </span><span class="m">2020</span>
-<span class="w">                </span>Open<span class="w"> </span>RTE:<span class="w"> </span><span class="m">4</span>.0.3
-<span class="w">  </span>Open<span class="w"> </span>RTE<span class="w"> </span>repo<span class="w"> </span>revision:<span class="w"> </span>v4.0.3
-<span class="w">   </span>Open<span class="w"> </span>RTE<span class="w"> </span>release<span class="w"> </span>date:<span class="w"> </span>Mar<span class="w"> </span><span class="m">03</span>,<span class="w"> </span><span class="m">2020</span>
-<span class="w">                    </span>OPAL:<span class="w"> </span><span class="m">4</span>.0.3
-<span class="w">      </span>OPAL<span class="w"> </span>repo<span class="w"> </span>revision:<span class="w"> </span>v4.0.3
-<span class="w">       </span>OPAL<span class="w"> </span>release<span class="w"> </span>date:<span class="w"> </span>Mar<span class="w"> </span><span class="m">03</span>,<span class="w"> </span><span class="m">2020</span>
+compute122:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openmpi/main-gcc-8.5.0
 </code></pre></div>
 <h2 id="building-the-example">Building the example<a class="headerlink" href="#building-the-example" title="Permanent link">&para;</a></h2>
 <p>Next, clone the OpenMPI example project from Gitlab.</p>
