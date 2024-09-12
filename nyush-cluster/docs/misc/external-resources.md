@@ -2,12 +2,9 @@
 
 ## Basic Linux
 
-The BIH HPC uses CentOS Linux.
+The NYUSH HPC uses Redhat Linux.
 **A basic understanding of Linux is required.**
 Even better, you should already have intermediate to advanced Linux/Unix skills.
-
-**BIH HPC IT cannot provide you with basic Unix training.**
-Please ask your home organization (e.g., Charite or MDC) to provide you with basic Linux training.
 
 That said, here are some resources that we find useful:
 

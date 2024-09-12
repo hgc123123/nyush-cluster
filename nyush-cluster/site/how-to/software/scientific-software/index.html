@@ -18,7 +18,7 @@
         <link rel="prev" href="../openmpi/">
       
       
-        <link rel="next" href="../cell-ranger/">
+        <link rel="next" href="../../service/file-exchange/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1960,132 +1960,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../cell-ranger/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Cell Ranger
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyter/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jupyter
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../keras/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Keras
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../matlab/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Matlab
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../tensorflow/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Tensorflow
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../apptainer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Apptainer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -2840,11 +2714,11 @@ However, otherwise you will have to install them on their own.</p>
 Note that the files in your <code>scratch</code> directory will automatically be removed after 2 weeks.
 You can also use your <code>work</code> directory here.</p>
 <div class="highlight"><pre><span></span><code>hpc-login-1:~$<span class="w"> </span>srun<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
-med0127:~$<span class="w"> </span>mkdir<span class="w"> </span><span class="nv">$HOME</span>/scratch/gromacs-install
-med0127:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/scratch/gromacs-install
-med0127:~$<span class="w"> </span>wget<span class="w"> </span>http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
-med0127:~$<span class="w"> </span>tar<span class="w"> </span>xf<span class="w"> </span>gromacs-2018.3.tar.gz
-med0127:~$<span class="w"> </span>ls<span class="w"> </span>gromacs-2018.3
+$<span class="w"> </span>mkdir<span class="w"> </span><span class="nv">$HOME</span>/scratch/gromacs-install
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span><span class="nv">$HOME</span>/scratch/gromacs-install
+$<span class="w"> </span>wget<span class="w"> </span>http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
+$<span class="w"> </span>tar<span class="w"> </span>xf<span class="w"> </span>gromacs-2018.3.tar.gz
+$<span class="w"> </span>ls<span class="w"> </span>gromacs-2018.3
 admin<span class="w">    </span>cmake<span class="w">           </span>COPYING<span class="w">          </span>CTestConfig.cmake<span class="w">  </span>INSTALL<span class="w">  </span>scripts<span class="w">  </span>src
 AUTHORS<span class="w">  </span>CMakeLists.txt<span class="w">  </span>CPackInit.cmake<span class="w">  </span>docs<span class="w">               </span>README<span class="w">   </span>share<span class="w">    </span>tests
 </code></pre></div>
@@ -2864,13 +2738,13 @@ We will install gromacs into <code>$HOME/work/software</code>, which is appropri
 Note that we install the software into your work directory as software installations are quite large and might go above your home quota.
 Also, software installations are usually not precious enough to waste resources on snapshots and backups.
 Also that we force Gromacs to use <code>AVX_256</code> for SIMD support (Intel <em>sandy bridge</em> architecture) to not get unsupported CPU instruction errors.</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>cmake/3.11.0-0
-med0127:~$<span class="w"> </span>module<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>cmake/3.11.0-0
+$<span class="w"> </span>module<span class="w"> </span>list
 Currently<span class="w"> </span>Loaded<span class="w"> </span>Modulefiles:
 <span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>gcc/7.2.0-0<span class="w">      </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>cmake/3.11.0-0
-med0127:~$<span class="w"> </span>mkdir<span class="w"> </span>gromacs-2018.3-build-nompi
-med0127:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gromacs-2018.3-build-nompi
-med0127:~$<span class="w"> </span>cmake<span class="w"> </span>../gromacs-2018.3<span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>gromacs-2018.3-build-nompi
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gromacs-2018.3-build-nompi
+$<span class="w"> </span>cmake<span class="w"> </span>../gromacs-2018.3<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_MPI<span class="o">=</span>OFF<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_SIMD<span class="o">=</span>AVX_256<span class="w"> </span><span class="se">\</span>
@@ -2880,13 +2754,13 @@ med0127:~$<span class="w"> </span>cmake<span class="w"> </span>../gromacs-2018.3
 Note that we are also enabling the <code>openmpi</code> module.
 We will also need the precise version here so we can later load the correct libraries.
 Note that we install the software into the directory <code>gromacs-mpi</code> but switch off shared library building as recommended by the Gromacs documentation.</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openmpi/3.1.0-0
-med0127:~$<span class="w"> </span>module<span class="w"> </span>list
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>openmpi/3.1.0-0
+$<span class="w"> </span>module<span class="w"> </span>list
 Currently<span class="w"> </span>Loaded<span class="w"> </span>Modulefiles:
 <span class="w">  </span><span class="m">1</span><span class="o">)</span><span class="w"> </span>gcc/7.2.0-0<span class="w">       </span><span class="m">2</span><span class="o">)</span><span class="w"> </span>cmake/3.11.0-0<span class="w">    </span><span class="m">3</span><span class="o">)</span><span class="w"> </span>openmpi/4.0.3-0
-med0127:~$<span class="w"> </span>mkdir<span class="w"> </span>gromacs-2018.3-build-mpi
-med0127:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gromacs-2018.3-build-mpi
-med0127:~$<span class="w"> </span>cmake<span class="w"> </span>../gromacs-2018.3<span class="w"> </span><span class="se">\</span>
+$<span class="w"> </span>mkdir<span class="w"> </span>gromacs-2018.3-build-mpi
+$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>gromacs-2018.3-build-mpi
+$<span class="w"> </span>cmake<span class="w"> </span>../gromacs-2018.3<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_BUILD_OWN_FFTW<span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_MPI<span class="o">=</span>ON<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>-DGMX_SIMD<span class="o">=</span>AVX_256<span class="w"> </span><span class="se">\</span>
@@ -2906,22 +2780,22 @@ You should only contact the BIH HPC IT helpdesk only if you are sure that the pr
 You should try to resolve the issue on your own and with the developers of the software that you are trying to build/use.</p>
 </div>
 <p>For the no-MPI version:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../cd<span class="w"> </span>gromacs-2018.3-build-nompi
-med0127:~$<span class="w"> </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">32</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../cd<span class="w"> </span>gromacs-2018.3-build-nompi
+$<span class="w"> </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">32</span>
 <span class="o">[</span>...<span class="o">]</span>
-med0127:~$<span class="w"> </span>make<span class="w"> </span>install
+$<span class="w"> </span>make<span class="w"> </span>install
 </code></pre></div>
 <p>For the MPI version:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../cd<span class="w"> </span>gromacs-2018.3-build-mpi
-med0127:~$<span class="w"> </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">32</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>../cd<span class="w"> </span>gromacs-2018.3-build-mpi
+$<span class="w"> </span>make<span class="w"> </span>-j<span class="w"> </span><span class="m">32</span>
 <span class="o">[</span>...<span class="o">]</span>
-med0127:~$<span class="w"> </span>make<span class="w"> </span>install
+$<span class="w"> </span>make<span class="w"> </span>install
 </code></pre></div>
 <h2 id="create-environment-modules-files">Create Environment Modules Files<a class="headerlink" href="#create-environment-modules-files" title="Permanent link">&para;</a></h2>
 <p>For Gromacs 2018.3, the following is appropriate.
 You should be able to use this as a template for your environment module files:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/local/modules/gromacs
-med0127:~$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="nv">$HOME</span>/local/modules/gromacs/2018.3<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/local/modules/gromacs
+$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="nv">$HOME</span>/local/modules/gromacs/2018.3<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="c1">#%Module</span>
 proc<span class="w"> </span>ModulesHelp<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span>puts<span class="w"> </span>stderr<span class="w"> </span><span class="o">{</span>
@@ -2947,8 +2821,8 @@ prepend-path<span class="w">    </span>PATH<span class="w">                    <
 setenv<span class="w">          </span>GMXRC<span class="w">                   </span><span class="nv">$root</span>/bin/GMXRC
 EOF
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/local/modules/gromacs-mpi
-med0127:~$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="nv">$HOME</span>/local/modules/gromacs-mpi/2018.3<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="nv">$HOME</span>/local/modules/gromacs-mpi
+$<span class="w"> </span>cat<span class="w"> </span>&gt;<span class="nv">$HOME</span>/local/modules/gromacs-mpi/2018.3<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="c1">#%Module</span>
 proc<span class="w"> </span>ModulesHelp<span class="w"> </span><span class="o">{</span><span class="w"> </span><span class="o">}</span><span class="w"> </span><span class="o">{</span>
 <span class="w">    </span>puts<span class="w"> </span>stderr<span class="w"> </span><span class="o">{</span>
@@ -2976,10 +2850,10 @@ setenv<span class="w">          </span>GMXRC<span class="w">                   <
 EOF
 </code></pre></div>
 <p>With the next command, make your local modules files path known to the environemtn modules system.</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>use<span class="w"> </span><span class="nv">$HOME</span>/local/modules
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>use<span class="w"> </span><span class="nv">$HOME</span>/local/modules
 </code></pre></div>
 <p>You can verify the result:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>avail
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>avail
 
 ------------------<span class="w"> </span>/data/cephfs-1/home/users/YOURUSER/local/modules<span class="w"> </span>------------------
 gromacs/2018.3<span class="w">     </span>gromacs-mpi/2018.3
@@ -2995,7 +2869,7 @@ gcc/7.2.0-0<span class="w">     </span>matlab/r2016b-0<span class="w"> </span>op
 <h3 id="interlude-convenient-module-use">Interlude: Convenient <code>module use</code><a class="headerlink" href="#interlude-convenient-module-use" title="Permanent link">&para;</a></h3>
 <p>You can add this to your <code>~/.bashrc</code> file to always execute the <code>module use</code> after login.
 Note that <code>module</code> is not available on the login or transfer nodes, the following should work fine:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>cat<span class="w"> </span>&gt;&gt;~/.bashrc<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>cat<span class="w"> </span>&gt;&gt;~/.bashrc<span class="w"> </span>&lt;&lt;<span class="s2">&quot;EOF&quot;</span>
 <span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
 <span class="w">  </span>login-*<span class="p">|</span>transfer-*<span class="o">)</span>
 <span class="w">    </span><span class="p">;;</span>
@@ -3031,10 +2905,10 @@ You can also place the module files anywhere, as long as the <code>module use</c
 </ul>
 <h3 id="going-on-with-gromacs">Going on with Gromacs<a class="headerlink" href="#going-on-with-gromacs" title="Permanent link">&para;</a></h3>
 <p>Every time you want to use Gromacs, you can now do</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>gromacs/2018.3
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>gromacs/2018.3
 </code></pre></div>
 <p>or, if you want to have the MPI version:</p>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>openmpi/4.0.3-0<span class="w"> </span>gromacs-mpi/2018.3
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>module<span class="w"> </span>load<span class="w"> </span>gcc/7.2.0-0<span class="w"> </span>openmpi/4.0.3-0<span class="w"> </span>gromacs-mpi/2018.3
 </code></pre></div>
 <h2 id="launching-gromacs">Launching Gromacs<a class="headerlink" href="#launching-gromacs" title="Permanent link">&para;</a></h2>
 <p>Something along the lines of the following job script should be appropriate.
@@ -3075,8 +2949,8 @@ module<span class="w"> </span>load<span class="w"> </span>gromacs-mpi/2018.3
 <span class="nb">export</span><span class="w"> </span><span class="nv">OMP_NUM_THREADS</span><span class="o">=</span><span class="m">4</span>
 mpirun<span class="w"> </span>-n<span class="w"> </span><span class="m">8</span><span class="w"> </span>gmx_mpi<span class="w"> </span>mdrun<span class="w"> </span>-deffnm<span class="w"> </span>npt_1000
 </code></pre></div>
-<div class="highlight"><pre><span></span><code>med0127:~$<span class="w"> </span>mkdir<span class="w"> </span>slurm_log
-med0127:~$<span class="w"> </span>sbatch<span class="w"> </span>job_script.sh
+<div class="highlight"><pre><span></span><code>$<span class="w"> </span>mkdir<span class="w"> </span>slurm_log
+$<span class="w"> </span>sbatch<span class="w"> </span>job_script.sh
 Submitted<span class="w"> </span>batch<span class="w"> </span>job<span class="w"> </span><span class="m">3229</span>
 </code></pre></div>
 

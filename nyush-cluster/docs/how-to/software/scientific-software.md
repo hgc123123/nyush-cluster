@@ -39,11 +39,11 @@ You can also use your `work` directory here.
 
 ```bash
 hpc-login-1:~$ srun --pty bash -i
-med0127:~$ mkdir $HOME/scratch/gromacs-install
-med0127:~$ cd $HOME/scratch/gromacs-install
-med0127:~$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
-med0127:~$ tar xf gromacs-2018.3.tar.gz
-med0127:~$ ls gromacs-2018.3
+$ mkdir $HOME/scratch/gromacs-install
+$ cd $HOME/scratch/gromacs-install
+$ wget http://ftp.gromacs.org/pub/gromacs/gromacs-2018.3.tar.gz
+$ tar xf gromacs-2018.3.tar.gz
+$ ls gromacs-2018.3
 admin    cmake           COPYING          CTestConfig.cmake  INSTALL  scripts  src
 AUTHORS  CMakeLists.txt  CPackInit.cmake  docs               README   share    tests
 ```
@@ -70,13 +70,13 @@ Also, software installations are usually not precious enough to waste resources 
 Also that we force Gromacs to use `AVX_256` for SIMD support (Intel *sandy bridge* architecture) to not get unsupported CPU instruction errors.
 
 ```bash
-med0127:~$ module load gcc/7.2.0-0 cmake/3.11.0-0
-med0127:~$ module list
+$ module load gcc/7.2.0-0 cmake/3.11.0-0
+$ module list
 Currently Loaded Modulefiles:
   1) gcc/7.2.0-0      2) cmake/3.11.0-0
-med0127:~$ mkdir gromacs-2018.3-build-nompi
-med0127:~$ cd gromacs-2018.3-build-nompi
-med0127:~$ cmake ../gromacs-2018.3 \
+$ mkdir gromacs-2018.3-build-nompi
+$ cd gromacs-2018.3-build-nompi
+$ cmake ../gromacs-2018.3 \
     -DGMX_BUILD_OWN_FFTW=ON \
     -DGMX_MPI=OFF \
     -DGMX_SIMD=AVX_256 \
@@ -89,13 +89,13 @@ We will also need the precise version here so we can later load the correct libr
 Note that we install the software into the directory `gromacs-mpi` but switch off shared library building as recommended by the Gromacs documentation.
 
 ```bash
-med0127:~$ module load openmpi/3.1.0-0
-med0127:~$ module list
+$ module load openmpi/3.1.0-0
+$ module list
 Currently Loaded Modulefiles:
   1) gcc/7.2.0-0       2) cmake/3.11.0-0    3) openmpi/4.0.3-0
-med0127:~$ mkdir gromacs-2018.3-build-mpi
-med0127:~$ cd gromacs-2018.3-build-mpi
-med0127:~$ cmake ../gromacs-2018.3 \
+$ mkdir gromacs-2018.3-build-mpi
+$ cd gromacs-2018.3-build-mpi
+$ cmake ../gromacs-2018.3 \
     -DGMX_BUILD_OWN_FFTW=ON \
     -DGMX_MPI=ON \
     -DGMX_SIMD=AVX_256 \
@@ -120,19 +120,19 @@ If something goes wrong: meh, the "joys" of compilling C software.
 For the no-MPI version:
 
 ```bash
-med0127:~$ cd ../cd gromacs-2018.3-build-nompi
-med0127:~$ make -j 32
+$ cd ../cd gromacs-2018.3-build-nompi
+$ make -j 32
 [...]
-med0127:~$ make install
+$ make install
 ```
 
 For the MPI version:
 
 ```bash
-med0127:~$ cd ../cd gromacs-2018.3-build-mpi
-med0127:~$ make -j 32
+$ cd ../cd gromacs-2018.3-build-mpi
+$ make -j 32
 [...]
-med0127:~$ make install
+$ make install
 ```
 
 ## Create Environment Modules Files
@@ -141,8 +141,8 @@ For Gromacs 2018.3, the following is appropriate.
 You should be able to use this as a template for your environment module files:
 
 ```bash
-med0127:~$ mkdir -p $HOME/local/modules/gromacs
-med0127:~$ cat >$HOME/local/modules/gromacs/2018.3 <<"EOF"
+$ mkdir -p $HOME/local/modules/gromacs
+$ cat >$HOME/local/modules/gromacs/2018.3 <<"EOF"
 #%Module
 proc ModulesHelp { } {
     puts stderr {
@@ -170,8 +170,8 @@ EOF
 ```
 
 ```bash
-med0127:~$ mkdir -p $HOME/local/modules/gromacs-mpi
-med0127:~$ cat >$HOME/local/modules/gromacs-mpi/2018.3 <<"EOF"
+$ mkdir -p $HOME/local/modules/gromacs-mpi
+$ cat >$HOME/local/modules/gromacs-mpi/2018.3 <<"EOF"
 #%Module
 proc ModulesHelp { } {
     puts stderr {
@@ -202,13 +202,13 @@ EOF
 With the next command, make your local modules files path known to the environemtn modules system.
 
 ```bash
-med0127:~$ module use $HOME/local/modules
+$ module use $HOME/local/modules
 ```
 
 You can verify the result:
 
 ```bash
-med0127:~$ module avail
+$ module avail
 
 ------------------ /data/cephfs-1/home/users/YOURUSER/local/modules ------------------
 gromacs/2018.3     gromacs-mpi/2018.3
@@ -228,7 +228,7 @@ You can add this to your `~/.bashrc` file to always execute the `module use` aft
 Note that `module` is not available on the login or transfer nodes, the following should work fine:
 
 ```bash
-med0127:~$ cat >>~/.bashrc <<"EOF"
+$ cat >>~/.bashrc <<"EOF"
 case "${HOSTNAME}" in
   login-*|transfer-*)
     ;;
@@ -265,13 +265,13 @@ As a best practice, you could use the following location:
 Every time you want to use Gromacs, you can now do
 
 ```bash
-med0127:~$ module load gcc/7.2.0-0 gromacs/2018.3
+$ module load gcc/7.2.0-0 gromacs/2018.3
 ```
 
 or, if you want to have the MPI version:
 
 ```bash
-med0127:~$ module load gcc/7.2.0-0 openmpi/4.0.3-0 gromacs-mpi/2018.3
+$ module load gcc/7.2.0-0 openmpi/4.0.3-0 gromacs-mpi/2018.3
 ```
 
 ## Launching Gromacs
@@ -318,7 +318,7 @@ mpirun -n 8 gmx_mpi mdrun -deffnm npt_1000
 ```
 
 ```bash
-med0127:~$ mkdir slurm_log
-med0127:~$ sbatch job_script.sh
+$ mkdir slurm_log
+$ sbatch job_script.sh
 Submitted batch job 3229
 ```
