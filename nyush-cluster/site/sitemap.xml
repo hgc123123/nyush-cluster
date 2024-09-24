@@ -2,382 +2,417 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/admin/getting-access/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/admin/maintenance/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/admin/policies/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/bashrc-guide/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/env-modules/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/project-structure/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/screen-tmux/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/software-craftmanship/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/software-installation-with-conda/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/best-practice/temp-files/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/connecting-windows/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/connecting/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/connection-problems/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/from-external/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/ssh-basics/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/advanced-ssh/linux/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/advanced-ssh/overview/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/generate-key/linux/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/connecting/generate-key/windows/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/help/faq/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/help/good-tickets/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/help/helpdesk/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/help/hpc-talk/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/connect/gpu-nodes/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/connect/high-memory/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/misc/contribute/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/misc/debug-at-hpc/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/misc/debug-software/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/misc/hpc-talk/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/service/file-exchange/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/apptainer/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/cell-ranger/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/keras/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/matlab/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/openmpi/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/scientific-software/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/how-to/software/tensorflow/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/hpc-tutorial/episode-0/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/hpc-tutorial/episode-1/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/misc/external-resources/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/misc/provided-software/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/misc/publication-list/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/ondemand/interactive/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/ondemand/overview/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/ondemand/quotas/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/architecture/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/for-the-impatient1/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/job-scheduler/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/monitoring/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/storage/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/background/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/cheat-sheet/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-sacct/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-sattach/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-sbatch/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-scancel/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-scontrol/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-sinfo/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-squeue/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/commands-srun/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/format-strings/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/job-scripts/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/memory-allocation/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/overview/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/quickstart/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/reservations/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/rosetta-stone/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/snakemake/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/temporary-files/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/slurm/x11/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/apptainer/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/cell-ranger/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/keras/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/matlab/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/openmpi/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/pytorch/</loc>
+         <lastmod>2024-09-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/software/scientific-software/</loc>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/storage/home-quota/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/storage/migration-faq/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/storage/querying-storage/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/storage/scratch-cleanup/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/storage/storage-locations/</loc>
-         <lastmod>2024-09-12</lastmod>
+         <lastmod>2024-09-24</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

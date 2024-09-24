@@ -94,6 +94,11 @@ nav:
       - "Linux": connecting/advanced-ssh/linux.md
     - "From External": connecting/from-external.md
     - "Connection Problems": connecting/connection-problems.md
+  - "Software":
+    - "AI": 
+      - "Pytorch": "software/pytorch.md"
+    - "Engineer":
+      - "Linux": connecting/generate-key/linux.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Home Folder Quota": storage/home-quota.md
