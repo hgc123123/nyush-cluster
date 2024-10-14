@@ -31,7 +31,7 @@ The reason is that `sbatch` only accepts bash scripts.
 If you give `sbatch` a normal shell command or binary, it won't work.
 This means that we have to put the command(s) we want to use in a bash script.
 
-The content of the example file:
+The content of the example file for CPU jobs:
 
 ```bash
 #!/bin/bash
@@ -39,27 +39,57 @@ The content of the example file:
 # Set a name for the job (-J or --job-name).
 #SBATCH --job-name=tutorial
 
-# Set the file to write the stdout and stderr to (if -e is not set; -o or --output).
-#SBATCH --output=logs/%x-%j.log
+# Set the file to write the stdout and stderr to.
+#SBATCH --output=logs/%x-%j.out
+#SBATCH --error=logs/%x-%j.err
 
-# Set the number of cores (-c or --cpus-per-task).
-#SBATCH --cpus-per-task=8
+# Set the number of ntasks.
+#SBATCH --ntasks-per-node=8
 
-# Force allocation of the two cores on ONE node.
+# Set the number of cores allocated to each task (-c or --cpus-per-task).
+#SBATCH --cpus-per-task=1
+
+# Force allocation of the eight tasks on ONE node.
 #SBATCH --nodes=1
 
 # Set the total memory. Units can be given in T|G|M|K.
-#SBATCH --mem=8G
+#SBATCH --mem=16G
 
 # Optionally, set the partition to be used (-p or --partition).
-#SBATCH --partition=medium
+#SBATCH --partition=debug
 
 # Set the expected running time of your job (-t or --time).
 # Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
-#SBATCH --time=30:00
+#SBATCH --time=06:00:00
 
-export TMPDIR=/data/cephfs-1/home/users/${USER}/scratch/tmp
-mkdir -p ${TMPDIR}
+ulimit -l unlimited
+module load  amber/22-oneapi-2022.0.1
+mpirun -np 8   pmemd.MPI -O -i mdin -o mdout -p prmtop -c inpcrd
+```
+
+The content of the example file for GPU jobs:
+
+```bash
+#!/bin/bash
+#SBATCH --job-name=tutorial
+
+#SBATCH --output=logs/%x-%j.out
+#SBATCH --error=logs/%x-%j.err
+
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=6
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=12G
+
+# Set the number of GPUs.
+#SBATCH --gres=gpu:1
+
+#SBATCH --partition=sfscai  //The partition is owned by the  AI center.
+#SBATCH --time=06:00:00
+
+ulimit -l unlimited
+module load  singularity amber/22-openmpi-4.0.3-cuda-11.4.3
+pmemd.cuda -O -i mdin -o mdout -p prmtop -c inpcrd
 ```
 
 The lines starting with `#SBATCH` are actually setting parameters for a `sbatch` command, so `#SBATCH --job-name=tutorial` is equal to `sbatch --job-name=tutorial`.
@@ -68,81 +98,20 @@ Slurm will create a log file with a file name composed of the job name (`%x`) an
 To start now with our tutorial, create a new tutorial directory with a log directory, e.g.,
 
 ```terminal
-(first-steps) $ mkdir -p /gpfsnyu/home/users/$USER/work/tutorial/episode2/logs
+(first-steps) $ mkdir -p /gpfsnyu/home/*NetID*/project/logs
+(first-steps) $ cd /gpfsnyu/home/*NetID*/project
 ```
 
 and copy the wrapper script to this directory:
 
 ```terminal
-(first-steps) $ pushd /gpfsnyu/home/users/$USER/work/tutorial/episode2
-(first-steps) $ cp /gpfsnyu/spack/share/submit_job.sh .
-(first-steps) $ chmod u+w submit_job.sh
+(first-steps) $ cp /gpfsnyu/spack/share/submit_job.slurm .
 ```
 
-Now open this file and copy the same commands we executed in the last tutorial to this file.
-
-To keep it simple, we will put everything into one script.
-This is perfectly fine because the alignment and indexing are sequential.
-But there are two steps that could be run in parallel, namely the variant calling, because they don't depend on each other.
-We will learn how to do that in a later tutorial.
-Your file should look something like this:
-
-```bash
-#!/bin/bash
-
-# Set a name for the job (-J or --job-name).
-#SBATCH --job-name=tutorial
-
-# Set the file to write the stdout and stderr to (if -e is not set; -o or --output).
-#SBATCH --output=logs/%x-%j.log
-
-# Set the number of cores (-c or --cpus-per-task).
-#SBATCH --cpus-per-task=8
-
-# Force allocation of the two cores on ONE node.
-#SBATCH --nodes=1
-
-# Set the total memory. Units can be given in T|G|M|K.
-#SBATCH --mem=8G
-
-# Optionally, set the partition to be used (-p or --partition).
-#SBATCH --partition=medium
-
-# Set the expected running time of your job (-t or --time).
-# Formats are MM:SS, HH:MM:SS, Days-HH, Days-HH:MM, Days-HH:MM:SS
-#SBATCH --time=30:00
-
-export TMPDIR=/gpfsnyu/home/users/${USER}/scratch/tmp
-mkdir -p ${TMPDIR}
-
-BWAREF=/gpfsnyu/scratch/user/static_data/precomputed/BWA/0.7.17/GRCh37/g1k_phase1/human_g1k_v37.fasta
-REF=/gpfsnyu/scratch/user/static_data/reference/GRCh37/g1k_phase1/human_g1k_v37.fasta
-
-bwa mem -t 8 \
-    -R "@RG\tID:FLOWCELL.LANE\tPL:ILLUMINA\tLB:test\tSM:PA01" \
-    $BWAREF \
-    /gpfsnyu/scratch/user/cubit/tutorial/input/test_R1.fq.gz \
-    /gpfsnyu/scratch/user/cubit/tutorial/input/test_R2.fq.gz \
-| samtools view -b \
-| samtools sort -O BAM -T $TMPDIR -o aln.bam
-
-samtools index aln.bam
-
-delly call -g \
-    $REF \
-    aln.bam
-
-gatk HaplotypeCaller \
-    -R $REF \
-    -I aln.bam \
-    -ploidy 2 \
-    -O test.GATK.vcf
-```
-
-Let's run it (make sure that you are in the `tutorial/episode2` directory!):
+Let's run it:
 
 ```terminal
-(first-steps) $ sbatch submit_job.sh
+(first-steps) $ sbatch submit_job.slurm
 ```
 
 And wait for the response which will tell you that your job was submitted and which job id number it was assigned. Note that `sbatch` only tells you that the job has started, but nothing about finishing. You won't get any response at the terminal when the job finishes. It will take approximately 20 minutes to finish the job.
@@ -155,29 +124,12 @@ You'll probably want to see how your job is doing. You can get a list of your jo
 (first-steps) $ squeue --me
 ```
 
-Note that logins are also considered as jobs.
-
 Identify your job by the `<JOBID>` (1st column) or the name of the script (3rd column).
 The most likely states you will see (5th column of the table):
 
 * `PD` pending, waiting to be submitted
 * `R` running
 * disappeared, either because of an error or because it finished
-
-In the 8th column you can see that your job is very likely running on a different machine than the one you are on!
-
-!!! warning "Do not use Slurm and `watch` or loops"
-
-    The `watch` command is a useful tool for running commands in a loop every `N` seconds.
-    For example, **on your workstation** you could do `watch 'ping -c 3 google.com'` to execute three network pings to Google every two seconds.
-    
-    👎 Using `watch` or manual loops in a cluster environment can have bad effects when querying Slurm or the shared file system.
-    Both are shared resources and "expensive" queries should not be run in loops.
-    For Slurm, this includes running `squeue`.
-    The same would be true for running `squeue -i` which performs an internal loop.
-    
-    👍 Use the Slurm query commands only when you actually need the output.
-    If you run them in an (implict or explicit) loop, then do so only for a short time and don't leave this open in a screen.
 
 Get more information about your jobs by either passing the job id:
 
@@ -203,10 +155,3 @@ If for some reason your job is hanging, you can delete your job using `scancel` 
 ```terminal
 (first-steps) $ scancel <job-ID>
 ```
-
-## Job Queues
-
-The cluster has a special way of organizing itself and by telling the cluster how long and with which priority you want your jobs to run, you can help it in this.
-There is a system set up on the cluster where you can enqueue your jobs to so-called *partitions*. *partitions* have different prioritites and are allowed for different running times.
-To get to know what partitions are available, and how to use them properly, we highly encourage you to read the [cluster queues wiki page](../overview/job-scheduler.md).
-

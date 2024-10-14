@@ -30,7 +30,7 @@ Policies marked with a robot (:robot:) are automatically enforced.
    Note well that small files above ~4KB take up at least 8MB of space.
 2. Default quotas are as follows (each user has a `home` and `scratch` volume).
     - `home` 50GB space
-    - `scratch` 10TB space
+    - `scratch` 5TB space
 3. The overall throughput limit is 10GB/sec.
    **Try not to overload the cluster I/O wise.**
 4. :shield: :robot: User home/scratch file sets have to be owned by the user, group is `hpc-users` and mode is `u=rwx,go=`; POSIX ACLs are prohibited.

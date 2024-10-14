@@ -14,7 +14,7 @@ In case you're not familiar with SSH, you should probably start via the web port
 ## In brief
 Follow these steps to connect to NYU Shanghai HPC via the command line:
 
-1. [Register an account](../admin/getting-access.md) via [submiting forum](https://nyu.service-now.com/sp?id=sc_cat_item&sys_id=b0fc230be498d6408b4d97a033492665). :memo: 
+1. **Register an account** via [submiting forum](https://nyu.service-now.com/sp?id=sc_cat_item&sys_id=b0fc230be498d6408b4d97a033492665). :memo: 
 2. Connect to one of the two login nodes.
     
     ```bash
@@ -26,9 +26,8 @@ Follow these steps to connect to NYU Shanghai HPC via the command line:
     ```
 
     !!! hint
-        There are two login nodes, `hpc.shanghai.nyu.edu` and `hpclogin.shanghai.nyu.edu`. There are two for
-        redundancy reasons. Please do not perform big file transfers or an `sshfs`
-        mount via the login nodes. 
+        There are two login nodes, `hpc.shanghai.nyu.edu` and `hpclogin.shanghai.nyu.edu`. 
+        . Please do not perform big file transfers or an `sshfs` mount via the login nodes. 
 
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to NYU Shanghai HPC.
     If you are using a Windows PC to access NYU Shanghai HPC, please read [Connecting via SSH on Windows](./connecting-windows.md)
@@ -40,8 +39,7 @@ Follow these steps to connect to NYU Shanghai HPC via the command line:
     $ srun --pty bash -i
     ```
 
-4. Bonus: [Configure your SSH client :wrench: on Linux and Mac](advanced-ssh/linux.md) or [Windows](advanced-ssh/windows.md).
-5. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
+4. Bonus: [Connect from external networks :flying_saucer:](./from-external.md).
 
 !!! tip "tl;dr"
 

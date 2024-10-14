@@ -21,8 +21,8 @@ Please note that directories whose name is starting with a dot are not shown by 
 $ du -shc ~/.* ~/* --exclude=.. --exclude=.
 ```
 
-You should move these locations to your `work` folder and create symbolic links in their place.
-Conda installations should be installed in `work` from the very beginning as they do not react well to being moved around.
+You should move these locations to your `scratch` folder and create symbolic links in their place.
+Conda installations should be installed in `scratch` from the very beginning as they do not react well to being moved around.
 
 Here is an example for the `.local` folder.
 
@@ -36,10 +36,10 @@ Another usual culprit is the hidden `.cache` directory which contains temporary 
 This folder can be moved to the `scratch` volume in a similar manner as described above.
 
 ```bash
-$ mv ~/.cache ~/scratch/.cache
-$ ln -s ~/scratch/.cache ~/.cache
+$ mv ~/.cache /gpfsnyu/scratch/NetID/.cache
+$ ln -s /gpfsnyu/scratch/NetID/.cache ~/.cache
 ```
 
 !!! warning "Important"
-    Files placed in your `scratch` directory will be [automatically removed](./scratch-cleanup.md) after 2 weeks.
+    Files placed in your `scratch` directory do not have mirrors.
     Do not place any valuable files in there.

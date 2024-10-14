@@ -16,7 +16,6 @@ Files stored on the HPC fall into one of two categories:
 Loss of this data requires to redo manual work (like programming).
 
 2. **Scratch** folders store data of potentially large size which has a medium life time and is important.
-Examples are raw sequencing data and intermediate results that are to be kept (e.&nbsp;g. sorted and indexed BAM files).
 
 Storage comes in two types which differ in their I/O speed, total capacity, and cost. They are called Tier 1 and Tier 2 and sometimes hot storage and warm storage. In the HPC filesystem they are mounted in /gpfsnyu/home and /gpfsnyu/scratch.
 
@@ -24,7 +23,13 @@ Storage comes in two types which differ in their I/O speed, total capacity, and 
 - Tier 2 storage is slow, big, cheap, and built for keeping large files for longer times.
 
 Storage quotas are imposed in these locations to restrict the maximum size of folders.
-Amount and utilization of quotas is communicated via the [HPC Access](https://ood.shanghai.nyu.edu/grafana) web portal.
+
+### Overview
+
+| Tier | Function        | Path                                           | Default Quota |
+|:-----|:----------------|:-----------------------------------------------|--------------:|
+|    1 | User home       | `/gpfsnyu/home/users/<user>`                   | 50 GB         |
+|    2 | scratch         | `/gpfsnyu/scratch/users/<user>`                |  5 TB         |
 
 ### Home Directories
 Location: `/gpfsnyu/home/`
@@ -41,14 +46,6 @@ This is where big files go when they are not in active use.
 Users are allocated 10 TB of Tier 2 storage by default.
 File quotas here can be significantly larger as space is much cheaper and more abundant than on Tier 1.
 
-
-### Overview
-
-| Tier | Function        | Path                                           | Default Quota |
-|:-----|:----------------|:-----------------------------------------------|--------------:|
-|    1 | User home       | `/gpfsnyu/home/users/<user>`                   | 50 GB         |
-|    2 | scratch         | `/gpfsnyu/scratch/users/<user>`                | 10 TB         |
-
 ## Snapshots and Mirroring
 Snapshots are incremental copies of the state of the data at a particular point in time. 
 They provide safety against various "Ops, did I just delete that?" scenarios, meaning they can be used to recover lost or damaged files.
@@ -56,5 +53,5 @@ Depending on the location and Tier, GPFS creates snapshots in different frequenc
 
 | Location                 | Path                         | Retention policy                | Mirrored |
 |:-------------------------|:-----------------------------|:--------------------------------|---------:|
-| User homes               | `/gpfsnyu/home/users/`       | Hourly for 48 h, daily for 14 d | yes      |
+| User homes               | `/gpfsnyu/home/users/`       | Weekly for 1 w, daily for 30 d  | yes      |
 
