@@ -136,11 +136,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://github.com/hgc123123/nyush-cluster.git/hardware/architecture/</loc>
-         <lastmod>2024-10-14</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/help/faq/</loc>
          <lastmod>2024-10-14</lastmod>
          <changefreq>daily</changefreq>
@@ -292,6 +287,11 @@
     </url>
     <url>
          <loc>https://github.com/hgc123123/nyush-cluster.git/overview/storage/</loc>
+         <lastmod>2024-10-14</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://github.com/hgc123123/nyush-cluster.git/resource/architecture/</loc>
          <lastmod>2024-10-14</lastmod>
          <changefreq>daily</changefreq>
     </url>

@@ -90,8 +90,8 @@ nav:
   - "File Transfers":
     - "Secure Copy File Transfers": "file-transfers/secure-copy-file-transfers.md"
     - "OOD File Transfers": file-transfers/ood-file-transfers.md
-  - "Hardware":
-    - "Architecture": "hardware/architecture.md"
+  - "Resource":
+    - "Architecture": "resource/architecture.md"
   - "Software":
     - "AI": 
       - "Pytorch": "software/pytorch.md"
