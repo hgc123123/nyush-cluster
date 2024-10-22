@@ -95,10 +95,12 @@ nav:
   - "Software":
     - "AI": 
       - "Pytorch": "software/pytorch.md"
-    - "Engineer":
-      - "Linux": connecting/generate-key/linux.md
     - "Visualization":
       - "RStudio": software/rstudio.md
+      - "VS Code": software/vs_code.md  
+      - "Matlab": software/matlab.md 
+    - "Molecular Dynamics":
+      - "Amber": software/amber.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Home Folder Quota": storage/home-quota.md
@@ -129,7 +131,6 @@ nav:
     - "Overview": ondemand/overview.md
     - "Interactive Sessions": ondemand/interactive.md
   - "Best Practice":
-    - "Using Screen/Tmux": best-practice/screen-tmux.md
     - "~/.bashrc Guide": best-practice/bashrc-guide.md
     - "Temporary Files": best-practice/temp-files.md
     - "Custom Environment Modules": best-practice/env-modules.md

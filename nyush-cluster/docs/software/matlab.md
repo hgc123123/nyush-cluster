@@ -1,171 +1,176 @@
 # How-To: Use Matlab
 
-!!! note
-    This information is outdated and will soon be removed. 
+MATLAB is a proprietary multi-paradigm programming language and numeric computing environment developed by MathWorks. MATLAB allows matrix manipulations, plotting of functions and data, implementation of algorithms, creation of user interfaces, and interfacing with programs written in other languages.
 
-!!! note "GNU Octave as Matlab alternative"
-    Note that [GNU Octave](https://www.gnu.org/software/octave/) is an Open Source alternative to Matlab.
-    While both packages are not 100% compatible, Octave is an alternative that does not require any license management.
-    Further, you can [easily install it yourself using Conda](../../best-practice/software-installation-with-conda.md).
+## Version
 
-!!! question "Want to use the Matlab GUI?"
-    Make sure you understand X forwarding as outline [in this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
+| Cluster | Version| Module       | 
+|:--------|:-------|:------------:|
+| nyushc  | 2022a  | matlab/2022a |
+| nyushc  | 2022b  | matlab/2022b |
+| nyushc  | 2023a  | matlab/2023a |
+| nyushc  | 2023b  | matlab/2023b |
+| nyushc  | 2025a  | matlab/2024a |
 
-    You can also use [Open OnDemand Portal](../../ondemand/overview.md) to run Matlab.
-
-## Pre-requisites
-
-You have to register with [hpc-helpdesk@bih-charite.de](mailto:hpc-helpdesk@bih-charite.de) for requesting access to the Matlab licenses.
-Afterwards, you can connect to the High-Memory using the `license_matlab_r2016b` resource (see below).
-
-## How-To Use
-
-BIH has a license of Matlab R2016b for **16 seats** and various licensed packages (see below).
-To display the available licenses:
-
-```bash
-hpc-login-1:~$ scontrol show lic
-LicenseName=matlab_r2016b
-    Total=16 Used=0 Free=16 Remote=no
-```
-
-Matlab is installed on all of the compute nodes:
+## Run Matlab via Shell
 
 ```console
-# The following is VITAL so the scheduler allocates a license to your session.
-hpc-login-1:~$ srun -L matlab_r2016b:1 --pty bash -i
-med0127:~$ scontrol show lic
-LicenseName=matlab_r2016b
-    Total=16 Used=1 Free=15 Remote=no
-med0127:~$ module avail
------------------ /usr/share/Modules/modulefiles -----------------
-dot         module-info null
-module-git  modules     use.own
+[hpc@hpclogin ~]$ srun --pty /bin/bash
+[hpc@compute130 ~]$ module avail matlab
 
------------------------ /opt/local/modules -----------------------
-cmake/3.11.0-0  llvm/6.0.0-0    openmpi/3.1.0-0
-gcc/7.2.0-0     matlab/r2016b-0
-med0127:~$ module load matlab/r2016b-0
-Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
-    Start matlab with GUI (requires X forwarding (ssh -X)): matlab
-med0127:~$ matlab -nosplash -nodisplay -nojvm
-                                               < M A T L A B (R) >
-                                     Copyright 1984-2016 The MathWorks, Inc.
-                                     R2016b (9.1.0.441655) 64-bit (glnxa64)
-                                                September 7, 2016
+------------------------------------------------------------------------------------------------- /gpfsnyu/spack/modulefiles --------------------------------------------------------------------------------------------------
+   matlab/2022a    matlab/2022b    matlab/2023a    matlab/2023b    matlab/2024a (D)
 
- 
-For online documentation, see http://www.mathworks.com/support
-For product information, visit www.mathworks.com.
- 
+  Where:
+   D:  Default Module
+[---]
 
-	Non-Degree Granting Education License -- for use at non-degree granting, nonprofit,
-	educational organizations only.  Not for government, commercial, or other organizational use.
-
->> ver
+[hpc@compute130 ~]$ module load matlab/2024a 
+[hpc@compute130 ~]$ matlab -nosplash -nodisplay -nojvm
+                                                              < M A T L A B (R) >
+                                                    Copyright 1984-2024 The MathWorks, Inc.
+                                                   R2024a (24.1.0.2537033) 64-bit (glnxa64)
+                                                               February 21, 2024
+>> ver 
 --------------------------------------------------------------------------------------------
-MATLAB Version: 9.1.0.441655 (R2016b)
-MATLAB License Number: 1108905
-Operating System: Linux 3.10.0-862.3.2.el7.x86_64 #1 SMP Mon May 21 23:36:36 UTC 2018 x86_64
+MATLAB Version: 24.1.0.2537033 (R2024a)
+MATLAB License Number: 618777
+Operating System: Linux 4.18.0-372.9.1.el8.x86_64 #1 SMP Fri Apr 15 22:12:19 EDT 2022 x86_64
 Java Version: Java is not enabled
 --------------------------------------------------------------------------------------------
-MATLAB                                                Version 9.1         (R2016b)
-Bioinformatics Toolbox                                Version 4.7         (R2016b)
-Global Optimization Toolbox                           Version 3.4.1       (R2016b)
-Image Processing Toolbox                              Version 9.5         (R2016b)
-Optimization Toolbox                                  Version 7.5         (R2016b)
-Parallel Computing Toolbox                            Version 6.9         (R2016b)
-Partial Differential Equation Toolbox                 Version 2.3         (R2016b)
-Signal Processing Toolbox                             Version 7.3         (R2016b)
-SimBiology                                            Version 5.5         (R2016b)
-Statistics and Machine Learning Toolbox               Version 11.0        (R2016b)
-Wavelet Toolbox                                       Version 4.17        (R2016b)
->> exit
+MATLAB                                                Version 24.1        (R2024a)
+Simulink                                              Version 24.1        (R2024a)
+5G Toolbox                                            Version 24.1        (R2024a)
+AUTOSAR Blockset                                      Version 24.1        (R2024a)
+Aerospace Blockset                                    Version 24.1        (R2024a)
+Aerospace Toolbox                                     Version 24.1        (R2024a)
+Antenna Toolbox                                       Version 24.1        (R2024a)
+Audio Toolbox                                         Version 24.1        (R2024a)
+Automated Driving Toolbox                             Version 24.1        (R2024a)
+Bioinformatics Toolbox                                Version 24.1        (R2024a)
+Bluetooth Toolbox                                     Version 24.1        (R2024a)
+C2000 Microcontroller Blockset                        Version 24.1        (R2024a)
+Communications Toolbox                                Version 24.1        (R2024a)
+Computer Vision Toolbox                               Version 24.1        (R2024a)
+Control System Toolbox                                Version 24.1        (R2024a)
+Curve Fitting Toolbox                                 Version 24.1        (R2024a)
+DDS Blockset                                          Version 24.1        (R2024a)
+DSP HDL Toolbox                                       Version 24.1        (R2024a)
+DSP System Toolbox                                    Version 24.1        (R2024a)
+Database Toolbox                                      Version 24.1        (R2024a)
+Datafeed Toolbox                                      Version 24.1        (R2024a)
+Deep Learning Toolbox                                 Version 24.1        (R2024a)
+Econometrics Toolbox                                  Version 24.1        (R2024a)
+Embedded Coder                                        Version 24.1        (R2024a)
+Filter Design HDL Coder                               Version 24.1        (R2024a)
+Financial Instruments Toolbox                         Version 24.1        (R2024a)
+Financial Toolbox                                     Version 24.1        (R2024a)
+Fixed-Point Designer                                  Version 24.1        (R2024a)
+Fuzzy Logic Toolbox                                   Version 24.1        (R2024a)
+GPU Coder                                             Version 24.1        (R2024a)
+Global Optimization Toolbox                           Version 24.1        (R2024a)
+HDL Coder                                             Version 24.1        (R2024a)
+HDL Verifier                                          Version 24.1        (R2024a)
+Image Acquisition Toolbox                             Version 24.1        (R2024a)
+Image Processing Toolbox                              Version 24.1        (R2024a)
+Industrial Communication Toolbox                      Version 24.1        (R2024a)
+Instrument Control Toolbox                            Version 24.1        (R2024a)
+LTE Toolbox                                           Version 24.1        (R2024a)
+Lidar Toolbox                                         Version 24.1        (R2024a)
+MATLAB Coder                                          Version 24.1        (R2024a)
+MATLAB Report Generator                               Version 24.1        (R2024a)
+MATLAB Test                                           Version 24.1        (R2024a)
+Mapping Toolbox                                       Version 24.1        (R2024a)
+Medical Imaging Toolbox                               Version 24.1        (R2024a)
+Mixed-Signal Blockset                                 Version 24.1        (R2024a)
+Model Predictive Control Toolbox                      Version 24.1        (R2024a)
+Motor Control Blockset                                Version 24.1        (R2024a)
+Navigation Toolbox                                    Version 24.1        (R2024a)
+Optimization Toolbox                                  Version 24.1        (R2024a)
+Parallel Computing Toolbox                            Version 24.1        (R2024a)
+Partial Differential Equation Toolbox                 Version 24.1        (R2024a)
+Phased Array System Toolbox                           Version 24.1        (R2024a)
+Powertrain Blockset                                   Version 24.1        (R2024a)
+Predictive Maintenance Toolbox                        Version 24.1        (R2024a)
+RF Blockset                                           Version 24.1        (R2024a)
+RF PCB Toolbox                                        Version 24.1        (R2024a)
+RF Toolbox                                            Version 24.1        (R2024a)
+ROS Toolbox                                           Version 24.1        (R2024a)
+Radar Toolbox                                         Version 24.1        (R2024a)
+Reinforcement Learning Toolbox                        Version 24.1        (R2024a)
+Requirements Toolbox                                  Version 24.1        (R2024a)
+Risk Management Toolbox                               Version 24.1        (R2024a)
+Robotics System Toolbox                               Version 24.1        (R2024a)
+Robust Control Toolbox                                Version 24.1        (R2024a)
+Satellite Communications Toolbox                      Version 24.1        (R2024a)
+Sensor Fusion and Tracking Toolbox                    Version 24.1        (R2024a)
+SerDes Toolbox                                        Version 24.1        (R2024a)
+Signal Integrity Toolbox                              Version 24.1        (R2024a)
+Signal Processing Toolbox                             Version 24.1        (R2024a)
+SimBiology                                            Version 24.1        (R2024a)
+SimEvents                                             Version 24.1        (R2024a)
+Simscape                                              Version 24.1        (R2024a)
+Simscape Battery                                      Version 24.1        (R2024a)
+Simscape Driveline                                    Version 24.1        (R2024a)
+Simscape Electrical                                   Version 24.1        (R2024a)
+Simscape Fluids                                       Version 24.1        (R2024a)
+Simscape Multibody                                    Version 24.1        (R2024a)
+Simulink 3D Animation                                 Version 24.1        (R2024a)
+Simulink Check                                        Version 24.1        (R2024a)
+Simulink Code Inspector                               Version 24.1        (R2024a)
+Simulink Coder                                        Version 24.1        (R2024a)
+Simulink Control Design                               Version 24.1        (R2024a)
+Simulink Coverage                                     Version 24.1        (R2024a)
+Simulink Design Optimization                          Version 24.1        (R2024a)
+Simulink Design Verifier                              Version 24.1        (R2024a)
+Simulink Desktop Real-Time                            Version 24.1        (R2024a)
+Simulink Fault Analyzer                               Version 24.1        (R2024a)
+Simulink PLC Coder                                    Version 24.1        (R2024a)
+Simulink Real-Time                                    Version 24.1        (R2024a)
+Simulink Report Generator                             Version 24.1        (R2024a)
+Simulink Test                                         Version 24.1        (R2024a)
+SoC Blockset                                          Version 24.1        (R2024a)
+Stateflow                                             Version 24.1        (R2024a)
+Statistics and Machine Learning Toolbox               Version 24.1        (R2024a)
+Symbolic Math Toolbox                                 Version 24.1        (R2024a)
+System Composer                                       Version 24.1        (R2024a)
+System Identification Toolbox                         Version 24.1        (R2024a)
+Text Analytics Toolbox                                Version 24.1        (R2024a)
+UAV Toolbox                                           Version 24.1        (R2024a)
+Vehicle Dynamics Blockset                             Version 24.1        (R2024a)
+Vehicle Network Toolbox                               Version 24.1        (R2024a)
+Vision HDL Toolbox                                    Version 24.1        (R2024a)
+WLAN Toolbox                                          Version 24.1        (R2024a)
+Wavelet Toolbox                                       Version 24.1        (R2024a)
+Wireless HDL Toolbox                                  Version 24.1        (R2024a)
+>> 
 ```
 
-## Running MATLAB UI
+## Run Matlab via OOD
 
-For starting the Matlab with GUI, make sure that your client is running a X11 server and you connect with X11 forwarding enabled (e.g., `ssh -X hpc-login-1.cubi.bihealth.org` from the Linux command line).
-Then, make sure to use `srun -L matlab_r2016b:1 --pty --x11 bash -i` for connecting to a node with X11 forwarding enabled.
+Setup an [Open OnDemand (OOD)](https://ood.shanghai.nyu.edu) portal web server.
 
-```bash
-client:~$ ssh -X hpc-login-1.cubi.bihealth.org
-[...]
-hpc-login-1:~ $ srun -L matlab_r2016b:1 --pty --x11 bash -i
-[...]
-med0203:~$ module load matlab/r2016b-0
-Start matlab without GUI: matlab -nosplash -nodisplay -nojvm
-    Start matlab with GUI (requires X forwarding (ssh -X)): matlab
-med0203:~$ matlab
-[UI will start]
-```
+To start the session, please go to `Interactive Apps` in the top menu bar and select `Code Server` or click `MATLAB` in the left-hand panel.
 
-For forcing starting in text mode can be done (as said after `module load`): `matlab -nosplash -nodisplay -nojvm`.
+![](figures/ondemand-interactive-matlab-config.png){: style="width:90%;" .center}
 
-Also see [this FAQ entry](../../help/faq.md#how-can-i-access-graphical-user-interfaces-such-as-for-matlab-on-the-cluster).
+Allocate appropriate resources and click `Launch`.
 
-## See Available Matlab Licenses
-
-You can use `scontrol show lic` to see the currently available MATLAB license.
-E.g., here I am running an interactive shell in which I have requested 1 of the 16 MATLAB licenses, so 15 more remain.
-
-```
-$ scontrol show lic
-LicenseName=matlab_r2016b
-    Total=16 Used=1 Free=15 Remote=no
-```
-
-## A Working Example
-
-Get a checkout of our MATLAB example.
-Then, look around at the contents of this repository.
-
-```console
-hpc-login-1:~$ git clone https://github.com/bihealth/bih-cluster-matlab-example.git
-hpc-login-1:~$ cd bih-cluster-matlab-example
-hpc-login-1:~$ cat job_script.sh
-#!/bin/bash
-
-# Logging goes to directory sge_log
-#SBATCH -o slurm_log/%x-%J.log
-# Keep current environment variables
-#SBATCH --export=ALL
-# Name of the script
-#SBATCH --job-name MATLAB-example
-# Allocate 4GB of RAM per core
-#SBATCH --mem 4G
-# Maximal running time of 2 hours
-#SBATCH --time 02:00:00
-# Allocate one Matlab license
-#SBATCH -L matlab_r2016b:1
-
-module load matlab/r2016b-0
-
-matlab -r example
-$ cat example.m
-% Example Hello World script for Matlab.
-
-disp('Hello world!')
-disp('Thinking...')
-
-pause(10)
-
-disp(sprintf('The square root of 2 is = %f', sqrt(2)))
-exit
-```
-
-For submitting the script, you can do the following
-
-```console
-hpc-login-1:~$ sbatch job_script.sh
-```
-
-This will submit a job with one Matlab license requested.
-If you were to submit 17 of these jobs, then at least one of them would have to wait until all licenses are free.
+An info card for the RStudio Server will be added to `My Interactive Sessions`, and during start,
+it will change its state from `Queued` to `Starting` to `Running`. Depending on the app, resources allocated and
+current cluster usage, this will take a couple of seconds.
 
 
-!!! warning "Matlab License Server"
-    Note that there is a Matlab license server running on the server that will check whether 16 or less Matlab sessions are currently running.
-    If a Matlab session is running but this is not made known to the scheduler via `-L matlab_r2016b` then this can lead to scripts crashing as not enough licenses are available.
-    If this happens to you, double-check that you have specified the license requirements correctly and notify hpc-helpdesk@bih-charite.de in case of any problems.
-    We will try to sort out the situation then.
+![](figures/ondemand-interactive-matlab-queued.png){: style="width:90%;" .center}
+
+
+![](figures/ondemand-interactive-matlab-starting.png){: style="width:90%;" .center}
+
+
+![](figures/ondemand-interactive-matlab-running.png){: style="width:90%;" .center}
+
+
+When in the final state (`Running`), one can directly connect to the Matlab
+to get an interactive session by clicking `Launch MATLAB`:
+
+![](figures/ondemand-interactive-matlab-session.png){: style="width:90%;" .center}

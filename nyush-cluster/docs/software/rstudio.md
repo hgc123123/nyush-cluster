@@ -9,6 +9,8 @@ RStudio IDE (or RStudio) is an integrated development environment for [R](https:
 
 ## Launch RStudio
 
+Setup an [Open OnDemand (OOD)](https://ood.shanghai.nyu.edu) portal web server.
+
 To start the session, please go to `Interactive Apps` in the top menu bar and select `RStudio Server` or click `RStudio Server` in the left-hand panel.
 
 ![](figures/ondemand-interactive-rstudio-config_new.png){: style="width:90%;" .center}

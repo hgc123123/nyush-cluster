@@ -1,0 +1,194 @@
+# Project information
+site_name: NYUSH HPC Docs
+site_description: Public documentation of the NYUSH HPC infrastructure.
+site_author: NYUSH HPC IT
+site_url: https://github.com/hgc123123/nyush-cluster.git
+
+# Repository
+repo_name: NYUSH HPC Docs
+repo_url: https://github.com/hgc123123/nyush-cluster.git
+edit_uri: 'edit/main/nyush-cluster/docs/'
+
+# Copyright
+copyright: 2016-2024, NYUSH HPC IT
+
+# Theming, Configuration
+theme:
+  name: material
+  # Custom overrides
+  custom_dir: overrides
+  palette:
+  # Palette toggle for light mode
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    toggle:
+      icon: material/lightbulb
+      name: Switch to dark mode
+  # Palette toggle for dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    toggle:
+      icon: material/lightbulb-outline
+      name: Switch to light mode
+  features:
+    - content.action.edit
+strict: true
+extra_css:
+  - css/extra.css
+
+# Plugins
+plugins:
+  - search
+  - git-revision-date-localized
+
+# Extensions
+markdown_extensions:
+  - attr_list
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
+  - markdown.extensions.def_list
+  - markdown.extensions.footnotes
+  - markdown.extensions.meta
+  - markdown.extensions.toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed
+  - pymdownx.superfences
+
+# Page tree
+nav:
+  - index.md
+  - "Administrative":
+    - "Getting Access": admin/getting-access.md
+    - "Maintenance etc.": admin/maintenance.md
+    - "Policies": admin/policies.md
+  - "Connecting":
+    - "Overview": "connecting/connecting.md"
+    - "SSH Basics": connecting/ssh-basics.md
+    - "Windows": "connecting/connecting-windows.md"
+    - "Generate Keys":
+      - "Linux": connecting/generate-key/linux.md
+      - "Windows": connecting/generate-key/windows.md
+    - "Submit Keys":
+      - "Charite": connecting/submit-key/charite.md
+      - "MDC": connecting/submit-key/mdc.md
+    - "Advanced SSH":
+      - "Overview": connecting/advanced-ssh/overview.md
+      - "Linux": connecting/advanced-ssh/linux.md
+      - "Windows": connecting/advanced-ssh/windows.md
+    - "From External": connecting/from-external.md
+    - "Connection Problems": connecting/connection-problems.md
+  - "Storage":
+    - "Storage Locations": storage/storage-locations.md
+    - "Home Folder Quota": storage/home-quota.md
+    - "Scratch Cleanup": storage/scratch-cleanup.md
+    - "Querying Quotas": storage/querying-storage.md
+    - "Storage Migration": storage/storage-migration.md
+    - "Migration FAQ": "storage/migration-faq.md"
+  - "HPC tutorial":
+    - "Episode 0": hpc-tutorial/episode-0.md
+    - "Episode 1": hpc-tutorial/episode-1.md
+    - "Episode 2": hpc-tutorial/episode-2.md
+    - "Episode 3": hpc-tutorial/episode-3.md
+    - "Episode 4": hpc-tutorial/episode-4.md
+  - "Cluster Scheduler (Slurm)":
+    - slurm/overview.md
+    - slurm/background.md
+    - slurm/quickstart.md
+    - slurm/temporary-files.md
+    - slurm/cheat-sheet.md
+    - slurm/job-scripts.md
+    - slurm/memory-allocation.md
+    - slurm/reservations.md
+    - "Slurm Commands":
+        - "srun": slurm/commands-srun.md
+        - "sbatch": slurm/commands-sbatch.md
+        - "sattach": slurm/commands-sattach.md
+        - "scancel": slurm/commands-scancel.md
+        - "sinfo": slurm/commands-sinfo.md
+        - "squeue": slurm/commands-squeue.md
+        - "scontrol": slurm/commands-scontrol.md
+        - "sacct": slurm/commands-sacct.md
+        - "Format Strings": slurm/format-strings.md
+    - slurm/snakemake.md
+    - "X11 Forwarding": slurm/x11.md
+    - slurm/rosetta-stone.md
+  - "OnDemand Portal":
+    - "Overview": ondemand/overview.md
+    - "Interactive Sessions": ondemand/interactive.md
+    - "Quotas": ondemand/quotas.md
+  - "Best Practice":
+    - "Project Structure": best-practice/project-structure.md
+    - "Software Craftmanship": best-practice/software-craftmanship.md
+    - "Using Screen/Tmux": best-practice/screen-tmux.md
+    - "~/.bashrc Guide": best-practice/bashrc-guide.md
+    - "Temporary Files": best-practice/temp-files.md
+    - "Custom Environment Modules": best-practice/env-modules.md
+    - "Install Software with Conda": best-practice/software-installation-with-conda.md
+<!--
+  - "Static Data (Cubit)":
+    - "Overview": cubit/index.md
+    - "Annotations": cubit/annotations.md
+    - "Application Support": cubit/app-support.md
+    - "Databases": cubit/databases.md
+    - "Exomes and Panels": cubit/exomes-panels.md
+    - "Exon Lists": cubit/exon-lists.md
+    - "Precomputed Indexes": cubit/index-files.md
+    - "Reference Sequences": cubit/references.md
+-->
+  - "How-To":
+    - "Connect":
+      - "High-Memory Nodes": how-to/connect/high-memory.md
+      - "GPU Nodes": how-to/connect/gpu-nodes.md
+    - "Software":
+      - "OpenMPI": how-to/software/openmpi.md
+      - "Scientific Software": how-to/software/scientific-software.md
+      - "Cell Ranger": how-to/software/cell-ranger.md
+      - "Jupyter": how-to/software/jupyter.md
+      - "Keras": how-to/software/keras.md
+      - "Matlab": how-to/software/matlab.md
+      - "Tensorflow": how-to/software/tensorflow.md
+      - "Apptainer": how-to/software/apptainer.md
+    - "Service":
+      - "File Exchange": how-to/service/file-exchange.md
+    - "Miscellaneous":
+      - "Access HPC Talk": how-to/misc/hpc-talk.md
+      - "Debug Software": how-to/misc/debug-software.md
+      - "Debug @HPC": how-to/misc/debug-at-hpc.md
+      - "Contribute to Docs": how-to/misc/contribute.md
+  - "Getting Help":
+    - "HPC Talk Forum": help/hpc-talk.md
+    - "HPC Helpdesk": help/helpdesk.md
+    - "Good Tickets": help/good-tickets.md
+    - "Frequently Asked Questions": help/faq.md
+  - "Miscellaneous":
+    - "Publication List": misc/publication-list.md
+    - "External Guides": misc/external-resources.md
+    - "Provided Software": misc/provided-software.md
+    - "Technical details":
+      - "Overview": overview/for-the-impatient.md
+      - "Architecture": overview/architecture.md
+      - "Job Scheduler": overview/job-scheduler.md
+      - "Nodes and Volumes": overview/storage.md
+      - "Monitoring": overview/monitoring.md
