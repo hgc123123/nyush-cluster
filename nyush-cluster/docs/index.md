@@ -6,7 +6,7 @@ See [How-To: Contribute to this Document](how-to/misc/contribute.md) for details
 
 :arrow_left: The global table of contents is on the left, the one of the current page is on the right. :arrow_right:
 
-!!! tip "Additional resources"
+!!! tip "Important links"
 
     - [How to create HPC account](https://nyu.service-now.com/sp?id=sc_cat_item&sys_id=b0fc230be498d6408b4d97a033492665)
     - [Performance and workload monitoring](https://ood.shanghai.nyu.edu/grafana/d/4247817/jobinfo?orgId=1)
@@ -19,8 +19,7 @@ Read the following set of pages (in order) to learn how to get access and connec
 2. [Connecting](connecting/connecting.md)
 3. [Storage](storage/storage-locations.md)
 5. [Slurm](slurm/overview.md)
-6. [Getting Help](help/hpc-talk.md) ([Writing Good Tickets](help/good-tickets.md); if no answer found, contact the [HPC Helpdesk](help/helpdesk.md)).
-7. [HPC Tutorial](hpc-tutorial/episode-0.md)
+6. [HPC Tutorial](hpc-tutorial/episode-0.md)
 
 !!! note "Acknowledging NYUSH HPC Usage"
     Acknowledge usage of the cluster in your manuscript as *"Computation has been performed on the HPC for Pudong/NYUSHC cluster of the NYU Shanghai"*.
@@ -45,6 +44,4 @@ The documentation is structured as follows:
 - **Cluster Scheduler** technical help for using the Slurm scheduler.
 - **OnDemand Portal** introduces web HPC access.
 - **Best Practice** guidelines on recommended usage of certain aspects of the system.
-- **How-To** short(ish) solutions for specific technical problems.
-- **Getting Help** explains how you can obtain help in using the NYUSH HPC.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.

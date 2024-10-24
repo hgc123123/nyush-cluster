@@ -1,7 +1,7 @@
 # Project information
 site_name: NYUSH HPC Docs
 site_description: Public documentation of the NYUSH HPC infrastructure.
-site_author: NYUSH HPC IT
+site_author: NYUSH HPC
 site_url: https://github.com/hgc123123/nyush-cluster.git
 
 # Repository
@@ -10,7 +10,7 @@ repo_url: https://github.com/hgc123123/nyush-cluster.git
 edit_uri: 'edit/main/nyush-cluster/docs/'
 
 # Copyright
-copyright: 2016-2024, NYUSH HPC IT
+copyright: 2024, NYUSH HPC
 
 # Theming, Configuration
 theme:
@@ -108,7 +108,7 @@ nav:
   - "HPC tutorial":
     - "Episode 0": hpc-tutorial/episode-0.md
     - "Episode 1": hpc-tutorial/episode-1.md
-  - "Cluster Scheduler (Slurm)":
+  - "Slurm":
     - slurm/overview.md
     - slurm/background.md
     - slurm/quickstart.md
@@ -135,21 +135,6 @@ nav:
     - "Temporary Files": best-practice/temp-files.md
     - "Custom Environment Modules": best-practice/env-modules.md
     - "Install Software with Conda": best-practice/software-installation-with-conda.md
-  - "How-To":
-    - "Connect":
-      - "GPU Nodes": how-to/connect/gpu-nodes.md
-    - "Software":
-      - "OpenMPI": how-to/software/openmpi.md
-      - "Scientific Software": how-to/software/scientific-software.md
-    - "Miscellaneous":
-      - "Debug Software": how-to/misc/debug-software.md
-      - "Debug @HPC": how-to/misc/debug-at-hpc.md
-      - "Contribute to Docs": how-to/misc/contribute.md
-  - "Getting Help":
-    - "HPC Talk Forum": help/hpc-talk.md
-    - "HPC Helpdesk": help/helpdesk.md
-    - "Good Tickets": help/good-tickets.md
-    - "Frequently Asked Questions": help/faq.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md

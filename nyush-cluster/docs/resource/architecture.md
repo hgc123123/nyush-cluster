@@ -8,7 +8,7 @@
 
 | Classes | Nodes | CPUs | GPUs  |
 |:--------|:------|:-----|:-----:|
-| `Total` | 131   | 6288 | 230   |
+| `Total` | 134   | 6480 | 230   |
 
 **Network**
 
@@ -33,19 +33,20 @@ In the pudong cluster, both bandwidths are `10GB/s` and `100GB/s`.
 
 | Classes | Nodes | CPUs | GPUs  |
 |:--------|:------|:-----|:-----:|
-| `Total` | 49    | 2920 | 134   |
+| `Total` | 52    | 3112 | 134   |
 
 **Partitions**
 ```
 $ sinfo --summarize
 PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
-parallel     up 20-00:00:0        11/0/0/11 compute[134-144]
-rooster      up   infinite          3/5/0/8 gpu[145-148,192-195]
-hebb         up   infinite          0/1/0/1 gpu180
-debug*       up 7-00:00:00        11/5/0/16 compute[118-133]
-chem         up   infinite          0/2/0/2 gpu[181,185]
+parallel     up 20-00:00:0        10/1/0/11 compute[134-144]
+rooster      up   infinite          5/3/0/8 gpu[145-148,192-195]
+hebb         up   infinite          1/0/0/1 gpu180
+debug*       up 7-00:00:00        3/13/0/16 compute[118-133]
+chem         up   infinite          2/0/0/2 gpu[181,185]
 li           up   infinite          0/1/0/1 gpu182
-aml          up   infinite          1/2/0/3 compute[183-184,189]
+aml          up   infinite          3/0/0/3 compute[183-184,189]
+argon        up   infinite          3/0/0/3 argon[23-25]
 netsys       up   infinite          0/1/0/1 gpu186
 sfscai       up 2-00:00:00          3/3/0/6 gpu[187-188,190-191,196-197]
 ```
@@ -53,8 +54,8 @@ sfscai       up 2-00:00:00          3/3/0/6 gpu[187-188,190-191,196-197]
 **CPUS**
 ```
 # sinfo -o "%C"
-CPUS(Alloc/Idle/Other/Total)
-1197/1715/8/2920
+CPUS(A/I/O/T)
+1262/1842/8/3112
 ```
 
 **GPUS**
