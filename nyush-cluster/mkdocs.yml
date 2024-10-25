@@ -101,6 +101,7 @@ nav:
       - "Matlab": software/matlab.md 
     - "Molecular Dynamics":
       - "Amber": software/amber.md
+      - "Lammps": software/lammps.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Home Folder Quota": storage/home-quota.md
