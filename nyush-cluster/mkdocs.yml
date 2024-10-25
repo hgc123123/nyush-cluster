@@ -98,10 +98,14 @@ nav:
     - "Visualization":
       - "RStudio": software/rstudio.md
       - "VS Code": software/vs_code.md  
-      - "Matlab": software/matlab.md 
+      - "Matlab": software/matlab.md
+      - "jupyter": software/jupyter.md 
     - "Molecular Dynamics":
       - "Amber": software/amber.md
       - "Lammps": software/lammps.md
+    - "Benchmark":
+      - "OSU": software/osu.md
+      - "HPL": software/hpl.md
   - "Storage":
     - "Storage Locations": storage/storage-locations.md
     - "Home Folder Quota": storage/home-quota.md

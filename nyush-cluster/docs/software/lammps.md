@@ -27,17 +27,17 @@ cp -r /gpfsnyu/spack/opt/spack/linux-rhel8-icelake/contribute/lammps/data/* ./
 #SBATCH --job-name=Lammps_MPI
 #SBATCH --partition=debug
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=64
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
 module load lammps/29Aug2024-oneapi-2022.0.1
 
 ulimit -l unlimited
-mpirun -np 4 lmp -in in.lj
+mpirun -np 64 lmp -in in.lj
 
 #Using MPI+OpenMP
-#export OMP_NUM_THREADS=2 
-#mpirun -np 2 lmp -sf omp -pk omp 2 -in in.lj
+#export OMP_NUM_THREADS=32 
+#mpirun -np 2 lmp -sf omp -pk omp 32 -in in.lj
 ```
 
 ```
@@ -50,32 +50,39 @@ sbatch lammps_cpu.slurm
 ```
 #!/bin/bash
 
-#SBATCH --job-name=Lammps_MPI
-#SBATCH --partition=debug
+#SBATCH --job-name=Lammps_GPU
+#SBATCH --partition=sfscai
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=64
+#SBATCH --gres=gpu:1
 #SBATCH --output=%j.out
 #SBATCH --error=%j.err
-module load lammps/29Aug2024-oneapi-2022.0.1
+module load lammps/29Aug2024-oneapi-2022.0.1-cuda-12.1.1
 
 ulimit -l unlimited
-mpirun -np 4 lmp -sf gpu -pk gpu 1 -in in.lj
+mpirun -np 64 lmp -sf gpu -pk gpu 1 -in in.lj
 ```
 
 ```
 sbatch lammps_gpu.slurm
 ```
 
-## Total CPU Time (CPU vs GPU)
+## Total Time (CPU vs GPU)
 
-**CPU (module load amber/22-oneapi-2022.0.1)**
+**CPU (module load lammps/29Aug2024-oneapi-2022.0.1)**
 
-| Cores    | 64            |
-|:---------|:--------------|
-| **Time** | 576.74 seconds|
+| Cores    | 64 (64*MPI) | 128 (128*MPI) | 192 (192*MPI) |
+|:---------|:------------|:--------------|---------------|
+| **Time** | 0:03:43     | 00:01:19      | 00:00:58      |
 
-**GPU (module load amber/22-cuda-11.4.2)**
+**CPU - MPI+OpenMP (module load lammps/29Aug2024-oneapi-2022.0.1)**
 
-| GPUs     | 1 RTX 3090    |
-|:---------|:--------------|
-| **Time** | 76.70 seconds |
+| Cores    | 64 (32MPI+2OpenMP) |
+|:---------|:-------------------|
+| **Time** | 00:03:22           |
+
+**GPU (module load lammps/29Aug2024-oneapi-2022.0.1-cuda-12.1.1)**
+
+| GPUs     | 1 (64*MPI+2*4090D) |
+|:---------|:-------------------|
+| **Time** | 00:01:05           |
