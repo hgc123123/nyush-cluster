@@ -1,19 +1,22 @@
 ## Introduction
-RStudio IDE (or RStudio) is an integrated development environment for [R](https://www.r-project.org/), a programming language for statistical computing and graphics.
+
+JupyterLab is the latest web-based interactive development environment for notebooks, code, and data. 
+Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning. 
+A modular design invites extensions to expand and enrich functionality.
 
 ## Version
 
-| Version For R   | Version For RStudio      |
-|:----------------|:------------------------:|
-| 4.4.1           | 2024.04.2+764            |
+| Cluster | Version   | Module                    |
+|:--------|:----------|:-------------------------:|
+| nyushc  | 7.0.6     | jupyter/7.0.6-cuda-11.4.3 |
 
-## Launch RStudio
+## Launch Jupyter
 
 Setup an [Open OnDemand (OOD)](https://ood.shanghai.nyu.edu) portal web server.
 
-To start the session, please go to `Interactive Apps` in the top menu bar and select `RStudio Server` or click `RStudio Server` in the left-hand panel.
+To start the session, please go to `My Interactive Apps` in the top menu bar and select `Jupyter` in the left-hand panel.
 
-![](figures/ondemand-interactive-rstudio-config_new.png){: style="width:90%;" .center}
+![](figures/ondemand-interactive-jupyter-config.png){: style="width:90%;" .center}
 
 Allocate appropriate resources and click `Launch`.
 
@@ -22,17 +25,22 @@ it will change its state from `Queued` to `Starting` to `Running`. Depending on 
 current cluster usage, this will take a couple of seconds.
 
 
-![](figures/ondemand-interactive-rstudio-queued.png){: style="width:90%;" .center}
+![](figures/ondemand-interactive-jupyter-queued.png){: style="width:90%;" .center}
 
 
-![](figures/ondemand-interactive-rstudio-starting.png){: style="width:90%;" .center}
+![](figures/ondemand-interactive-jupyter-starting.png){: style="width:90%;" .center}
 
 
-![](figures/ondemand-interactive-rstudio-running.png){: style="width:90%;" .center}
+![](figures/ondemand-interactive-jupyter-running.png){: style="width:90%;" .center}
 
 
-When in the final state (`Running`), one can directly connect to the RStudio Server
-to get an interactive session by clicking `Connect to RStudio Server`:
+When in the final state (`Running`), one can directly connect to the JupyterLab
+to get an interactive session by clicking `Connect to Jupyter`:
 
-![](figures/ondemand-interactive-rstudio-session.png){: style="width:90%;" .center}
+![](figures/ondemand-interactive-jupyter-session.png){: style="width:90%;" .center}
 
+Open JupyterLab
+
+![](figures/ondemand-interactive-jupyterlab-open.png){: style="width:90%;" .center}
+
+![](figures/ondemand-interactive-jupyterlab-session.png){: style="width:90%;" .center}

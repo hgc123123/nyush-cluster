@@ -12,13 +12,13 @@
         <meta name="author" content="NYUSH HPC">
       
       
-        <link rel="canonical" href="https://github.com/hgc123123/nyush-cluster.git/slurm/commands-sacct/">
+        <link rel="canonical" href="https://github.com/hgc123123/nyush-cluster.git/software/jupyter/">
       
       
-        <link rel="prev" href="../commands-scontrol/">
+        <link rel="prev" href="../matlab/">
       
       
-        <link rel="next" href="../format-strings/">
+        <link rel="next" href="../amber/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>sacct - NYUSH HPC Docs</title>
+        <title>Jupyter - NYUSH HPC Docs</title>
       
     
     
@@ -93,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#slurm-command-sacct" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -129,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              sacct
+              Jupyter
             
           </span>
         </div>
@@ -646,17 +646,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -670,7 +672,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Software
@@ -719,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/pytorch/" class="md-nav__link">
+      <a href="../pytorch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -745,17 +747,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_2" checked>
         
           
           <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
@@ -769,7 +773,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_2">
             <span class="md-nav__icon md-icon"></span>
             Visualization
@@ -783,7 +787,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/rstudio/" class="md-nav__link">
+      <a href="../rstudio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -804,7 +808,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/vs_code/" class="md-nav__link">
+      <a href="../vs_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -825,7 +829,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/matlab/" class="md-nav__link">
+      <a href="../matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -843,10 +847,28 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../software/jupyter/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Jupyter
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -855,6 +877,51 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch Jupyter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -910,7 +977,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/amber/" class="md-nav__link">
+      <a href="../amber/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -931,7 +998,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/lammps/" class="md-nav__link">
+      <a href="../lammps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -995,7 +1062,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/osu/" class="md-nav__link">
+      <a href="../osu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +1083,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/hpl/" class="md-nav__link">
+      <a href="../hpl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,19 +1305,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
         
           
           <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
@@ -1264,7 +1329,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
             Slurm
@@ -1278,7 +1343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../overview/" class="md-nav__link">
+      <a href="../../slurm/overview/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1299,7 +1364,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../background/" class="md-nav__link">
+      <a href="../../slurm/background/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1320,7 +1385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../quickstart/" class="md-nav__link">
+      <a href="../../slurm/quickstart/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1341,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../temporary-files/" class="md-nav__link">
+      <a href="../../slurm/temporary-files/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1362,7 +1427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cheat-sheet/" class="md-nav__link">
+      <a href="../../slurm/cheat-sheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1383,7 +1448,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../job-scripts/" class="md-nav__link">
+      <a href="../../slurm/job-scripts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1404,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../memory-allocation/" class="md-nav__link">
+      <a href="../../slurm/memory-allocation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1425,7 +1490,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../reservations/" class="md-nav__link">
+      <a href="../../slurm/reservations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1443,19 +1508,17 @@
                 
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_9" >
         
           
           <label class="md-nav__link" for="__nav_9_9" id="__nav_9_9_label" tabindex="0">
@@ -1469,7 +1532,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_9_9">
             <span class="md-nav__icon md-icon"></span>
             Slurm Commands
@@ -1483,7 +1546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-srun/" class="md-nav__link">
+      <a href="../../slurm/commands-srun/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1504,7 +1567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-sbatch/" class="md-nav__link">
+      <a href="../../slurm/commands-sbatch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1525,7 +1588,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-sattach/" class="md-nav__link">
+      <a href="../../slurm/commands-sattach/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1546,7 +1609,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-scancel/" class="md-nav__link">
+      <a href="../../slurm/commands-scancel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1567,7 +1630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-sinfo/" class="md-nav__link">
+      <a href="../../slurm/commands-sinfo/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1588,7 +1651,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-squeue/" class="md-nav__link">
+      <a href="../../slurm/commands-squeue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1609,7 +1672,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../commands-scontrol/" class="md-nav__link">
+      <a href="../../slurm/commands-scontrol/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1627,30 +1690,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    sacct
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../slurm/commands-sacct/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1659,44 +1702,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Important Arguments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    <span class="md-ellipsis">
-      Notes
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1709,7 +1714,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../format-strings/" class="md-nav__link">
+      <a href="../../slurm/format-strings/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2049,8 +2054,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2059,18 +2062,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#important-arguments" class="md-nav__link">
+  <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
-      Important Arguments
+      Introduction
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
+  <a href="#version" class="md-nav__link">
     <span class="md-ellipsis">
-      Notes
+      Version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#launch-jupyter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Launch Jupyter
     </span>
   </a>
   
@@ -2091,7 +2103,7 @@
                   
 
   
-    <a href="https://github.com/hgc123123/nyush-cluster.git/edit/main/nyush-cluster/docs/slurm/commands-sacct.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hgc123123/nyush-cluster.git/edit/main/nyush-cluster/docs/software/jupyter.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2099,41 +2111,43 @@
   
 
 
-<h1 id="slurm-command-sacct">Slurm Command: <code>sacct</code><a class="headerlink" href="#slurm-command-sacct" title="Permanent link">&para;</a></h1>
-<p>Perform queries to the Slurm accounting information.</p>
-<div class="admonition info">
-<p class="admonition-title">Representative Example</p>
-<div class="highlight"><pre><span></span><code><span class="o">[</span>gh2440@hpclogin<span class="w"> </span>~<span class="o">]</span>$<span class="w"> </span>sacct<span class="w"> </span>-j<span class="w"> </span><span class="m">483188</span>
-JobID<span class="w">           </span>JobName<span class="w">  </span>Partition<span class="w">    </span>Account<span class="w">  </span>AllocCPUS<span class="w">      </span>State<span class="w"> </span>ExitCode<span class="w"> </span>
-------------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>----------<span class="w"> </span>--------<span class="w"> </span>
-<span class="m">483188</span><span class="w">               </span>PT<span class="w">        </span>aml<span class="w">     </span>jh3899<span class="w">          </span><span class="m">9</span><span class="w">    </span>RUNNING<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<span class="m">483188</span>.batch<span class="w">      </span>batch<span class="w">                </span>jh3899<span class="w">          </span><span class="m">9</span><span class="w">    </span>RUNNING<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<span class="m">483188</span>.exte+<span class="w">     </span>extern<span class="w">                </span>jh3899<span class="w">          </span><span class="m">9</span><span class="w">    </span>RUNNING<span class="w">      </span><span class="m">0</span>:0<span class="w"> </span>
-<span class="m">483188</span>.0<span class="w">         </span>matlab<span class="w">                </span>jh3899<span class="w">          </span><span class="m">9</span><span class="w">    </span>RUNNING<span class="w">      </span><span class="m">0</span>:0
-</code></pre></div>
-</div>
-<p>The <code>sacct</code> command displays information from the Slurm accounting service.
-The Slurm scheduler only knows about active or completing (very recently active) jobs.
-The accouting system also knows about currently running jobs so it is the more robust way to query information about jobs.
-However, not all information is available to the accouting system, so <code>scontrol show job</code> and <code>squeue</code> provide more information about current and pending jbos.</p>
-<div class="admonition info">
-<p class="admonition-title">Slurm Documentation: sacct</p>
-<p>Please also see the official <a href="https://slurm.schedmd.com/sacct.html">Slurm documentation on sacct</a>.</p>
-</div>
-<h2 id="important-arguments">Important Arguments<a class="headerlink" href="#important-arguments" title="Permanent link">&para;</a></h2>
-<p>Also see all important arguments of the <a href="../commands-sbatch/"><code>sbatch</code></a> command.</p>
-<ul>
-<li><code>--jobs</code>
-  -- The job(s) to query for.</li>
-<li><code>--format</code>
-  -- Define attributes to retrieve.</li>
-<li><code>--long</code>
-  -- Get a lot of information from the database, consider to pipe into <code>| less -S</code>.</li>
-</ul>
-<h2 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
-<ul>
-<li>If you need to get information about a job regardless of it being in the past, present, or future execution, use <code>sacct</code> over <code>scontrol</code> and <code>squeue</code>.</li>
-</ul>
+  <h1>Jupyter</h1>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>JupyterLab is the latest web-based interactive development environment for notebooks, code, and data. 
+Its flexible interface allows users to configure and arrange workflows in data science, scientific computing, computational journalism, and machine learning. 
+A modular design invites extensions to expand and enrich functionality.</p>
+<h2 id="version">Version<a class="headerlink" href="#version" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cluster</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: center;">Module</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">nyushc</td>
+<td style="text-align: left;">7.0.6</td>
+<td style="text-align: center;">jupyter/7.0.6-cuda-11.4.3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="launch-jupyter">Launch Jupyter<a class="headerlink" href="#launch-jupyter" title="Permanent link">&para;</a></h2>
+<p>Setup an <a href="https://ood.shanghai.nyu.edu">Open OnDemand (OOD)</a> portal web server.</p>
+<p>To start the session, please go to <code>Interactive Apps</code> in the top menu bar and select <code>Jupyter</code> in the left-hand panel.</p>
+<p><img alt="" class="center" src="figures/ondemand-interactive-rstudio-confnew.png" style="width:90%;" /></p>
+<p>Allocate appropriate resources and click <code>Launch</code>.</p>
+<p>An info card for the RStudio Server will be added to <code>My Interactive Sessions</code>, and during start,
+it will change its state from <code>Queued</code> to <code>Starting</code> to <code>Running</code>. Depending on the app, resources allocated and
+current cluster usage, this will take a couple of seconds.</p>
+<p><img alt="" class="center" src="figures/ondemand-interactive-rstudqueued.png" style="width:90%;" /></p>
+<p><img alt="" class="center" src="figures/ondemand-interactive-rstud-starting.png" style="width:90%;" /></p>
+<p><img alt="" class="center" src="figures/ondemand-interactive-rstud-running.png" style="width:90%;" /></p>
+<p>When in the final state (<code>Running</code>), one can directly connect to the JupyterLab
+to get an interactive session by clicking <code>Connect to Jupyter</code>:</p>
+<p><img alt="" class="center" src="figures/ondemand-interactive-rstud-session.png" style="width:90%;" /></p>
 
 
 
@@ -2154,7 +2168,7 @@ However, not all information is available to the accouting system, so <code>scon
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">September 12, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 25, 2024</span>
   </span>
 
     

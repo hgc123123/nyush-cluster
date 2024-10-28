@@ -99,7 +99,7 @@ nav:
       - "RStudio": software/rstudio.md
       - "VS Code": software/vs_code.md  
       - "Matlab": software/matlab.md
-      - "jupyter": software/jupyter.md 
+      - "Jupyter": software/jupyter.md 
     - "Molecular Dynamics":
       - "Amber": software/amber.md
       - "Lammps": software/lammps.md
