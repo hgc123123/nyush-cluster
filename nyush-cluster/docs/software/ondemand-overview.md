@@ -65,12 +65,12 @@ a symlink for the now dislocated `~/ondemand` folder:
 !!! help "Problems with Open OnDemand?"
 
     First try to log out and login again.
-    Next, try to clear all cookies for the domain `hpc-portal.cubi.bihealth.org`.
+    Next, try to clear all cookies for the domain `ood.shanghai.nyu.edu`.
     Finally, try the `Help > Restart Web Server` link to restart the per-user nginx (PUN) server.
 
 You will then be redirected to the dashboard screen.
 
-![](figures/ondemand-dashboard.png){: style="width:60%;" .center}
+![](figures/ondemand-dashboard.png){: style="width:90%;" .center}
 
 Here you have access to the following actions.
 We will not go into detail of all of them and expect them to be self-explanatory.
