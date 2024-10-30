@@ -1,19 +1,16 @@
 # Software Installation with Conda
 ## Conda
 Users do not have the rights to install system packages on the NYUSH HPC cluster.
-For the management of bioinformatics software we therefore recommend using the conda package manager.
-Conda provides software in different “channels” and one of those channels contains a huge selection of bioinformatics software (bioconda).
+For the management of AI software we therefore recommend using the conda package manager.
+Conda provides software in different “channels” and one of those channels contains a huge selection of software.
 Generally packages are pre-compiled and conda just downloads the binaries from the conda servers.
 
 You are in charge of managing your own software stack, but conda makes it easy
-to do so. We will provide you with a description on how to install conda and how
-to use it. Of course there are many online resources that you can also use.
+to do so. We will provide you with a description on how to use it. 
+Of course there are many online resources that you can also use.
 Please find a list at the end of the document.
 
 Also note that some system-level software is managed through environment modules.
-
-## Premise
-When you logged into the cluster, please make sure that you also executed `srun` to log into a computation node and perform the software installation there.
 
 ## Loading conda modules
 
@@ -21,7 +18,7 @@ When you logged into the cluster, please make sure that you also executed `srun`
 module load miniconda3
 ```
 
-To make bioinformatics software available, we have to add the `bioconda` and
+Example1: To make bioinformatics software available, we have to add the `bioconda` and
 some other channels to the conda configuration:
 
 ```bash
@@ -83,23 +80,21 @@ environment or group your software. Another common use case is to have different
 environments for the different Python versions. Since conda is Python-based,
 conflicting packages will mostly struggle with the Python version.
 
-By default, conda will install packages into its root environment. Please note
-that software that does not depend on Python and is installed in the root
-environment, it is available in all other environments.
+By default, conda will install packages into its home environment. 
 
-To create a Python 3.7 environment and activate it, issue the following commands:
+To create a Python 3.10 environment and activate it, issue the following commands:
 
 ```bash
- $ conda create -n py37 python=3.7
- $ source activate py37
-(py37)  $
+ $ conda create -n py310 python=3.10
+ $ source activate py310
+(py310)  $
 ```
 
-From now on, conda will install packages into the `py37` environment when you issue
-the `install` command. To switch back to the root environment, simply deactivate the
-`py37` environment:
+From now on, conda will install packages into the `py310` environment when you issue
+the `install` command. To switch back to the home environment, simply deactivate the
+`py310` environment:
 
 ```bash
-(py37)  $ source deactivate py37
+(py310)  $ source deactivate py310
  $
 ```

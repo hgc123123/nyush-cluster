@@ -68,36 +68,3 @@ Simply create a directory with module files and then use `module use` for using 
 ```terminal
 $ module use path/to/modules
 ```
-
-## FAQ: Why `-bash: module: command not found`?
-
-On the login nodes, the `module` command is not installed.
-You should not run any computations there, so why would you need environment modules there? ;)
-
-```terminal
-$ module
--bash: module: command not found
-```
-
-Use `srun --pty bash -i` to get to one of the compute nodes.
-
-## Auto-loading a set of Modules
-
-You will certainly finding yourself using a set of programs regularly without it being part of the core cluster installation, e.g., SAMtools, or Python 3.
-Just putting the appropriate `module load` lines in your `~/.bashrc` will generate warnings when logging into the login node.
-It is thus recommended to use the following snippet for loading modules automatically on logging into a compute node:
-
-```bash
-case "${HOSTNAME}" in
-    login-*)
-        ;;
-    *)
-        # load Python3 environment module
-        module load python/3.10.10-gcc-8.5.0
-
-        # Define path for temporary directories, don't forget to cleanup!
-        # Also, this will only work after /fast is available.
-        export TMPDIR=/gpfsnyu/home/users/$USER/scratch/tmp
-        ;;
-esac
-```

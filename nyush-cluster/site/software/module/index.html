@@ -12,9 +12,13 @@
         <meta name="author" content="NYUSH HPC">
       
       
-        <link rel="canonical" href="https://github.com/hgc123123/nyush-cluster.git/file-transfers/from-external/">
+        <link rel="canonical" href="https://github.com/hgc123123/nyush-cluster.git/software/module/">
       
       
+        <link rel="prev" href="../../resource/architecture/">
+      
+      
+        <link rel="next" href="../conda/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +26,7 @@
     
     
       
-        <title>Connecting from External Networks - NYUSH HPC Docs</title>
+        <title>Module - NYUSH HPC Docs</title>
       
     
     
@@ -89,7 +93,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#connecting-from-external-networks" class="md-skip">
+        <a href="#custom-environment-modules" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +129,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Connecting from External Networks
+              Module
             
           </span>
         </div>
@@ -533,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../secure-copy-file-transfers/" class="md-nav__link">
+      <a href="../../file-transfers/secure-copy-file-transfers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -554,7 +558,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ood-file-transfers/" class="md-nav__link">
+      <a href="../../file-transfers/ood-file-transfers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -642,17 +646,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -666,7 +672,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Software
@@ -677,17 +683,19 @@
                 
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_1" checked>
         
           
           <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
@@ -701,7 +709,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_1">
             <span class="md-nav__icon md-icon"></span>
             Module & Conda
@@ -712,10 +720,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../software/module/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Module
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -724,6 +752,104 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-does-it-work" class="md-nav__link">
+    <span class="md-ellipsis">
+      How does it Work?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular Commands">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#querying" class="md-nav__link">
+    <span class="md-ellipsis">
+      Querying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadingunloading-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading/Unloading Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-your-own-module-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using your own Module Files
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq-why-bash-module-command-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ: Why -bash: module: command not found?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-loading-a-set-of-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-loading a set of Modules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -736,7 +862,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/conda/" class="md-nav__link">
+      <a href="../conda/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/pytorch/" class="md-nav__link">
+      <a href="../pytorch/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -864,7 +990,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/rstudio/" class="md-nav__link">
+      <a href="../rstudio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -885,7 +1011,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/vs_code/" class="md-nav__link">
+      <a href="../vs_code/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -906,7 +1032,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/matlab/" class="md-nav__link">
+      <a href="../matlab/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -927,7 +1053,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/jupyter/" class="md-nav__link">
+      <a href="../jupyter/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -991,7 +1117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/amber/" class="md-nav__link">
+      <a href="../amber/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1012,7 +1138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/lammps/" class="md-nav__link">
+      <a href="../lammps/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1076,7 +1202,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/osu/" class="md-nav__link">
+      <a href="../osu/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1097,7 +1223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../software/hpl/" class="md-nav__link">
+      <a href="../hpl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1952,19 +2078,55 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#nyu-shanghai-users" class="md-nav__link">
+  <a href="#how-does-it-work" class="md-nav__link">
     <span class="md-ellipsis">
-      NYU Shanghai Users
+      How does it Work?
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="NYU Shanghai Users">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#popular-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Popular Commands
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Popular Commands">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#general-vpn-access" class="md-nav__link">
+  <a href="#querying" class="md-nav__link">
     <span class="md-ellipsis">
-      General VPN Access
+      Querying
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadingunloading-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Loading/Unloading Modules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Getting Help
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-your-own-module-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using your own Module Files
     </span>
   </a>
   
@@ -1972,6 +2134,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq-why-bash-module-command-not-found" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ: Why -bash: module: command not found?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto-loading-a-set-of-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-loading a set of Modules
+    </span>
+  </a>
   
 </li>
       
@@ -1990,7 +2170,7 @@
                   
 
   
-    <a href="https://github.com/hgc123123/nyush-cluster.git/edit/main/nyush-cluster/docs/file-transfers/from-external.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/hgc123123/nyush-cluster.git/edit/main/nyush-cluster/docs/software/module.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1998,33 +2178,67 @@
   
 
 
-<h1 id="connecting-from-external-networks">Connecting from External Networks<a class="headerlink" href="#connecting-from-external-networks" title="Permanent link">&para;</a></h1>
-<p>This page describes how to connect to the NYUSH HPC from external networks (e.g., another university or from your home).</p>
-<ul>
-<li>NYU Shanghai <img alt="🔬" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f52c.svg" title=":microscope:" /> users can use<ul>
-<li>the VPN with "vpn.shanghai.nyu.edu".</li>
-</ul>
-</li>
-</ul>
-<div class="admonition faq">
-<p class="admonition-title">Getting Help with VPN and Gateway Nodes</p>
-<p>Please note that the VPNs and gateway nodes are maintained by the central IT departments of NYU Shanghai.
-Authorative information and documentation is provided by the central IT departments as well.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">SSH Key Gotchas</p>
-<p>You should use separate SSH key pairs for your workstation, laptop, home computer etc.
-When using gateway nodes, please make sure to use SSH key agents and agent forwarding (<code>ssh</code> flag "<code>-A</code>").</p>
-</div>
-<h2 id="nyu-shanghai-users">NYU Shanghai Users<a class="headerlink" href="#nyu-shanghai-users" title="Permanent link">&para;</a></h2>
-<p>Access to NYUSH HPC from external networks requires a VPN connection with special access permissions.</p>
-<h3 id="general-vpn-access">General VPN Access<a class="headerlink" href="#general-vpn-access" title="Permanent link">&para;</a></h3>
-<p>You need to apply for general VPN access if you haven't done so already.
-The form can be found in the <a href="https://wiki.it.shanghai.nyu.edu/Virtual-Private-Network-VPN">VPN in IT</a> and contains further instructions.
-<a href="mailto:shanghai.it.help@nyu.edu">IT Helpdesk</a> can help you with any questions.</p>
-<p>Once you have been granted VPN access, start the client and connect to VPN.
-You will then be able to connect from your client in the VPN just as you do from your workstation.</p>
-<div class="highlight"><pre><span></span><code>$<span class="w"> </span>ssh<span class="w"> </span>NetID@hpclogin.shanghai.nyu.edu
+<h1 id="custom-environment-modules">Custom Environment Modules<a class="headerlink" href="#custom-environment-modules" title="Permanent link">&para;</a></h1>
+<p>This document contains a few tips for helping you using environment modules more effectively.
+As the general online documentation is lacking a bit, we also give the most popular commands here.</p>
+<h2 id="how-does-it-work">How does it Work?<a class="headerlink" href="#how-does-it-work" title="Permanent link">&para;</a></h2>
+<p>Environment modules are descriptions of software packages.
+The <code>module</code> command is provided which allows the manipulation of environment variables such as <code>PATH</code>, <code>MANPATH</code>, etc., such that programs are available without passing the full path.
+Environment modules also allow specifying dependencies between packages and conflicting packages (e.g., when the same binary is available in two packages).
+Further, environment variables allow the parallel installation of different software versions in parallel and then using software "a la carte" in your projects.</p>
+<h2 id="popular-commands">Popular Commands<a class="headerlink" href="#popular-commands" title="Permanent link">&para;</a></h2>
+<h3 id="querying">Querying<a class="headerlink" href="#querying" title="Permanent link">&para;</a></h3>
+<p>List currently loaded modules:</p>
+<div class="highlight"><pre><span></span><code>$ module list
+</code></pre></div>
+<p>Show all available modules</p>
+<div class="highlight"><pre><span></span><code>$ module avail
+</code></pre></div>
+<h3 id="loadingunloading-modules">Loading/Unloading Modules<a class="headerlink" href="#loadingunloading-modules" title="Permanent link">&para;</a></h3>
+<p>Load one module, make sure to use a specific version to avoid ambiguities.</p>
+<div class="highlight"><pre><span></span><code>$ module load cuda/12.1.0-gcc-8.5.0
+</code></pre></div>
+<p>Unload one module</p>
+<div class="highlight"><pre><span></span><code>$ module unload cuda
+</code></pre></div>
+<p>Unload all modules</p>
+<div class="highlight"><pre><span></span><code>$ module purge
+</code></pre></div>
+<h3 id="getting-help">Getting Help<a class="headerlink" href="#getting-help" title="Permanent link">&para;</a></h3>
+<p>Get help for environment modules</p>
+<div class="highlight"><pre><span></span><code>$ module help
+</code></pre></div>
+<p>Get help for a particular environment module</p>
+<div class="highlight"><pre><span></span><code>$ module help cuda/12.1.0-gcc-8.5.0
+</code></pre></div>
+<h3 id="using-your-own-module-files">Using your own Module Files<a class="headerlink" href="#using-your-own-module-files" title="Permanent link">&para;</a></h3>
+<p>You can also create your own environment modules.
+Simply create a directory with module files and then use <code>module use</code> for using the modules from the directory tree.</p>
+<div class="highlight"><pre><span></span><code>$ module use path/to/modules
+</code></pre></div>
+<h2 id="faq-why-bash-module-command-not-found">FAQ: Why <code>-bash: module: command not found</code>?<a class="headerlink" href="#faq-why-bash-module-command-not-found" title="Permanent link">&para;</a></h2>
+<p>On the login nodes, the <code>module</code> command is not installed.
+You should not run any computations there, so why would you need environment modules there? ;)</p>
+<div class="highlight"><pre><span></span><code>$ module
+-bash: module: command not found
+</code></pre></div>
+<p>Use <code>srun --pty bash -i</code> to get to one of the compute nodes.</p>
+<h2 id="auto-loading-a-set-of-modules">Auto-loading a set of Modules<a class="headerlink" href="#auto-loading-a-set-of-modules" title="Permanent link">&para;</a></h2>
+<p>You will certainly finding yourself using a set of programs regularly without it being part of the core cluster installation, e.g., SAMtools, or Python 3.
+Just putting the appropriate <code>module load</code> lines in your <code>~/.bashrc</code> will generate warnings when logging into the login node.
+It is thus recommended to use the following snippet for loading modules automatically on logging into a compute node:</p>
+<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
+<span class="w">    </span>login-*<span class="o">)</span>
+<span class="w">        </span><span class="p">;;</span>
+<span class="w">    </span>*<span class="o">)</span>
+<span class="w">        </span><span class="c1"># load Python3 environment module</span>
+<span class="w">        </span>module<span class="w"> </span>load<span class="w"> </span>python/3.10.10-gcc-8.5.0
+
+<span class="w">        </span><span class="c1"># Define path for temporary directories, don&#39;t forget to cleanup!</span>
+<span class="w">        </span><span class="c1"># Also, this will only work after /fast is available.</span>
+<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/gpfsnyu/home/users/<span class="nv">$USER</span>/scratch/tmp
+<span class="w">        </span><span class="p">;;</span>
+<span class="k">esac</span>
 </code></pre></div>
 
 
@@ -2046,7 +2260,7 @@ You will then be able to connect from your client in the VPN just as you do from
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 14, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">October 30, 2024</span>
   </span>
 
     
