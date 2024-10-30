@@ -828,24 +828,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#faq-why-bash-module-command-not-found" class="md-nav__link">
-    <span class="md-ellipsis">
-      FAQ: Why -bash: module: command not found?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auto-loading-a-set-of-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Auto-loading a set of Modules
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2137,24 +2119,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#faq-why-bash-module-command-not-found" class="md-nav__link">
-    <span class="md-ellipsis">
-      FAQ: Why -bash: module: command not found?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#auto-loading-a-set-of-modules" class="md-nav__link">
-    <span class="md-ellipsis">
-      Auto-loading a set of Modules
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2215,30 +2179,6 @@ Further, environment variables allow the parallel installation of different soft
 <p>You can also create your own environment modules.
 Simply create a directory with module files and then use <code>module use</code> for using the modules from the directory tree.</p>
 <div class="highlight"><pre><span></span><code>$ module use path/to/modules
-</code></pre></div>
-<h2 id="faq-why-bash-module-command-not-found">FAQ: Why <code>-bash: module: command not found</code>?<a class="headerlink" href="#faq-why-bash-module-command-not-found" title="Permanent link">&para;</a></h2>
-<p>On the login nodes, the <code>module</code> command is not installed.
-You should not run any computations there, so why would you need environment modules there? ;)</p>
-<div class="highlight"><pre><span></span><code>$ module
--bash: module: command not found
-</code></pre></div>
-<p>Use <code>srun --pty bash -i</code> to get to one of the compute nodes.</p>
-<h2 id="auto-loading-a-set-of-modules">Auto-loading a set of Modules<a class="headerlink" href="#auto-loading-a-set-of-modules" title="Permanent link">&para;</a></h2>
-<p>You will certainly finding yourself using a set of programs regularly without it being part of the core cluster installation, e.g., SAMtools, or Python 3.
-Just putting the appropriate <code>module load</code> lines in your <code>~/.bashrc</code> will generate warnings when logging into the login node.
-It is thus recommended to use the following snippet for loading modules automatically on logging into a compute node:</p>
-<div class="highlight"><pre><span></span><code><span class="k">case</span><span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">HOSTNAME</span><span class="si">}</span><span class="s2">&quot;</span><span class="w"> </span><span class="k">in</span>
-<span class="w">    </span>login-*<span class="o">)</span>
-<span class="w">        </span><span class="p">;;</span>
-<span class="w">    </span>*<span class="o">)</span>
-<span class="w">        </span><span class="c1"># load Python3 environment module</span>
-<span class="w">        </span>module<span class="w"> </span>load<span class="w"> </span>python/3.10.10-gcc-8.5.0
-
-<span class="w">        </span><span class="c1"># Define path for temporary directories, don&#39;t forget to cleanup!</span>
-<span class="w">        </span><span class="c1"># Also, this will only work after /fast is available.</span>
-<span class="w">        </span><span class="nb">export</span><span class="w"> </span><span class="nv">TMPDIR</span><span class="o">=</span>/gpfsnyu/home/users/<span class="nv">$USER</span>/scratch/tmp
-<span class="w">        </span><span class="p">;;</span>
-<span class="k">esac</span>
 </code></pre></div>
 
 

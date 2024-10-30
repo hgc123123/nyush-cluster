@@ -98,7 +98,8 @@ nav:
       - "Conda": "software/conda.md"
     - "AI": 
       - "Pytorch": "software/pytorch.md"
-    - "Visualization":
+    - "OnDemand Portal":
+      - "Overview": software/ondemand-overview.md.md
       - "RStudio": software/rstudio.md
       - "VS Code": software/vs_code.md  
       - "Matlab": software/matlab.md
@@ -135,9 +136,6 @@ nav:
         - "scontrol": slurm/commands-scontrol.md
         - "sacct": slurm/commands-sacct.md
         - "Format Strings": slurm/format-strings.md
-  - "OnDemand Portal":
-    - "Overview": ondemand/overview.md
-    - "Interactive Sessions": ondemand/interactive.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md

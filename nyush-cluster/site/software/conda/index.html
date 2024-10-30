@@ -799,15 +799,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#premise" class="md-nav__link">
-    <span class="md-ellipsis">
-      Premise
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#loading-conda-modules" class="md-nav__link">
     <span class="md-ellipsis">
       Loading conda modules
@@ -2054,15 +2045,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#premise" class="md-nav__link">
-    <span class="md-ellipsis">
-      Premise
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#loading-conda-modules" class="md-nav__link">
     <span class="md-ellipsis">
       Loading conda modules
@@ -2115,20 +2097,18 @@
 <h1 id="software-installation-with-conda">Software Installation with Conda<a class="headerlink" href="#software-installation-with-conda" title="Permanent link">&para;</a></h1>
 <h2 id="conda">Conda<a class="headerlink" href="#conda" title="Permanent link">&para;</a></h2>
 <p>Users do not have the rights to install system packages on the NYUSH HPC cluster.
-For the management of bioinformatics software we therefore recommend using the conda package manager.
-Conda provides software in different “channels” and one of those channels contains a huge selection of bioinformatics software (bioconda).
+For the management of AI software we therefore recommend using the conda package manager.
+Conda provides software in different “channels” and one of those channels contains a huge selection of software.
 Generally packages are pre-compiled and conda just downloads the binaries from the conda servers.</p>
 <p>You are in charge of managing your own software stack, but conda makes it easy
-to do so. We will provide you with a description on how to install conda and how
-to use it. Of course there are many online resources that you can also use.
+to do so. We will provide you with a description on how to use it. 
+Of course there are many online resources that you can also use.
 Please find a list at the end of the document.</p>
 <p>Also note that some system-level software is managed through environment modules.</p>
-<h2 id="premise">Premise<a class="headerlink" href="#premise" title="Permanent link">&para;</a></h2>
-<p>When you logged into the cluster, please make sure that you also executed <code>srun</code> to log into a computation node and perform the software installation there.</p>
 <h2 id="loading-conda-modules">Loading conda modules<a class="headerlink" href="#loading-conda-modules" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>module<span class="w"> </span>load<span class="w"> </span>miniconda3
 </code></pre></div>
-<p>To make bioinformatics software available, we have to add the <code>bioconda</code> and
+<p>Example1: To make bioinformatics software available, we have to add the <code>bioconda</code> and
 some other channels to the conda configuration:</p>
 <div class="highlight"><pre><span></span><code><span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>bioconda
 <span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>config<span class="w"> </span>--add<span class="w"> </span>channels<span class="w"> </span>default
@@ -2170,18 +2150,16 @@ installation that took more than an hour can be resolved in seconds.</p>
 environment or group your software. Another common use case is to have different
 environments for the different Python versions. Since conda is Python-based,
 conflicting packages will mostly struggle with the Python version.</p>
-<p>By default, conda will install packages into its root environment. Please note
-that software that does not depend on Python and is installed in the root
-environment, it is available in all other environments.</p>
-<p>To create a Python 3.7 environment and activate it, issue the following commands:</p>
-<div class="highlight"><pre><span></span><code><span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py37<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.7
-<span class="w"> </span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>py37
-<span class="o">(</span>py37<span class="o">)</span><span class="w">  </span>$
+<p>By default, conda will install packages into its home environment. </p>
+<p>To create a Python 3.10 environment and activate it, issue the following commands:</p>
+<div class="highlight"><pre><span></span><code><span class="w"> </span>$<span class="w"> </span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py310<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.10
+<span class="w"> </span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>activate<span class="w"> </span>py310
+<span class="o">(</span>py310<span class="o">)</span><span class="w">  </span>$
 </code></pre></div>
-<p>From now on, conda will install packages into the <code>py37</code> environment when you issue
-the <code>install</code> command. To switch back to the root environment, simply deactivate the
-<code>py37</code> environment:</p>
-<div class="highlight"><pre><span></span><code><span class="o">(</span>py37<span class="o">)</span><span class="w">  </span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate<span class="w"> </span>py37
+<p>From now on, conda will install packages into the <code>py310</code> environment when you issue
+the <code>install</code> command. To switch back to the home environment, simply deactivate the
+<code>py310</code> environment:</p>
+<div class="highlight"><pre><span></span><code><span class="o">(</span>py310<span class="o">)</span><span class="w">  </span>$<span class="w"> </span><span class="nb">source</span><span class="w"> </span>deactivate<span class="w"> </span>py310
 <span class="w"> </span>$
 </code></pre></div>
 
