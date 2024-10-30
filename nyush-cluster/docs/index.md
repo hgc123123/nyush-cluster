@@ -43,5 +43,4 @@ The documentation is structured as follows:
 - **HPC tutorial** a first demo project for getting you started quickly.
 - **Cluster Scheduler** technical help for using the Slurm scheduler.
 - **OnDemand Portal** introduces web HPC access.
-- **Best Practice** guidelines on recommended usage of certain aspects of the system.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.

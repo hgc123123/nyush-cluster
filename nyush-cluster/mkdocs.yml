@@ -93,6 +93,9 @@ nav:
   - "Resource":
     - "Architecture": "resource/architecture.md"
   - "Software":
+    - "Module & Conda":
+      - "Module": "software/module.md"
+      - "Conda": "software/conda.md"
     - "AI": 
       - "Pytorch": "software/pytorch.md"
     - "Visualization":
@@ -135,11 +138,6 @@ nav:
   - "OnDemand Portal":
     - "Overview": ondemand/overview.md
     - "Interactive Sessions": ondemand/interactive.md
-  - "Best Practice":
-    - "~/.bashrc Guide": best-practice/bashrc-guide.md
-    - "Temporary Files": best-practice/temp-files.md
-    - "Custom Environment Modules": best-practice/env-modules.md
-    - "Install Software with Conda": best-practice/software-installation-with-conda.md
   - "Miscellaneous":
     - "Publication List": misc/publication-list.md
     - "External Guides": misc/external-resources.md
