@@ -8,7 +8,7 @@ There are two primary methods for interacting with NYU Shanghai HPC:
 2. Via SSH and Slurm.
 
 This part of the documentation only described direct console access via SSH.
-For information regarding the web portal, please read [OnDemand Portal](../ondemand/overview.md).
+For information regarding the web portal, please read [OnDemand Portal](../software/ondemand-overview.md).
 In case you're not familiar with SSH, you should probably start via the web portal or (if you are determined to learn) read through our [SSH basics](ssh-basics.md) page.
 
 ## In brief

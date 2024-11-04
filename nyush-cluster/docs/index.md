@@ -41,6 +41,5 @@ The documentation is structured as follows:
 - **Connecting** technical help for connecting to the cluster.
 - **Storage** describes how and where files are stored.
 - **HPC tutorial** a first demo project for getting you started quickly.
-- **Cluster Scheduler** technical help for using the Slurm scheduler.
-- **OnDemand Portal** introduces web HPC access.
+- **Slurm** technical help for using the Slurm scheduler.
 - **Miscellaneous** contains a growing list of pages that don't fit anywhere else.
