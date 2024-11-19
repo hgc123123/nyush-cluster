@@ -98,12 +98,15 @@ nav:
       - "Conda": "software/conda.md"
     - "AI": 
       - "Pytorch": "software/pytorch.md"
+      - "AlphaFold3": "software/alphafold3.md"
+      - "Protenix": "software/protenix.md"
     - "OnDemand Portal":
-      - "Overview": software/ondemand-overview.md.md
+      - "Overview": software/ondemand-overview.md
       - "RStudio": software/rstudio.md
       - "VS Code": software/vs_code.md  
       - "Matlab": software/matlab.md
-      - "Jupyter": software/jupyter.md 
+      - "Jupyter": software/jupyter.md
+      - "Molden": software/molden.md 
     - "Molecular Dynamics":
       - "Amber": software/amber.md
       - "Lammps": software/lammps.md
