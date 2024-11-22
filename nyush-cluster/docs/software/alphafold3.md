@@ -36,7 +36,7 @@ The following input JSON file named `alphafold_input.json`:
 #SBATCH --job-name=af3
 #SBATCH --partition=sfscai
 #SBATCH -N 1
-#SBATCH --ntasks-per-node=6
+#SBATCH --ntasks-per-node=10
 #SBATCH --gres=gpu:1
 #SBATCH --time=10:00:00
 #SBATCH --output=%j.out
@@ -52,4 +52,40 @@ sbatch af3.slurm
 
 ## Result
 
-**
+```
+[hpc@hpclogin alphafold3]$ tree  af_output
+af_output
++-- 2pv7
+    +-- 2pv7_confidences.json
+    +-- 2pv7_data.json
+    +-- 2pv7_model.cif
+    +-- 2pv7_summary_confidences.json
+    +-- ranking_scores.csv
+    +-- seed-1_sample-0
+    ¦   +-- confidences.json
+    ¦   +-- model.cif
+    ¦   +-- summary_confidences.json
+    +-- seed-1_sample-1
+    ¦   +-- confidences.json
+    ¦   +-- model.cif
+    ¦   +-- summary_confidences.json
+    +-- seed-1_sample-2
+    ¦   +-- confidences.json
+    ¦   +-- model.cif
+    ¦   +-- summary_confidences.json
+    +-- seed-1_sample-3
+    ¦   +-- confidences.json
+    ¦   +-- model.cif
+    ¦   +-- summary_confidences.json
+    +-- seed-1_sample-4
+    ¦   +-- confidences.json
+    ¦   +-- model.cif
+    ¦   +-- summary_confidences.json
+    +-- TERMS_OF_USE.md
+
+6 directories, 21 files
+```
+
+**af_output/2pv7_model.cif**
+
+![](figures/ondemand-2pv7_model.png){: style="width:80%;style="height:80%" .center}
