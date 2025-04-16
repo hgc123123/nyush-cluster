@@ -37,15 +37,18 @@ examples/
 10 directories, 10 files
 ```
 
-## Build Protenix Environment
+## Submit Inference Jobs
+
+### v0.1.0
+
+**Build protenix firstly**
 ```
-git clone https://github.com/bytedance/protenix.git 
-cd ./protenix
-module load protenix
+wget https://github.com/bytedance/Protenix/archive/refs/tags/v0.1.0.tar.gz
+tar xf v0.1.0.tar.gz
+cd Protenix-0.1.0
+module load protenix/0.1.0
 pip install -e .
 ```
-
-## Submit Inference Jobs
 
 **protenix.slurm**
 ```
@@ -83,12 +86,38 @@ python3 runner/inference.py \
 --sample_diffusion.N_step ${N_step}
 ```
 
+### v0.4.6
+
+#### Enter data directory
+```
+git clone https://github.com/bytedance/protenix.git 
+cd ~/protenix
+```
+
+**protenix.slurm**
+```
+#!/bin/bash
+#SBATCH --job-name=af3
+#SBATCH --partition=sfscai
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=6
+#SBATCH --gres=gpu:1
+#SBATCH --time=10:00:00
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+module load protenix/0.4.6
+protenix predict --input examples/example.json --out_dir  ./output --seeds 101
+
+```
 
 ```
 sbatch protenix.slurm
 ```
 
 ## Protenix Prediction Result
+
+### v0.1.0
 
 **Example**: 7pzb_sample_0
 

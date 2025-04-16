@@ -905,20 +905,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-protenix-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build Protenix Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#submit-inference-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       Submit Inference Jobs
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Submit Inference Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v010" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.1.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v046" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.4.6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.4.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enter-data-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter data directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -928,6 +958,21 @@
       Protenix Prediction Result
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Protenix Prediction Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v010_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.1.0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2045,20 +2090,50 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#build-protenix-environment" class="md-nav__link">
-    <span class="md-ellipsis">
-      Build Protenix Environment
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#submit-inference-jobs" class="md-nav__link">
     <span class="md-ellipsis">
       Submit Inference Jobs
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Submit Inference Jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v010" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.1.0
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#v046" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.4.6
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="v0.4.6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enter-data-directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enter data directory
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2068,6 +2143,21 @@
       Protenix Prediction Result
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Protenix Prediction Result">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#v010_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      v0.1.0
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2145,13 +2235,15 @@ examples/
 
 10 directories, 10 files
 </code></pre></div>
-<h2 id="build-protenix-environment">Build Protenix Environment<a class="headerlink" href="#build-protenix-environment" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>git clone https://github.com/bytedance/protenix.git 
-cd ./protenix
-module load protenix
-pip install -e .
-</code></pre></div>
 <h2 id="submit-inference-jobs">Submit Inference Jobs<a class="headerlink" href="#submit-inference-jobs" title="Permanent link">&para;</a></h2>
+<h3 id="v010">v0.1.0<a class="headerlink" href="#v010" title="Permanent link">&para;</a></h3>
+<p><strong>Build protenix firstly</strong>
+<div class="highlight"><pre><span></span><code>wget https://github.com/bytedance/Protenix/archive/refs/tags/v0.1.0.tar.gz
+tar xf v0.1.0.tar.gz
+cd Protenix-0.1.0
+module load protenix/0.1.0
+pip install -e .
+</code></pre></div></p>
 <p><strong>protenix.slurm</strong>
 <div class="highlight"><pre><span></span><code>#!/bin/bash
 #SBATCH --job-name=af3
@@ -2186,9 +2278,29 @@ python3 runner/inference.py \
 --sample_diffusion.N_sample ${N_sample} \
 --sample_diffusion.N_step ${N_step}
 </code></pre></div></p>
+<h3 id="v046">v0.4.6<a class="headerlink" href="#v046" title="Permanent link">&para;</a></h3>
+<h4 id="enter-data-directory">Enter data directory<a class="headerlink" href="#enter-data-directory" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>git clone https://github.com/bytedance/protenix.git 
+cd ~/protenix
+</code></pre></div>
+<p><strong>protenix.slurm</strong>
+<div class="highlight"><pre><span></span><code>#!/bin/bash
+#SBATCH --job-name=af3
+#SBATCH --partition=sfscai
+#SBATCH -N 1
+#SBATCH --ntasks-per-node=6
+#SBATCH --gres=gpu:1
+#SBATCH --time=10:00:00
+#SBATCH --output=%j.out
+#SBATCH --error=%j.err
+
+module load protenix/0.4.6
+protenix predict --input examples/example.json --out_dir  ./output --seeds 101
+</code></pre></div></p>
 <div class="highlight"><pre><span></span><code>sbatch protenix.slurm
 </code></pre></div>
 <h2 id="protenix-prediction-result">Protenix Prediction Result<a class="headerlink" href="#protenix-prediction-result" title="Permanent link">&para;</a></h2>
+<h3 id="v010_1">v0.1.0<a class="headerlink" href="#v010_1" title="Permanent link">&para;</a></h3>
 <p><strong>Example</strong>: 7pzb_sample_0</p>
 <p><strong>Protenix prediction confidence</strong>: ./output/7pzb/seed_101/predictions/7pzb_summary_confidence_sample_0.json</p>
 <p><strong>Protenix prediction</strong>: ./output/7pzb/seed_101/predictions/7pzb_sample_0.cif </p>
@@ -2213,7 +2325,7 @@ python3 runner/inference.py \
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">November 19, 2024</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 16, 2025</span>
   </span>
 
     
