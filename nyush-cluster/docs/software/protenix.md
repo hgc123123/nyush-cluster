@@ -2,6 +2,11 @@
 
 A trainable PyTorch reproduction of AlphaFold 3.
 
+| Cluster | Version| Module         |
+|:--------|:-------|:--------------:|
+| nyushc  | 0.1.0  | protenix/0.1.0 |
+| nyushc  | 0.4.6  | protenix/0.4.6 |
+
 ## Example
 ```
 git clone https://github.com/bytedance/protenix.git 
