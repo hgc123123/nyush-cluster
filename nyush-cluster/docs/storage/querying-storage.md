@@ -15,7 +15,7 @@ This file is automatically sourced in all of your Bash sessions.
 For querying your user's data and file usage, enter the following command:
 
 ```
-# myquota
+# mmlsquota -u $USER --block-size=1G
 ```
 
 You will get a report as follows.

@@ -2110,12 +2110,15 @@ In case you're not familiar with SSH, you should probably start via the web port
 <li>
 <p>Connect to one of the two login nodes.</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># NYUSHC Cluster</span>
-$<span class="w"> </span>ssh<span class="w"> </span>NetID@hpclogin.shanghai.nyu.edu
+$<span class="w"> </span>ssh<span class="w"> </span>NetID@hpclogin1.shanghai.nyu.edu
+
+or
+
+$<span class="w"> </span>ssh<span class="w"> </span>NetID@hpclogin2.shanghai.nyu.edu
 </code></pre></div>
 <div class="admonition hint">
 <p class="admonition-title">Hint</p>
-<p><code>hpclogin.shanghai.nyu.edu</code> is the login node. 
- Please do not perform big file transfers or an <code>sshfs</code> mount via the login nodes. </p>
+<p>Please do not perform big file transfers or an <code>sshfs</code> mount via the login nodes. </p>
 </div>
 <p>Please also read <a href="../advanced-ssh/overview/">Advanced SSH</a> for more custom scenarios how to connect to NYU Shanghai HPC.
 If you are using a Windows PC to access NYU Shanghai HPC, please read <a href="../connecting-windows/">Connecting via SSH on Windows</a></p>
@@ -2137,7 +2140,7 @@ $<span class="w"> </span>srun<span class="w"> </span>--pty<span class="w"> </spa
 <li>
 <p>SSH-Based Access:</p>
 <div class="highlight"><pre><span></span><code><span class="c1"># Interactive login (choose one)</span>
-ssh<span class="w"> </span>NetID@hpclogin.shanghai.nyu.edu
+ssh<span class="w"> </span>NetID@hpclogin1.shanghai.nyu.edu
 srun<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
 </code></pre></div>
 </li>

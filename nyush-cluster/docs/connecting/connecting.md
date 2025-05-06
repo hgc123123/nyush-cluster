@@ -19,11 +19,14 @@ Follow these steps to connect to NYU Shanghai HPC via the command line:
     
     ```bash
     # NYUSHC Cluster
-    $ ssh NetID@hpclogin.shanghai.nyu.edu
+    $ ssh NetID@hpclogin1.shanghai.nyu.edu
+
+    or
+
+    $ ssh NetID@hpclogin2.shanghai.nyu.edu
     ```
 
     !!! hint
-        `hpclogin.shanghai.nyu.edu` is the login node. 
          Please do not perform big file transfers or an `sshfs` mount via the login nodes. 
 
     Please also read [Advanced SSH](./advanced-ssh/overview.md) for more custom scenarios how to connect to NYU Shanghai HPC.
@@ -45,7 +48,7 @@ Follow these steps to connect to NYU Shanghai HPC via the command line:
 
         ```bash
         # Interactive login (choose one)
-        ssh NetID@hpclogin.shanghai.nyu.edu
+        ssh NetID@hpclogin1.shanghai.nyu.edu
         srun --pty bash -i
         ```
 

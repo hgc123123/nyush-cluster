@@ -2049,7 +2049,7 @@ This page quickly shows how to query for the current usage of data volume and fi
 <p>The file <code>/etc/bashrc.gpfs-quota</code> contains some Bash functions that you can use for querying the quota usage.
 This file is automatically sourced in all of your Bash sessions.</p>
 <p>For querying your user's data and file usage, enter the following command:</p>
-<div class="highlight"><pre><span></span><code># myquota
+<div class="highlight"><pre><span></span><code># mmlsquota -u $USER --block-size=1G
 </code></pre></div>
 <p>You will get a report as follows.</p>
 <div class="highlight"><pre><span></span><code>                         Block Limits                                               |     File Limits
