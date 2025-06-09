@@ -79,10 +79,6 @@ markdown_extensions:
 # Page tree
 nav:
   - index.md
-  - "Administrative":
-    - "Getting Access": admin/getting-access.md
-    - "Maintenance etc.": admin/maintenance.md
-    - "Policies": admin/policies.md
   - "Connecting":
     - "Overview": "connecting/connecting.md"
     - "From External": connecting/from-external.md

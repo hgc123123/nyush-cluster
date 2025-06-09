@@ -44,3 +44,55 @@ Open JupyterLab
 ![](figures/ondemand-interactive-jupyterlab-open.png){: style="width:90%;" .center}
 
 ![](figures/ondemand-interactive-jupyterlab-session.png){: style="width:90%;" .center}
+
+## Configure iPython Kernel
+
+Install iPython Kernel
+```
+module load miniconda3
+source activate my_env
+pip install ipykernel 
+```
+
+Copy the template files to your `~/.local/share/jupyter/kernels` directory.
+```
+mkdir -p ~/.local/share/jupyter/kernels
+cd ~/.local/share/jupyter/kernels
+cp -R /gpfsnyu/spack/share/kernel_template ./my_env # this should be the name of your conda env
+cd ./my_env 
+
+ls
+#kernel.json  logo-32x32.png  logo-64x64.png  python
+```
+
+To set the conda environment, edit the file named 'python' in ~/.local/share/jupyter/kernels/my_env/. 
+
+Edit the default kernel.json file by setting PYTHON_LOCATION and KERNEL_DISPLAY_NAME using a text editor like vi.
+
+```
+{
+ "argv": [
+  "PYTHON_LOCATION",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "KERNEL_DISPLAY_NAME",
+ "language": "python"
+}
+```
+to
+```
+{
+ "argv": [
+  "/gpfsnyu/home/<Your NetID>/.local/share/jupyter/kernels/my_env/python",
+  "-m",
+  "ipykernel_launcher",
+  "-f",
+  "{connection_file}"
+ ],
+ "display_name": "my_env [~/.conda/envs/my_env]",
+ "language": "python"
+}
+```

@@ -91,7 +91,12 @@ To create a Python 3.10 environment and activate it, issue the following command
 ```
 
 From now on, conda will install packages into the `py310` environment when you issue
-the `install` command. To switch back to the home environment, simply deactivate the
+the `install` command. Such as:
+```bash
+pip install pandas
+```
+
+To switch back to the home environment, simply deactivate the
 `py310` environment:
 
 ```bash
