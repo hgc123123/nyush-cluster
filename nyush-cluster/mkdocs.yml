@@ -96,6 +96,7 @@ nav:
       - "Pytorch": "software/pytorch.md"
       - "AlphaFold3": "software/alphafold3.md"
       - "Protenix": "software/protenix.md"
+      - "Boltz": "software/boltz.md"
     - "OnDemand Portal":
       - "Overview": software/ondemand-overview.md
       - "RStudio": software/rstudio.md

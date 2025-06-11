@@ -46,14 +46,11 @@ The content of the example file for CPU jobs:
 # Set the number of ntasks.
 #SBATCH --ntasks-per-node=8
 
-# Set the number of cores allocated to each task (-c or --cpus-per-task).
-#SBATCH --cpus-per-task=1
-
 # Force allocation of the eight tasks on ONE node.
 #SBATCH --nodes=1
 
 # Set the total memory. Units can be given in T|G|M|K.
-#SBATCH --mem=16G
+#SBATCH --mem=8G
 
 # Optionally, set the partition to be used (-p or --partition).
 #SBATCH --partition=debug
@@ -77,9 +74,7 @@ The content of the example file for GPU jobs:
 #SBATCH --error=logs/%x-%j.err
 
 #SBATCH --nodes=1
-#SBATCH --ntasks-per-node=6
-#SBATCH --cpus-per-task=1
-#SBATCH --mem=12G
+#SBATCH --ntasks-per-node=8
 
 # Set the number of GPUs.
 #SBATCH --gres=gpu:1

@@ -755,6 +755,27 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../software/boltz/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Boltz
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2002,14 +2023,11 @@ This means that we have to put the command(s) we want to use in a bash script.</
 <span class="c1"># Set the number of ntasks.</span>
 <span class="c1">#SBATCH --ntasks-per-node=8</span>
 
-<span class="c1"># Set the number of cores allocated to each task (-c or --cpus-per-task).</span>
-<span class="c1">#SBATCH --cpus-per-task=1</span>
-
 <span class="c1"># Force allocation of the eight tasks on ONE node.</span>
 <span class="c1">#SBATCH --nodes=1</span>
 
 <span class="c1"># Set the total memory. Units can be given in T|G|M|K.</span>
-<span class="c1">#SBATCH --mem=16G</span>
+<span class="c1">#SBATCH --mem=8G</span>
 
 <span class="c1"># Optionally, set the partition to be used (-p or --partition).</span>
 <span class="c1">#SBATCH --partition=debug</span>
@@ -2030,9 +2048,7 @@ mpirun<span class="w"> </span>-np<span class="w"> </span><span class="m">8</span
 <span class="c1">#SBATCH --error=logs/%x-%j.err</span>
 
 <span class="c1">#SBATCH --nodes=1</span>
-<span class="c1">#SBATCH --ntasks-per-node=6</span>
-<span class="c1">#SBATCH --cpus-per-task=1</span>
-<span class="c1">#SBATCH --mem=12G</span>
+<span class="c1">#SBATCH --ntasks-per-node=8</span>
 
 <span class="c1"># Set the number of GPUs.</span>
 <span class="c1">#SBATCH --gres=gpu:1</span>
