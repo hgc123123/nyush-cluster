@@ -107,6 +107,9 @@ nav:
     - "Molecular Dynamics":
       - "Amber": software/amber.md
       - "Lammps": software/lammps.md
+      - "SHARC4": software/sharc4.md
+      - "ORCA": software/orca.md
+      - "Gaussian": software/gaussian.md
     - "Benchmark":
       - "OSU": software/osu.md
       - "HPL": software/hpl.md
