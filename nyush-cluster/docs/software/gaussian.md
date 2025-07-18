@@ -46,18 +46,20 @@ g09 < gaussian.com > gaussian.log
 
 ## Total Time
 
+```
+Job cpu time = single-core time × number of cores
+```
+
 **g09**
+
 | Cores                  | 1 core | 2 cores | 4 cores | 8 cores |
 |:-----------------------|:------:|:-------:|:-------:|:--------|
 | Job cpu time (seconds) | 17.9   | 18.7    | 20.6    |	25.4    |
 | Elapsed time (seconds) | 17.9   |  9.5    |  5.3    |	 3.4    |
 
-Job CPU time = single-core time × number of cores
-
 **g16**
+
 | Cores                  | 1 core | 2 cores | 4 cores | 8 cores |
 |:-----------------------|:------:|:-------:|:-------:|:--------|
 | Job cpu time (seconds) | 17.7   | 18.4    | 20.4    | 25.0    |
 | Elapsed time (seconds) | 17.9   |  9.3    |  5.3    |  3.4    |
-
-Job CPU time = single-core time × number of cores
